@@ -1,0 +1,14 @@
+Package: hoaddata
+Type: Package
+Title: Provides data about hybrid open access journals
+Version: 0.1.0
+Authors@R: 
+    person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
+    role = c("aut", "cre"),
+    comment = c(ORCID = "YOUR-ORCID-ID")
+    )
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
