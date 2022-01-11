@@ -3,4 +3,4 @@
 #' A dataset comprising hybrid journals from German transformative agreements.
 #' The dataset was unified and enriched with ISSN variants and ISSN-L.
 #'
-"oam_df"
+"oam_hybrid_jns"
