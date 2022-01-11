@@ -28,9 +28,19 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
 
-      - name: Generate data
+      - name: Process data
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
           source("data-raw/DATASET.R")
         shell: Rscript {0}
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit --allow-empty -m "Auto-update of the data packages" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.gh }}
