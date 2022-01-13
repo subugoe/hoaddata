@@ -6,10 +6,10 @@ on:
   pull_request:
     branches: main
 
-name: update-data
+name: Building, testing and updating hybrid oa data package
 
 jobs:
-  R-CMD-check:
+  CICD:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit --allow-empty -m "Auto-update of the data packages" -a
+          git commit --allow-empty -m "Auto-update of the data package" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@master
