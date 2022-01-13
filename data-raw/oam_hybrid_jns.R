@@ -1,4 +1,4 @@
-## code to prepare `oam_hybrid_jns.R` dataset goes here
+## code to prepare `oam_hybrid_jns`
 pkgload::load_all()
 #' Load cleaned and enriched hybrid journal list from FZ Jülich
 oam_hybrid_jns <- system.file(package = "hoaddata",
