@@ -15,4 +15,4 @@ bg_oam_journals <-
 if (bigrquery::bq_table_exists(bg_oam_journals))
   bigrquery::bq_table_delete(bg_oam_journals)
 bigrquery::bq_table_upload(bg_oam_journals,
-                           oam_df)
+                           oam_hybrid_jns)
