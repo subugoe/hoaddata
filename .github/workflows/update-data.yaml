@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: main
 
-name: Building, testing and updating hybrid oa data package
+name: cicd
 
 jobs:
   CICD:
