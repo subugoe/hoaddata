@@ -29,6 +29,7 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
 
       - name: Process data
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
@@ -36,12 +37,14 @@ jobs:
         shell: Rscript {0}
 
       - name: Commit files
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit --allow-empty -m "Auto-update of the data package" -a
 
       - name: Push changes
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
