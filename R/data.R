@@ -13,5 +13,8 @@
 #' @source \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 "oam_hybrid_jns"
 
+#' Yearly publication volume
+"oam_jns_by_year"
+
 #' @importFrom tibble tibble
 NULL

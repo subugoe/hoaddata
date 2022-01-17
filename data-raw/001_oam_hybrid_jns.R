@@ -23,7 +23,7 @@ decrypt_gc_secret <-
       rawToChar(json)
     }
 
-bigrquery::bq_auth(path = decrypt_gc_secret)
+bigrquery::bq_auth(path = decrypt_gc_secret())
 
 ### Upload to BQ
 bg_oam_journals <- bigrquery::bq_table("hoad-dash", "oam", "oam_hybrid_jns")
