@@ -14,7 +14,7 @@
 "oam_hybrid_jns"
 
 #' Yearly publication volume
-"oam_jns_by_year"
+"oam_jn_by_year"
 
 #' @importFrom tibble tibble
 NULL

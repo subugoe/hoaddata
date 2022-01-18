@@ -13,17 +13,13 @@ usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
 
 ### Auth BQ: Decrypt Google Cloud secret service token
 
-# Implements decrypt-ability using internal secret_* functions from gargle
+# Decrypting-ability using internal secret_* functions from gargle
 # package following bigrquery test setup.
 # <https://gargle.r-lib.org/articles/articles/managing-tokens-securely.html>
-decrypt_gc_secret <-
-  function(package = "hoaddata", name = "hoaddata-bq.json")
-    if (gargle:::secret_can_decrypt(package)) {
-      json <- gargle:::secret_read(package, name)
-      rawToChar(json)
-    }
-
-bigrquery::bq_auth(path = decrypt_gc_secret())
+if (gargle:::secret_can_decrypt(package = "hoaddata")) {
+    gc_json <- gargle:::secret_read(package = "hoaddata", name = "hoaddata-bq.json")
+    bigrquery::bq_auth(path = rawToChar(gc_json))
+}
 
 ### Upload to BQ
 bg_oam_journals <- bigrquery::bq_table("hoad-dash", "oam", "oam_hybrid_jns")

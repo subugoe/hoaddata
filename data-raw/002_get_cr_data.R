@@ -1,40 +1,46 @@
 # Crossref analytics
 
-# Executes analytics task on Big Query
+# Helper function ----
+
+#' @param  sql_basename basename of sql file in inst/sql
+#' @param  project BigQuery project
+#' @param dataset BigQuery dataset
+#' @param download download save result locally?
+#'
+create_bq_table <- function(sql_basename = NULL,
+                            project = "hoad-dash",
+                            dataset = "oam",
+                            download = FALSE) {
+  # Refer to Big Query dataset
+  oam <- bigrquery::bq_dataset(project, dataset)
+  # Refer to Big Query table
+  dest <- bigrquery::bq_table(project, dataset, sql_basename)
+
+  if (bigrquery::bq_table_exists(dest))
+    bigrquery::bq_table_delete(dest)
+
+  # Read sql query
+  sql_string <- system.file(package = "hoaddata", paste0("inst/sql/", sql_basename, ".sql"))
+  if (sql_string == "")
+    stop(paste(sql, "file not found"))
+  sql_ <-  readr::read_file(sql_string)
+
+  # Execute sql
+  bigrquery::bq_dataset_query(oam,
+                              query = sql_,
+                              destination_table = dest)
+  if (isTRUE(download))
+    bigrquery::bq_table_download(dest)
+}
 
 # Create Crossref metadata subset ----
-oam <- bigrquery::bq_dataset("hoad-dash", "oam")
-bg_oam_cr_raw <- bigrquery::bq_table("hoad-dash", "oam", "cr_raw")
-
-if (bigrquery::bq_table_exists(bg_oam_cr_raw))
-  bigrquery::bq_table_delete(bg_oam_cr_raw)
-
-cr_md_sql <-  readr::read_file(
-system.file(package = "hoaddata", "inst/sql/cr_raw.sql")
-)
-
-bigrquery::bq_dataset_query(
-  oam,
-  query = cr_md_sql,
-  destination_table = bg_oam_cr_raw
-)
+create_bq_table(sql_basename = "cr_raw")
 
 # Aggregation ----
 
 ## Journal publication volume by year ----
-bg_oam_jn_by_year <- bigrquery::bq_table("hoad-dash", "oam", "oam_jn_by_year")
-
-if (bigrquery::bq_table_exists(bg_oam_jn_by_year))
-  bigrquery::bq_table_delete(bg_oam_jn_by_year)
-oam_jn_by_year_sql <-  readr::read_file(
-  system.file(package = "hoaddata", "inst/sql/oam_jn_by_year.sql")
-)
-
-bigrquery::bq_dataset_query(
-  oam,
-  query = oam_jn_by_year_sql,
-  destination_table = bg_oam_jn_by_year
-)
-
-oam_jns_by_year <- bigrquery::bq_table_download(bg_oam_jn_by_year)
-usethis::use_data(oam_jns_by_year, overwrite = TRUE)
+oam_jn_by_year <- create_bq_table(sql_basename = "oam_jn_by_year",
+                                  download = TRUE)
+#save as internal data
+oam_jn_by_year |>
+  usethis::use_data(overwrite = TRUE)
