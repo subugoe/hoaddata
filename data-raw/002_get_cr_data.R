@@ -44,3 +44,8 @@ oam_jn_by_year <- create_bq_table(sql_basename = "oam_jn_by_year",
 #save as internal data
 oam_jn_by_year |>
   usethis::use_data(overwrite = TRUE)
+
+## Creative Commons licensing ----
+
+create_bq_table(sql_basename = "cc_md")
+
