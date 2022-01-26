@@ -12,6 +12,7 @@ WHERE
 SELECT
   cr_raw.doi,
   issn_l,
+  cr_year,
   cc,
   CASE
     WHEN content_version != "am" THEN 1 ELSE 0
