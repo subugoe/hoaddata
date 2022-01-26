@@ -36,16 +36,11 @@ create_bq_table <- function(sql_basename = NULL,
 # Create Crossref metadata subset ----
 create_bq_table(sql_basename = "cr_raw")
 
-# Aggregation ----
-
-## Journal publication volume by year ----
-oam_jn_by_year <- create_bq_table(sql_basename = "oam_jn_by_year",
-                                  download = TRUE)
-#save as internal data
-oam_jn_by_year |>
-  usethis::use_data(overwrite = TRUE)
-
 ## Creative Commons licensing ----
 
+### Metadata ----
 create_bq_table(sql_basename = "cc_md")
 
+### Indicator ----
+cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE)
+usethis::use_data(cc_jn_ind, overwrite = TRUE)
