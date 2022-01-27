@@ -35,6 +35,7 @@ jobs:
         run: |
           source("data-raw/001_oam_hybrid_jns.R")
           source("data-raw/002_get_cr_data.R")
+          rmarkdown::render("README.Rmd")
         shell: Rscript {0}
 
       - name: Commit files

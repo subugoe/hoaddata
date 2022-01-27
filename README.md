@@ -1,22 +1,18 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
 
 # hoaddata
 
 <!-- badges: start -->
+
 [![update-data.yaml](https://github.com/njahn82/hoaddashtest/actions/workflows/update-data.yaml/badge.svg)](https://github.com/njahn82/hoaddashtest/actions/workflows/update-data.yaml)
 
 <!-- badges: end -->
 
-hoaddata contains indicators about the open access uptake of
-hybrid journals, which belong to national transformative agreements in Germany
-as listed by the 
-[Open Access Monitor](https://open-access-monitor.de/#/publications).
+hoaddata contains indicators about the open access uptake of hybrid
+journals, which belong to national transformative agreements in Germany
+as listed by the [Open Access
+Monitor](https://open-access-monitor.de/#/publications).
 
 ## Installation
 
@@ -31,13 +27,17 @@ remotes::install_github("njahn82/hoaddashtest")
 
 This package provides the following data tables.
 
-`?oam_hybrid_jns`: Hybrid Journals listed in the Open Access Monitor. Data were 
-gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
-ISSN variants.
+### Hybrid journal list
 
+`?oam_hybrid_jns`: Hybrid Journals listed in the Open Access Monitor.
+Data were gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
+and enriched with ISSN variants.
 
-```r
+``` r
 library(hoaddata)
+library(dplyr) # For data analytics
+
+# Data structure
 oam_hybrid_jns
 #> # A tibble: 10,765 × 3
 #>    vertrag     issn_l    issn     
@@ -55,11 +55,44 @@ oam_hybrid_jns
 #> # … with 10,755 more rows
 ```
 
-`?cc_jn_ind`: Prevalence of Creative Commons licenses by variant, year and 
-journal obtained from Crossref.
+Summary statistics:
 
+``` r
+# Journals by transformative agreement
+oam_hybrid_jns %>%
+  group_by(vertrag) %>%
+  summarise(n = n_distinct(issn_l)) %>%
+  arrange(desc(n)) %>%
+  knitr::kable()
+```
 
-```r
+| vertrag                 |    n |
+|:------------------------|-----:|
+| Springer Hybrid (DEAL)  | 2098 |
+| Wiley Hybrid (DEAL)     | 1429 |
+| Sage (BSB)              |  980 |
+| CUP (BSB)               |  282 |
+| TaylorFrancis (ZBW)     |  267 |
+| IOP (TIB)               |  116 |
+| Karger (BSB)            |   71 |
+| ACM (hebis)             |   62 |
+| De Gruyter (ZBW)        |   45 |
+| RSC (TIB)               |   39 |
+| Hogrefe (SUB Göttingen) |   35 |
+| Nature (MPDL)           |   33 |
+| AIP (TIB)               |   32 |
+| BMJ (BSB)               |   28 |
+| SPIE (TIB)              |    9 |
+| Thieme 2 (ab 2021)      |    6 |
+| ECS (TIB)               |    2 |
+| Thieme 1 (ab 2019)      |    1 |
+
+### Creative commons licensing
+
+`?cc_jn_ind`: Prevalence of Creative Commons licenses by variant, year
+and journal obtained from Crossref.
+
+``` r
 cc_jn_ind
 #> # A tibble: 35,981 × 6
 #>    issn_l    cr_year cc          cc_total jn_all     prop
@@ -81,12 +114,20 @@ cc_jn_ind
 
 Datasets are released into the public domain.
 
-Anyone is free to copy, modify, publish, use, compile, sell, or distribute these materials in any form, for any purpose, commercial or non-commercial, and by any means.
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute these materials in any form, for any purpose, commercial or
+non-commercial, and by any means.
 
-Crossref asserts no claims of ownership to individual items of bibliographic metadata and associated Digital Object Identifiers (DOIs) acquired through the use of the Crossref Free Services. Individual items of bibliographic metadata and associated DOIs may be cached and incorporated into the user's content and systems.
+Crossref asserts no claims of ownership to individual items of
+bibliographic metadata and associated Digital Object Identifiers (DOIs)
+acquired through the use of the Crossref Free Services. Individual items
+of bibliographic metadata and associated DOIs may be cached and
+incorporated into the user’s content and systems.
 
-This work re-used the following dataset: 
+This work re-used the following dataset:
 
-Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021, "Open Access Monitor: Zeitschriftenlisten", <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>.
+Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021, “Open Access
+Monitor: Zeitschriftenlisten”,
+<https://doi.org/10.26165/JUELICH-DATA/VTQXLM>.
 
 published under CC BY 4.0.

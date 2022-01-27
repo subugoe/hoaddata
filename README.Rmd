@@ -38,14 +38,32 @@ remotes::install_github("njahn82/hoaddashtest")
 
 This package provides the following data tables.
 
+### Hybrid journal list
+
 `?oam_hybrid_jns`: Hybrid Journals listed in the Open Access Monitor. Data were 
 gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
 ISSN variants.
 
-```{r}
+```{r, message=FALSE}
 library(hoaddata)
+library(dplyr) # For data analytics
+
+# Data structure
 oam_hybrid_jns
 ```
+
+Summary statistics:
+
+```{r}
+# Journals by transformative agreement
+oam_hybrid_jns %>%
+  group_by(vertrag) %>%
+  summarise(n = n_distinct(issn_l)) %>%
+  arrange(desc(n)) %>%
+  knitr::kable()
+```
+
+### Creative commons licensing 
 
 `?cc_jn_ind`: Prevalence of Creative Commons licenses by variant, year and 
 journal obtained from Crossref.
@@ -53,6 +71,7 @@ journal obtained from Crossref.
 ```{r}
 cc_jn_ind
 ```
+
 
 ## Data re-use and licenses
 
