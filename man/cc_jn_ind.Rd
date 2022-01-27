@@ -29,8 +29,9 @@ License information for author accepted manuscripts ("aam") and
 with time lag between licensing and publication (delayed OA) were not
 considered.
 
-#' @format A data frame with 3 variables
-  \describe{
+Variables:
+
+\describe{
     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{cc}{Normalized Creative Commons variant. Ordered factor by license variant permissiveness}

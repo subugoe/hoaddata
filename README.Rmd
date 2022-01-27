@@ -4,7 +4,14 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # hoaddata
 
@@ -35,46 +42,16 @@ This package provides the following data tables.
 gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
 ISSN variants.
 
-
-```r
+```{r}
 library(hoaddata)
 oam_hybrid_jns
-#> # A tibble: 10,765 × 3
-#>    vertrag     issn_l    issn     
-#>    <chr>       <chr>     <chr>    
-#>  1 ACM (hebis) 0360-0300 0360-0300
-#>  2 ACM (hebis) 0360-0300 1557-7341
-#>  3 ACM (hebis) 1550-4832 1550-4832
-#>  4 ACM (hebis) 1550-4832 1550-4840
-#>  5 ACM (hebis) 1936-7236 1936-7228
-#>  6 ACM (hebis) 1936-7236 1936-7236
-#>  7 ACM (hebis) 1549-6325 1549-6325
-#>  8 ACM (hebis) 1549-6325 1549-6333
-#>  9 ACM (hebis) 1544-3558 1544-3558
-#> 10 ACM (hebis) 1544-3558 1544-3965
-#> # … with 10,755 more rows
 ```
 
 `?cc_jn_ind`: Prevalence of Creative Commons licenses by variant, year and 
 journal obtained from Crossref.
 
-
-```r
+```{r}
 cc_jn_ind
-#> # A tibble: 35,981 × 6
-#>    issn_l    cr_year cc          cc_total jn_all     prop
-#>    <chr>     <fct>   <fct>          <int>  <int>    <dbl>
-#>  1 0009-4536 2019    <NA>              NA    256 NA      
-#>  2 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
-#>  3 1359-4184 2018    CC BY-SA           1    256  0.00391
-#>  4 2058-9883 2019    CC BY-NC           2    256  0.00781
-#>  5 1359-4184 2018    CC BY-NC-ND        3    256  0.0117 
-#>  6 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
-#>  7 0006-3592 2018    CC BY-NC           3    256  0.0117 
-#>  8 0014-3820 2018    CC BY-NC           3    256  0.0117 
-#>  9 0090-4392 2021    CC BY-NC           3    256  0.0117 
-#> 10 2058-9883 2019    CC BY              3    256  0.0117 
-#> # … with 35,971 more rows
 ```
 
 ## Data re-use and licenses

@@ -5,12 +5,7 @@
 \alias{oam_hybrid_jns}
 \title{Hybrid Journals listed in the Open Access Monitor}
 \format{
-A data frame with 3 variables
-  \describe{
-    \item{vertrag}{Transformative aggrement from a German consortium (in brakets)}
-    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
-    \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
-    }
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 10765 rows and 3 columns.
 }
 \source{
 \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
@@ -22,5 +17,14 @@ oam_hybrid_jns
 The dataset contains hybrid journals available as filter in the
 \href{https://open-access-monitor.de/}{German Open Access Monitor}.
 The dataset was unified and enriched with ISSN variants and ISSN-L.
+}
+\details{
+Variables:
+
+\describe{
+    \item{vertrag}{Transformative aggrement from a German consortium (in brakets)}
+    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+    \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
+    }
 }
 \keyword{datasets}
