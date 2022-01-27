@@ -66,26 +66,26 @@ oam_hybrid_jns %>%
   knitr::kable()
 ```
 
-| vertrag                 |    n |
-|:------------------------|-----:|
-| Springer Hybrid (DEAL)  | 2098 |
-| Wiley Hybrid (DEAL)     | 1429 |
-| Sage (BSB)              |  980 |
-| CUP (BSB)               |  282 |
-| TaylorFrancis (ZBW)     |  267 |
-| IOP (TIB)               |  116 |
-| Karger (BSB)            |   71 |
-| ACM (hebis)             |   62 |
-| De Gruyter (ZBW)        |   45 |
-| RSC (TIB)               |   39 |
-| Hogrefe (SUB Göttingen) |   35 |
-| Nature (MPDL)           |   33 |
-| AIP (TIB)               |   32 |
-| BMJ (BSB)               |   28 |
-| SPIE (TIB)              |    9 |
-| Thieme 2 (ab 2021)      |    6 |
-| ECS (TIB)               |    2 |
-| Thieme 1 (ab 2019)      |    1 |
+| vertrag                |    n |
+| :--------------------- | ---: |
+| Springer Hybrid (DEAL) | 2098 |
+| Wiley Hybrid (DEAL)    | 1429 |
+| Sage (BSB)             |  980 |
+| CUP (BSB)              |  282 |
+| TaylorFrancis (ZBW)    |  267 |
+| IOP (TIB)              |  116 |
+| Karger (BSB)           |   71 |
+| ACM (hebis)            |   62 |
+| De Gruyter (ZBW)       |   45 |
+| RSC (TIB)              |   39 |
+| Hogrefe (SUB)          |   35 |
+| Nature (MPDL)          |   33 |
+| AIP (TIB)              |   32 |
+| BMJ (BSB)              |   28 |
+| SPIE (TIB)             |    9 |
+| Thieme 2 (ab 2021)     |    6 |
+| ECS (TIB)              |    2 |
+| Thieme 1 (ab 2019)     |    1 |
 
 ### Creative commons licensing
 
@@ -98,15 +98,15 @@ cc_jn_ind
 #>    issn_l    cr_year cc          cc_total jn_all     prop
 #>    <chr>     <fct>   <fct>          <int>  <int>    <dbl>
 #>  1 0009-4536 2019    <NA>              NA    256 NA      
-#>  2 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
-#>  3 1359-4184 2018    CC BY-SA           1    256  0.00391
+#>  2 1359-4184 2018    CC BY-SA           1    256  0.00391
+#>  3 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
 #>  4 2058-9883 2019    CC BY-NC           2    256  0.00781
-#>  5 1359-4184 2018    CC BY-NC-ND        3    256  0.0117 
+#>  5 0014-3820 2018    CC BY-NC           3    256  0.0117 
 #>  6 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
 #>  7 0006-3592 2018    CC BY-NC           3    256  0.0117 
-#>  8 0014-3820 2018    CC BY-NC           3    256  0.0117 
-#>  9 0090-4392 2021    CC BY-NC           3    256  0.0117 
-#> 10 2058-9883 2019    CC BY              3    256  0.0117 
+#>  8 0090-4392 2021    CC BY-NC           3    256  0.0117 
+#>  9 2058-9883 2019    CC BY              3    256  0.0117 
+#> 10 1359-4184 2018    CC BY-NC-ND        3    256  0.0117 
 #> # … with 35,971 more rows
 ```
 
