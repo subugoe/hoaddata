@@ -17,7 +17,7 @@
 #'
 #' This dataset contains the number and proportion of articles with Creative
 #' Commons license (CC) by license variant and year for hybrid journals as
-#' listed by the German Open Access monitor since 2013.
+#' listed by the German Open Access monitor since 2017
 #'
 #' Journal's article volume was calculated using the Crossref database snapshot.
 #' Note that only articles published in regular issues aside from supplements
@@ -36,7 +36,7 @@
 #'   \describe{
 #'     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
-#'     \item{cc}{Normalized Creative Commons variant}
+#'     \item{cc}{Normalized Creative Commons variant. Ordered factor by license variant permissiveness}
 #'     \item{cc_total}{Number of articles under Creative Commons variant}
 #'     \item{jn_all}{Yearly journal output}
 #'     \item{prop}{Proportion of CC licensed articles}
