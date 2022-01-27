@@ -42,14 +42,11 @@ create_bq_table(sql_basename = "cr_raw")
 create_bq_table(sql_basename = "cc_md")
 
 ### Indicator ----
-cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE)
-
-# Define factor levels
-cc_jn_ind |>
+cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
   dplyr::mutate(cr_year = factor(cr_year))  |>
   dplyr::mutate(cc = factor(cc,
                                # Order by permissiveness
                                levels = c("CC BY", "CC BY-SA",
                                           "CC BY-NC", "CC BY-NC-SA",
-                                          "CC BY-ND", "CC BY-NC-ND"))) |>
-  usethis::use_data(overwrite = TRUE)
+                                          "CC BY-ND", "CC BY-NC-ND")))
+usethis::use_data(cc_jn_ind, overwrite = TRUE)
