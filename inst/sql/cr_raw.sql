@@ -1,4 +1,3 @@
--- CREATE OR REPLACE TABLE `hoad-dash.oam.cr_raw` AS (
 SELECT
   issn_l,
   vertrag,
@@ -42,4 +41,4 @@ INNER JOIN
   `hoad-dash.oam.oam_hybrid_jns`
 ON
   issn = `hoad-dash.oam.oam_hybrid_jns`.`issn`
---)
+WHERE cr_year BETWEEN 2017 AND 2022
