@@ -89,8 +89,8 @@ oam_hybrid_jns %>%
 
 ### Creative commons licensing
 
-`?cc_jn_ind`: Prevalence of Creative Commons licenses by variant, year
-and journal obtained from Crossref.
+`?cc_jn_ind`: Aggregated data about the prevalence of Creative Commons
+license variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 cc_jn_ind
