@@ -94,20 +94,20 @@ license variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 cc_jn_ind
-#> # A tibble: 35,981 × 6
+#> # A tibble: 36,167 × 6
 #>    issn_l    cr_year cc          cc_total jn_all     prop
 #>    <chr>     <fct>   <fct>          <int>  <int>    <dbl>
 #>  1 0009-4536 2019    <NA>              NA    256 NA      
-#>  2 1359-4184 2018    CC BY-SA           1    256  0.00391
-#>  3 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
-#>  4 2058-9883 2019    CC BY-NC           2    256  0.00781
-#>  5 0014-3820 2018    CC BY-NC           3    256  0.0117 
-#>  6 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
-#>  7 0006-3592 2018    CC BY-NC           3    256  0.0117 
-#>  8 0090-4392 2021    CC BY-NC           3    256  0.0117 
-#>  9 2058-9883 2019    CC BY              3    256  0.0117 
+#>  2 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
+#>  3 0253-2964 2021    CC BY              1    256  0.00391
+#>  4 1359-4184 2018    CC BY-SA           1    256  0.00391
+#>  5 0253-2964 2021    CC BY-NC-ND        1    256  0.00391
+#>  6 1124-4909 2021    CC BY-NC-ND        1    256  0.00391
+#>  7 2058-9883 2019    CC BY-NC           2    256  0.00781
+#>  8 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
+#>  9 0006-3592 2018    CC BY-NC           3    256  0.0117 
 #> 10 1359-4184 2018    CC BY-NC-ND        3    256  0.0117 
-#> # … with 35,971 more rows
+#> # … with 36,157 more rows
 ```
 
 ## Data re-use and licenses
