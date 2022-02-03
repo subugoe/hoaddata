@@ -1,0 +1,94 @@
+---
+title: "testa"
+output: flexdashboard::flex_dashboard
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hoaddata)
+library(ggplot2)
+library(dplyr)
+
+my_df <- oam_hybrid_jns %>%
+  select(-issn) %>%
+  filter(vertrag == "Springer Hybrid (DEAL)") %>%
+  inner_join(cc_jn_ind, by = "issn_l") %>%
+  distinct()
+
+all_art <- my_df %>% distinct(issn_l, cr_year, jn_all) %>% .$jn_all %>% sum()
+```
+
+- `r length(unique(my_df$issn_l))` Hybrid Journals
+- `r sum(my_df$cc_total, na.rm = TRUE)` OA articles under CC license
+- `r round(sum(my_df$cc_total, na.rm = TRUE) / all_art * 100, 2)`% Hybrid OA Uptake Rate
+
+## Creative Commons (CC) license prevalence {.tabset}
+
+Open access article volume 2015–2019 by Creative Commons (CC) license type
+
+```{r}
+cc_df <- my_df %>%
+  group_by(cr_year, cc) %>%
+  summarise(cc_total = sum(cc_total))
+all_df <- my_df %>%
+  distinct(cr_year, issn_l, jn_all) %>%
+  group_by(cr_year) %>%
+  summarise(jn_all = sum(jn_all))
+cc_ind <- inner_join(cc_df, all_df) %>%
+  filter(!is.na(cc)) %>%
+  mutate(prop = cc_total / jn_all)
+```
+
+### Absolute {.active}
+
+```{r}
+p <- ggplot(cc_ind, aes(cr_year, cc_total, fill = cc)) +
+  geom_bar(position = position_stack(reverse = TRUE), stat= "identity") +
+  cowplot::theme_minimal_hgrid() +
+  scale_y_continuous(labels = scales::number_format(big.mark = ","),
+                      expand = expansion(mult = c(0, 0.05))) +
+  scale_fill_manual(
+      "CC Variant",
+      values =  c(
+        "#65BADA",
+        "#00A757",
+        "#E5BA52",
+        "#D86F27",
+        "#C82E6B"
+      )) +
+  labs(y = "CC Articles", c = "Year")
+  plotly::ggplotly(p)
+```
+
+### Relative
+
+
+```{r}
+q <- ggplot(cc_ind, aes(cr_year, prop, fill = cc)) +
+  geom_bar(position = position_stack(reverse = TRUE), stat= "identity") +
+  cowplot::theme_minimal_hgrid() +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1L),
+                      expand = expansion(mult = c(0, 0.05))) +
+  scale_fill_manual(
+      "CC Variant",
+      values =  c(
+        "#65BADA",
+        "#00A757",
+        "#E5BA52",
+        "#D86F27",
+        "#C82E6B"
+      )) +
+  labs(y = "Hybrid OA Uptake", x = "Year")
+  plotly::ggplotly(q) 
+
+```
+## Hello

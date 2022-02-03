@@ -1,0 +1,16 @@
+template:
+  bootstrap: 5
+  bootswatch: cosmo
+  bslib:
+    primary: "#1a3771"
+    navbar-light-active-color: "#fff"
+    navbar-light-hover-color: "#bfbfbf"
+    navbar-light-color: "#fff"
+    navbar-light-contrast: "#f1f0ef"
+
+navbar:
+  bg: primary
+  type: light
+
+
+

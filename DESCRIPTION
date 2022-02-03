@@ -9,7 +9,7 @@ Authors@R:
     )
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: MIT + file LICENSE
+License: CC0
 Encoding: UTF-8
 LazyData: true
 Suggests: 
@@ -29,3 +29,4 @@ RoxygenNote: 7.1.1
 Config/testthat/edition: 3
 Imports: 
     tibble
+VignetteBuilder: knitr
