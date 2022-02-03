@@ -13,7 +13,7 @@ cc_jn_ind
 \description{
 This dataset contains the number and proportion of articles with Creative
 Commons license (CC) by license variant and year for hybrid journals as
-listed by the German Open Access monitor since 2017
+listed by the German Open Access monitor since 2017.
 }
 \details{
 Journal's article volume was calculated using the Crossref database snapshot.
