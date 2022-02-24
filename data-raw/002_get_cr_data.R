@@ -50,3 +50,10 @@ cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
                                           "CC BY-NC", "CC BY-NC-SA",
                                           "CC BY-ND", "CC BY-NC-ND")))
 usethis::use_data(cc_jn_ind, overwrite = TRUE)
+
+## Affiliations (openalex)
+
+cr_olax_inst <- create_bq_table("cr_oalex_inst", download = TRUE)
+usethis::use_data(cr_olax_inst, overwrite = TRUE)
+
+
