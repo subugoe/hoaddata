@@ -7,10 +7,18 @@ template:
     navbar-light-hover-color: "#bfbfbf"
     navbar-light-color: "#fff"
     navbar-light-contrast: "#f1f0ef"
+    font_scale: 1.2
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
 
 navbar:
   bg: primary
   type: light
 
+reference:
+- title: Datasets
+  desc: Datasets about hybrid open access publishing
+- contents:
+  - has_keyword("datasets")
 
 

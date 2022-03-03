@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-hoaddata contains indicators about the open access uptake of
+This package contains indicators about the open access uptake of
 hybrid journals, which belong to national transformative agreements in Germany
 as listed by the 
 [Open Access Monitor](https://open-access-monitor.de/#/publications).
@@ -31,45 +31,37 @@ You can install hoaddata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("njahn82/hoaddashtest")
+remotes::install_github("njahn82/hoaddashtest", dependencies = "Imports")
 ```
-
 ## Data tables
 
 This package provides the following data tables.
 
-### Hybrid journal list
+### `oam_hybrid_jns`
 
-`?oam_hybrid_jns`: Hybrid Journals listed in the Open Access Monitor. Data were 
+Hybrid Journals listed in the Open Access Monitor. Data were 
 gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
 ISSN variants.
 
-```{r, message=FALSE}
-library(hoaddata)
-library(dplyr) # For data analytics
-
-# Data structure
+```{r}
 oam_hybrid_jns
 ```
 
-Summary statistics:
-
-```{r}
-# Journals by transformative agreement
-oam_hybrid_jns %>%
-  group_by(vertrag) %>%
-  summarise(n = n_distinct(issn_l)) %>%
-  arrange(desc(n)) %>%
-  knitr::kable()
-```
-
-### Creative commons licensing 
-
-`?cc_jn_ind`: Aggregated data about the prevalence of Creative Commons 
+### `cc_jn_ind`
+Aggregated data about the prevalence of Creative Commons 
 license variants by year and hybrid journal as obtained from Crossref.
 
 ```{r}
 cc_jn_ind
+```
+
+### `cr_olax_inst`
+
+Article-level affiliation data from first authors as obtained
+from OpenAlex.
+
+```{r}
+cr_olax_inst
 ```
 
 

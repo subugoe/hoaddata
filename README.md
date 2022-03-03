@@ -9,7 +9,7 @@
 
 <!-- badges: end -->
 
-hoaddata contains indicators about the open access uptake of hybrid
+This package contains indicators about the open access uptake of hybrid
 journals, which belong to national transformative agreements in Germany
 as listed by the [Open Access
 Monitor](https://open-access-monitor.de/#/publications).
@@ -20,24 +20,20 @@ You can install hoaddata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("njahn82/hoaddashtest")
+remotes::install_github("njahn82/hoaddashtest", dependencies = "Imports")
 ```
 
 ## Data tables
 
 This package provides the following data tables.
 
-### Hybrid journal list
+### `oam_hybrid_jns`
 
-`?oam_hybrid_jns`: Hybrid Journals listed in the Open Access Monitor.
-Data were gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
-and enriched with ISSN variants.
+Hybrid Journals listed in the Open Access Monitor. Data were gathered
+from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
+ISSN variants.
 
 ``` r
-library(hoaddata)
-library(dplyr) # For data analytics
-
-# Data structure
 oam_hybrid_jns
 #> # A tibble: 10,765 × 3
 #>    vertrag     issn_l    issn     
@@ -55,59 +51,50 @@ oam_hybrid_jns
 #> # … with 10,755 more rows
 ```
 
-Summary statistics:
+### `cc_jn_ind`
 
-``` r
-# Journals by transformative agreement
-oam_hybrid_jns %>%
-  group_by(vertrag) %>%
-  summarise(n = n_distinct(issn_l)) %>%
-  arrange(desc(n)) %>%
-  knitr::kable()
-```
-
-| vertrag                |    n |
-| :--------------------- | ---: |
-| Springer Hybrid (DEAL) | 2098 |
-| Wiley Hybrid (DEAL)    | 1429 |
-| Sage (BSB)             |  980 |
-| CUP (BSB)              |  282 |
-| TaylorFrancis (ZBW)    |  267 |
-| IOP (TIB)              |  116 |
-| Karger (BSB)           |   71 |
-| ACM (hebis)            |   62 |
-| De Gruyter (ZBW)       |   45 |
-| RSC (TIB)              |   39 |
-| Hogrefe (SUB)          |   35 |
-| Nature (MPDL)          |   33 |
-| AIP (TIB)              |   32 |
-| BMJ (BSB)              |   28 |
-| SPIE (TIB)             |    9 |
-| Thieme 2 (ab 2021)     |    6 |
-| ECS (TIB)              |    2 |
-| Thieme 1 (ab 2019)     |    1 |
-
-### Creative commons licensing
-
-`?cc_jn_ind`: Aggregated data about the prevalence of Creative Commons
-license variants by year and hybrid journal as obtained from Crossref.
+Aggregated data about the prevalence of Creative Commons license
+variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 cc_jn_ind
-#> # A tibble: 36,167 × 6
+#> # A tibble: 41,319 × 6
 #>    issn_l    cr_year cc          cc_total jn_all     prop
 #>    <chr>     <fct>   <fct>          <int>  <int>    <dbl>
 #>  1 0009-4536 2019    <NA>              NA    256 NA      
-#>  2 0253-2964 2021    CC BY              1    256  0.00391
-#>  3 0253-2964 2021    CC BY-NC-ND        1    256  0.00391
-#>  4 1359-4184 2018    CC BY-SA           1    256  0.00391
+#>  2 1124-4909 2021    CC BY-NC-ND        1    256  0.00391
+#>  3 0253-2964 2021    CC BY              1    256  0.00391
+#>  4 0253-2964 2021    CC BY-NC-ND        1    256  0.00391
 #>  5 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
-#>  6 1124-4909 2021    CC BY-NC-ND        1    256  0.00391
+#>  6 1359-4184 2018    CC BY-SA           1    256  0.00391
 #>  7 2058-9883 2019    CC BY-NC           2    256  0.00781
 #>  8 0014-3820 2018    CC BY-NC           3    256  0.0117 
 #>  9 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
-#> 10 1359-4184 2018    CC BY-NC-ND        3    256  0.0117 
-#> # … with 36,157 more rows
+#> 10 0006-3592 2018    CC BY-NC           3    256  0.0117 
+#> # … with 41,309 more rows
+```
+
+### `cr_olax_inst`
+
+Article-level affiliation data from first authors as obtained from
+OpenAlex.
+
+``` r
+cr_olax_inst
+#> # A tibble: 291,049 × 7
+#>    doi                issn_l cr_year cc    country_code id    display_name
+#>    <chr>              <chr>    <int> <chr> <chr>        <chr> <chr>       
+#>  1 10.1002/wat2.1241  2049-…    2017 CC B… <NA>         <NA>  <NA>        
+#>  2 10.1017/s00332917… 0033-…    2017 CC BY <NA>         <NA>  <NA>        
+#>  3 10.1007/s12325-01… 0741-…    2017 CC BY <NA>         <NA>  <NA>        
+#>  4 10.1002/jrsm.1240  1759-…    2017 CC BY <NA>         <NA>  <NA>        
+#>  5 10.1002/btpr.2564  1520-…    2017 CC B… <NA>         <NA>  <NA>        
+#>  6 10.1007/s11306-01… 1573-…    2017 CC BY <NA>         <NA>  <NA>        
+#>  7 10.1111/bcp.13428  0306-…    2017 CC B… <NA>         <NA>  <NA>        
+#>  8 10.1007/s11325-01… 1520-…    2017 CC BY <NA>         <NA>  <NA>        
+#>  9 10.1177/095646241… 0956-…    2017 CC B… <NA>         <NA>  <NA>        
+#> 10 10.1111/eip.12534  1751-…    2017 CC B… <NA>         <NA>  <NA>        
+#> # … with 291,039 more rows
 ```
 
 ## Data re-use and licenses

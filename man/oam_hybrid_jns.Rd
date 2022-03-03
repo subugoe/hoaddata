@@ -27,4 +27,7 @@ Variables:
     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
     }
 }
+\examples{
+oam_hybrid_jns
+}
 \keyword{datasets}
