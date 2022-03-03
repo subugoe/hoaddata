@@ -1,7 +1,9 @@
 ---
 title: "Hybrid Open Access Sample Report"
-pkgdown:
-    as_is:true
+vignette: >
+  %\VignetteIndexEntry{Hybrid Open Access Sample Report}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}

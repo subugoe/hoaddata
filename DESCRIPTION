@@ -29,6 +29,8 @@ Suggests:
     forcats, 
     cowplot, 
     echarts4r,
+    scales,
+    tidyr,
     rmarkdown,
     knitr
 Depends: 
