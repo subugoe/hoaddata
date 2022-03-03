@@ -1,17 +1,20 @@
 Package: hoaddata
 Type: Package
-Title: Provides data about hybrid open access journals
+Title: Data about hybrid open access journal publishing
 Version: 0.1.0
 Authors@R: 
     person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
     role = c("aut", "cre"),
-    comment = c(ORCID = "YOUR-ORCID-ID")
+    comment = c(ORCID = "0000-0001-5105-1463")
     )
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: MIT + file LICENSE
+Description: Scholarly data about hybrid open access publsihing since 2017. 
+  It includes data about Creative Commons licensing and lead author affiliations.
+  Data were gathered from the German Open Access Monitor, Crossref and OpenAlex.
+License: CC0
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    tibble
 Suggests: 
     devtools,
     usethis,
@@ -21,11 +24,17 @@ Suggests:
     gargle,
     testthat (>= 3.0.0),
     dplyr,
+    ggplot2, 
+    ggiraph, 
+    forcats, 
+    cowplot, 
+    echarts4r,
+    scales,
+    tidyr,
     rmarkdown,
     knitr
 Depends: 
     R (>= 2.10)
 RoxygenNote: 7.1.1
 Config/testthat/edition: 3
-Imports: 
-    tibble
+VignetteBuilder: knitr

@@ -5,14 +5,14 @@
 \alias{cr_olax_inst}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 265283 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 291049 rows and 7 columns.
 }
 \usage{
 cr_olax_inst
 }
 \description{
 This dataset comprises affiliation information from first authors for each
-open accesss article published in hybrid journals as
+open access article published in hybrid journals as
 listed by the German Open Access monitor since 2017.
 }
 \details{
@@ -20,13 +20,17 @@ Affiliation data was obtained from OpenAlex.
 
 Variables:
 
-#' \describe{
+\describe{
     \item{doi}{DOI for the OA article}
     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
     \item{id}{The OpenAlex ID for this institution}
-    \item{inst_name}{The primary name of the institution (OpenAlex field `display_name`)}
+    \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
     }
+}
+\examples{
+# Hybrid OA articles with lead author from Uni Göttingen
+cr_olax_inst[cr_olax_inst$id \%in\% "https://openalex.org/I74656192",]
 }
 \keyword{datasets}
