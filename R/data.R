@@ -77,3 +77,6 @@
 #' # Hybrid OA articles with lead author from Uni Göttingen
 #' cr_olax_inst[cr_olax_inst$id %in% "https://openalex.org/I74656192",]
 "cr_olax_inst"
+
+#' @importFrom tibble tibble
+NULL
