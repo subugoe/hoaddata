@@ -42,6 +42,7 @@ hybrid journal as obtained from Crossref.
 - `?cr_olax_inst`: Article-level affiliation data from first authors as obtained
 from OpenAlex.
 
+## Data gathering
 
 The `data-raw` folder contains code used to generate the hoaddata datasets.
 
