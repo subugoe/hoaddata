@@ -9,10 +9,19 @@
 
 <!-- badges: end -->
 
-This package contains indicators about the open access uptake of hybrid
-journals, which belong to national transformative agreements in Germany
-as listed by the [Open Access
+This package contains information about the open access uptake of hybrid
+journals. These journals belong to national transformative agreements in
+Germany as listed by the [Open Access
 Monitor](https://open-access-monitor.de/#/publications).
+
+The main purpose of {hoaddata} is to ship data for hybrid open access
+monitoring dashboards, which are currently under development at the SUB
+Göttingen with the support of the [Deutsche
+Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&).
+By providing the data as an R package, {hoaddata} can be also used for
+other data analytics tasks with R.
+
+Data cover the publication period 2017 - 2022.
 
 ## Installation
 
@@ -23,79 +32,45 @@ You can install hoaddata from [GitHub](https://github.com/) with:
 remotes::install_github("njahn82/hoaddashtest", dependencies = "Imports")
 ```
 
-## Data tables
+## Datasets
 
 This package provides the following data tables.
 
-### `oam_hybrid_jns`
+### Journal-level data
 
-Hybrid Journals listed in the Open Access Monitor. Data were gathered
-from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
-ISSN variants.
+-   `?oam_hybrid_jns`: Hybrid Journals listed in the Open Access
+    Monitor. Data were gathered from
+    <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>, validated and
+    enriched with ISSN variants.
 
-``` r
-oam_hybrid_jns
-#> # A tibble: 10,765 × 3
-#>    vertrag     issn_l    issn     
-#>    <chr>       <chr>     <chr>    
-#>  1 ACM (hebis) 0360-0300 0360-0300
-#>  2 ACM (hebis) 0360-0300 1557-7341
-#>  3 ACM (hebis) 1550-4832 1550-4832
-#>  4 ACM (hebis) 1550-4832 1550-4840
-#>  5 ACM (hebis) 1936-7236 1936-7228
-#>  6 ACM (hebis) 1936-7236 1936-7236
-#>  7 ACM (hebis) 1549-6325 1549-6325
-#>  8 ACM (hebis) 1549-6325 1549-6333
-#>  9 ACM (hebis) 1544-3558 1544-3558
-#> 10 ACM (hebis) 1544-3558 1544-3965
-#> # … with 10,755 more rows
-```
+-   `?cc_jn_ind` Prevalence of Creative Commons license variants by year
+    and hybrid journal as obtained from Crossref.
 
-### `cc_jn_ind`
+### Article-level data
 
-Aggregated data about the prevalence of Creative Commons license
-variants by year and hybrid journal as obtained from Crossref.
+-   `?cr_olax_inst`: Article-level affiliation data from first authors
+    as obtained from OpenAlex.
 
-``` r
-cc_jn_ind
-#> # A tibble: 41,319 × 6
-#>    issn_l    cr_year cc          cc_total jn_all     prop
-#>    <chr>     <fct>   <fct>          <int>  <int>    <dbl>
-#>  1 0009-4536 2019    <NA>              NA    256 NA      
-#>  2 1124-4909 2021    CC BY-NC-ND        1    256  0.00391
-#>  3 0253-2964 2021    CC BY              1    256  0.00391
-#>  4 0253-2964 2021    CC BY-NC-ND        1    256  0.00391
-#>  5 0032-3888 2019    CC BY-NC-ND        1    256  0.00391
-#>  6 1359-4184 2018    CC BY-SA           1    256  0.00391
-#>  7 2058-9883 2019    CC BY-NC           2    256  0.00781
-#>  8 0014-3820 2018    CC BY-NC           3    256  0.0117 
-#>  9 1359-4184 2018    CC BY-NC-SA        3    256  0.0117 
-#> 10 0006-3592 2018    CC BY-NC           3    256  0.0117 
-#> # … with 41,309 more rows
-```
+## Data generation methods
 
-### `cr_olax_inst`
+The `data-raw` folder contains code used to generate the hoaddata
+datasets.
 
-Article-level affiliation data from first authors as obtained from
-OpenAlex.
+Most of the data was obtained by interfacing the [subugoe-collaborative
+scholarly data warehouse](https://github.com/naustica/bqsub), a
+collection of big scholarly datasets hosted on Google Big Query and
+maintained by the SUB Göttingen. [Crossref](https://www.crossref.org/)
+was used for determining the publication volume and articles provided
+under a CC license, while affiliation data was gathered from
+[OpenAlex](https://openalex.org/).
 
-``` r
-cr_olax_inst
-#> # A tibble: 291,049 × 7
-#>    doi                issn_l cr_year cc    country_code id    display_name
-#>    <chr>              <chr>    <int> <chr> <chr>        <chr> <chr>       
-#>  1 10.1002/wat2.1241  2049-…    2017 CC B… <NA>         <NA>  <NA>        
-#>  2 10.1017/s00332917… 0033-…    2017 CC BY <NA>         <NA>  <NA>        
-#>  3 10.1007/s12325-01… 0741-…    2017 CC BY <NA>         <NA>  <NA>        
-#>  4 10.1002/jrsm.1240  1759-…    2017 CC BY <NA>         <NA>  <NA>        
-#>  5 10.1002/btpr.2564  1520-…    2017 CC B… <NA>         <NA>  <NA>        
-#>  6 10.1007/s11306-01… 1573-…    2017 CC BY <NA>         <NA>  <NA>        
-#>  7 10.1111/bcp.13428  0306-…    2017 CC B… <NA>         <NA>  <NA>        
-#>  8 10.1007/s11325-01… 1520-…    2017 CC BY <NA>         <NA>  <NA>        
-#>  9 10.1177/095646241… 0956-…    2017 CC B… <NA>         <NA>  <NA>        
-#> 10 10.1111/eip.12534  1751-…    2017 CC B… <NA>         <NA>  <NA>        
-#> # … with 291,039 more rows
-```
+You can find the corresponding SQL code in the `inst/sql/` folder.
+
+The data package is automatically build with GitHub Actions. Each merge
+event into the main branch triggers a data update by calling the scripts
+in the `data-raw/` folder. Data changes will be incorporated in the
+package and tracked with Git. This makes it easy to update and reproduce
+different version of the data contained in {hoaddata}.
 
 ## Data re-use and licenses
 
@@ -110,6 +85,8 @@ bibliographic metadata and associated Digital Object Identifiers (DOIs)
 acquired through the use of the Crossref Free Services. Individual items
 of bibliographic metadata and associated DOIs may be cached and
 incorporated into the user’s content and systems.
+
+OpenAlex data is made available under the CC0 license.
 
 This work re-used the following dataset:
 

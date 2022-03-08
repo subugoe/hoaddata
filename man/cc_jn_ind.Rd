@@ -43,4 +43,4 @@ Variables:
 \examples{
 cc_jn_ind
 }
-\keyword{datasets}
+\keyword{jndatasets}

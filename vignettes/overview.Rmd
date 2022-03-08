@@ -1,0 +1,50 @@
+---
+title: "Overview: Hybrid OA data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview: Hybrid OA data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hoaddata)
+```
+
+## Datasets
+
+This package provides the following data tables.
+
+### `oam_hybrid_jns`
+
+Hybrid Journals listed in the Open Access Monitor. Data were 
+gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
+ISSN variants.
+
+```{r}
+oam_hybrid_jns
+```
+
+### `cc_jn_ind`
+Aggregated data about the prevalence of Creative Commons 
+license variants by year and hybrid journal as obtained from Crossref.
+
+```{r}
+cc_jn_ind
+```
+
+### `cr_olax_inst`
+
+Article-level affiliation data from first authors as obtained
+from OpenAlex.
+
+```{r}
+cr_olax_inst
+```

@@ -8,7 +8,8 @@
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 10765 rows and 3 columns.
 }
 \source{
-\url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
+Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021,
+Open Access Monitor: Zeitschriftenlisten \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 }
 \usage{
 oam_hybrid_jns
@@ -30,4 +31,4 @@ Variables:
 \examples{
 oam_hybrid_jns
 }
-\keyword{datasets}
+\keyword{jndatasets}
