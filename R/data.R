@@ -12,9 +12,10 @@
 #'     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
 #'     }
 #'
-#' @source \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
+#' @source Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021,
+#' Open Access Monitor: Zeitschriftenlisten \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 #'
-#' @keywords datasets
+#' @keywords jndatasets
 #' @examples
 #' oam_hybrid_jns
 "oam_hybrid_jns"
@@ -48,7 +49,7 @@
 #'     \item{jn_all}{Yearly journal output}
 #'     \item{prop}{Proportion of CC licensed articles}
 #'     }
-#' @keywords datasets
+#' @keywords jndatasets
 #' @examples
 #' cc_jn_ind
 "cc_jn_ind"
@@ -56,10 +57,13 @@
 #' Hybrid OA publishing output from first authors
 #'
 #' This dataset comprises affiliation information from first authors for each
-#' open access article published in hybrid journals as
-#' listed by the German Open Access monitor since 2017.
+#' open access article published in hybrid journals as listed in
+#' \link[hoaddata]{oam_hybrid_jns}.
 #'
-#' Affiliation data was obtained from OpenAlex.
+#' A first author is often considered as lead author(\url{https://en.wikipedia.org/wiki/Lead_author})
+#' who has usually undertaken most of the research presented in the article,
+#' although author roles can vary across disciplines.
+#' We used OpenAlex as data source for determining the lead author's affiliation.
 #'
 #' Variables:
 #'
@@ -72,7 +76,10 @@
 #'     \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
 #'     }
 #'
-#' @keywords datasets
+#'  To our knowledge, OpenAlex does not provide information about corresponding
+#'  authors and their affiliation.
+#'
+#' @keywords articledatasets
 #' @examples
 #' # Hybrid OA articles with lead author from Uni Göttingen
 #' cr_olax_inst[cr_olax_inst$id %in% "https://openalex.org/I74656192",]

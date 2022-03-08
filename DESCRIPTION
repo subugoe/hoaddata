@@ -13,6 +13,8 @@ Description: Scholarly data about hybrid open access publsihing since 2017.
 License: CC0
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/njahn82/hoaddashtest
+BugReports: https://github.com/njahn82/hoaddashtest/issues
 Imports: 
     tibble
 Suggests: 
@@ -24,13 +26,6 @@ Suggests:
     gargle,
     testthat (>= 3.0.0),
     dplyr,
-    ggplot2, 
-    ggiraph, 
-    forcats, 
-    cowplot, 
-    echarts4r,
-    scales,
-    tidyr,
     rmarkdown,
     knitr
 Depends: 

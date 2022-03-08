@@ -12,11 +12,14 @@ cr_olax_inst
 }
 \description{
 This dataset comprises affiliation information from first authors for each
-open access article published in hybrid journals as
-listed by the German Open Access monitor since 2017.
+open access article published in hybrid journals as listed in
+\link[hoaddata]{oam_hybrid_jns}.
 }
 \details{
-Affiliation data was obtained from OpenAlex.
+A first author is often considered as lead author(\url{https://en.wikipedia.org/wiki/Lead_author})
+who has usually undertaken most of the research presented in the article,
+although author roles can vary across disciplines.
+We used OpenAlex as data source for determining the lead author's affiliation.
 
 Variables:
 
@@ -28,9 +31,12 @@ Variables:
     \item{id}{The OpenAlex ID for this institution}
     \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
     }
+
+ To our knowledge, OpenAlex does not provide information about corresponding
+ authors and their affiliation.
 }
 \examples{
 # Hybrid OA articles with lead author from Uni Göttingen
 cr_olax_inst[cr_olax_inst$id \%in\% "https://openalex.org/I74656192",]
 }
-\keyword{datasets}
+\keyword{articledatasets}

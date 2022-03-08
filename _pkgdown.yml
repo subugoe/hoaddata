@@ -6,19 +6,32 @@ template:
     navbar-light-active-color: "#fff"
     navbar-light-hover-color: "#bfbfbf"
     navbar-light-color: "#fff"
-    navbar-light-contrast: "#f1f0ef"
     font_scale: 1.2
     base_font: {google: "Roboto"}
-    heading_font: {google: "Roboto Slab"}
-
-navbar:
-  bg: primary
-  type: light
 
 reference:
-- title: Datasets
+- title: Data
   desc: Datasets about hybrid open access publishing
+- subtitle: Journal-level data
 - contents:
-  - has_keyword("datasets")
+  - has_keyword("jndatasets")
+- subtitle: Article-level data
+- contents:
+  - has_keyword("articledatasets")
 
+home:
+  sidebar:
+    structure: [links, license, community, citation, authors, dev, custom]
+    components:
+      custom:
+        title: Funding
+        text: Funded by the [Deutsche Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&).
+navbar:
+    bg: primary
+    type: light
 
+footer:
+  structure:
+    left: legal
+  components:
+    legal: Developed at the [State and University Library Göttingen (SUB Göttingen)](https://www.sub.uni-goettingen.de/sub-aktuell/) | [Impressum](https://www.sub.uni-goettingen.de/impressum/)
