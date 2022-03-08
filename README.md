@@ -42,7 +42,6 @@ hybrid journal as obtained from Crossref.
 - `?cr_olax_inst`: Article-level affiliation data from first authors as obtained
 from OpenAlex.
 
-## Data generation methods
 
 The `data-raw` folder contains code used to generate the hoaddata datasets.
 
@@ -60,6 +59,7 @@ into the main branch triggers a data update by calling the scripts in the
 `data-raw/` folder. Data changes will be incorporated in the package and 
 tracked with Git. This makes it easy to update and reproduce different version 
 of the data contained in {hoaddata}.
+
 
 ## Data re-use and licenses
 
