@@ -13,6 +13,7 @@ Description: Scholarly data about hybrid open access publsihing since 2017.
 License: CC0
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: bzip2
 URL: https://subugoe.github.io/hoaddata, https://github.com/subugoe/hoaddata
 BugReports: https://github.com/subugoe/hoaddata/issues
 Imports: 

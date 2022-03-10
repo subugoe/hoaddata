@@ -79,7 +79,8 @@
 #'     }
 #' @keywords jndatasets
 #' @examples
-#' cc_openalex_inst_jn_ind
+#'   cc_openalex_inst_jn_ind[cc_openalex_inst_jn_ind$issn_l %in%  "0138-9130" &
+#'                          cc_openalex_inst_jn_ind$country_code %in% c("DE", "CN"),]
 "cc_openalex_inst_jn_ind"
 
 #' Hybrid OA publishing output from first authors

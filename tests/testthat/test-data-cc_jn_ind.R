@@ -1,5 +1,4 @@
 # Test internal cc_jn_ind dataset
-
 testthat::test_that("cc_jn_ind can be loaded as tibble", {
   testthat::expect_s3_class(cc_jn_ind, "tbl_df")
 })
