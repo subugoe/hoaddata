@@ -57,7 +57,7 @@ cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
       "CC BY-NC-ND"
     )
   )) |>
-  mutate(across(c(cc_total, prop), ~ tidyr::replace_na(., 0)))
+  dplyr::mutate(across(c(cc_total, prop), ~ tidyr::replace_na(., 0)))
 
 usethis::use_data(cc_jn_ind, overwrite = TRUE)
 
@@ -83,6 +83,6 @@ cc_openalex_inst_jn_ind_tmp <-
                   download = TRUE)
 
 cc_openalex_inst_jn_ind <- cc_openalex_inst_jn_ind_tmp |>
-  mutate(across(c(cc_articles, prop), ~ tidyr::replace_na(., 0)))
+  dplyr::mutate(across(c(cc_articles, prop), ~ tidyr::replace_na(., 0)))
 
 usethis::use_data(cc_openalex_inst_jn_ind, overwrite = TRUE)
