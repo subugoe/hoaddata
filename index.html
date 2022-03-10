@@ -75,7 +75,7 @@
 
 <!-- badges: end -->
 <p>This package contains information about the open access uptake of hybrid journals. These journals belong to national transformative agreements in Germany as listed by the <a href="https://open-access-monitor.de/#/publications" class="external-link">Open Access Monitor</a>.</p>
-<p>The main purpose of {hoaddata} is to ship data for hybrid open access monitoring dashboards, which are currently under development at the SUB Göttingen with the support of the <a href="https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&amp;task=showDetail&amp;id=416115939&amp;" class="external-link">Deutsche Forschungsgemeinschaft</a>. By providing the data as an R package, {hoaddata} can be also used for other data analytics tasks with R.</p>
+<p>The main purpose of hoaddata is to ship data for hybrid open access monitoring dashboards, which are currently under development at the SUB Göttingen with the support of the <a href="https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&amp;task=showDetail&amp;id=416115939&amp;" class="external-link">Deutsche Forschungsgemeinschaft</a>. By providing the data as an R package, hoaddata can be also used for other data analytics tasks with R.</p>
 <p>Data cover the publication period 2017 - 2022.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -94,7 +94,8 @@
 </h3>
 <ul>
 <li><p><code><a href="reference/oam_hybrid_jns.html">?oam_hybrid_jns</a></code>: Hybrid Journals listed in the Open Access Monitor. Data were gathered from <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link uri">https://doi.org/10.26165/JUELICH-DATA/VTQXLM</a>, validated and enriched with ISSN variants.</p></li>
-<li><p><code><a href="reference/cc_jn_ind.html">?cc_jn_ind</a></code> Prevalence of Creative Commons license variants by year and hybrid journal as obtained from Crossref.</p></li>
+<li><p><code><a href="reference/cc_jn_ind.html">?cc_jn_ind</a></code>: Prevalence of Creative Commons license variants by year and hybrid journal as obtained from Crossref.</p></li>
+<li><p><code><a href="reference/cc_openalex_inst_jn_ind.html">?cc_openalex_inst_jn_ind</a></code>: First author country affiliations per journal, year and Creative Commons license</p></li>
 </ul>
 </div>
 <div class="section level3">
@@ -102,7 +103,7 @@
 </h3>
 <ul>
 <li>
-<code><a href="reference/cr_olax_inst.html">?cr_olax_inst</a></code>: Article-level affiliation data from first authors as obtained from OpenAlex.</li>
+<code><a href="reference/cc_openalex_inst.html">?cc_openalex_inst</a></code>: Article-level affiliation data from first authors as obtained from OpenAlex. Covers only open access articles under a Creative Commons license in a hybrid journal.</li>
 </ul>
 </div>
 </div>
@@ -112,7 +113,7 @@
 <p>The <code>data-raw</code> folder contains code used to generate the hoaddata datasets.</p>
 <p>Most of the data was obtained by interfacing the <a href="https://github.com/naustica/bqsub" class="external-link">subugoe-collaborative scholarly data warehouse</a>, a collection of big scholarly datasets hosted on Google Big Query and maintained by the SUB Göttingen. <a href="https://www.crossref.org/" class="external-link">Crossref</a> was used for determining the publication volume and articles provided under a CC license, while affiliation data was gathered from <a href="https://openalex.org/" class="external-link">OpenAlex</a>.</p>
 <p>You can find the corresponding SQL code in the <code>inst/sql/</code> folder.</p>
-<p>The data package is automatically build with GitHub Actions. Each merge event into the main branch triggers a data update by calling the scripts in the <code>data-raw/</code> folder. Data changes will be incorporated in the package and tracked with Git. This makes it easy to update and reproduce different version of the data contained in {hoaddata}.</p>
+<p>The data package is automatically build with GitHub Actions. Each merge event into the main branch triggers a data update by calling the scripts in the <code>data-raw/</code> folder. Data changes will be incorporated in the package and tracked with Git. This makes it easy to update and reproduce different version of the data contained in hoaddata.</p>
 </div>
 <div class="section level2">
 <h2 id="data-re-use-and-licenses">Data re-use and licenses<a class="anchor" aria-label="anchor" href="#data-re-use-and-licenses"></a>
