@@ -41,7 +41,7 @@ create_bq_table(sql_basename = "cr_raw")
 ### Metadata ----
 create_bq_table(sql_basename = "cc_md")
 
-### Indicator ----
+### Creative Commons per journals ----
 cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
   dplyr::mutate(cr_year = factor(cr_year))  |>
   dplyr::mutate(cc = factor(cc,
@@ -51,9 +51,21 @@ cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
                                           "CC BY-ND", "CC BY-NC-ND")))
 usethis::use_data(cc_jn_ind, overwrite = TRUE)
 
-## Affiliations (openalex)
+## Affiliations (OpenAlex)  ----
 
-cr_olax_inst <- create_bq_table("cr_oalex_inst", download = TRUE)
-usethis::use_data(cr_olax_inst, overwrite = TRUE)
+### Metadata ----
+
+create_bq_table("cr_openalex_inst_full")
+
+### Aggregated first-author country affiliations per hybrid journal and year ----
+
+cc_openalex_inst_jn_ind <- create_bq_table("cc_openalex_inst_jn_ind",
+                                           download = TRUE)
+usethis::use_data(cc_openalex_inst_jn_ind, overwrite = TRUE)
+
+
+### First-author affiliation data CC articles ----
+cc_openalex_inst <- create_bq_table("cc_openalex_inst", download = TRUE)
+usethis::use_data(cc_openalex_inst, overwrite = TRUE)
 
 

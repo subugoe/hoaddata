@@ -39,8 +39,9 @@ hybrid journal as obtained from Crossref.
 
 ### Article-level data
 
-- `?cr_olax_inst`: Article-level affiliation data from first authors as obtained
-from OpenAlex.
+- `?cc_openalex_inst`: Article-level affiliation data from first authors as obtained
+from OpenAlex. Covers only open access articles under a Creative Commons license
+in a hybrid journal.
 
 ## Data gathering
 
