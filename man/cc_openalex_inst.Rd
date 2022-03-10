@@ -37,6 +37,6 @@ Variables:
 }
 \examples{
 # Hybrid OA articles with lead author from Uni Göttingen
-cr_olax_inst[cr_olax_inst$id \%in\% "https://openalex.org/I74656192",]
+cc_openalex_inst[cc_openalex_inst$id \%in\% "https://openalex.org/I74656192",]
 }
 \keyword{articledatasets}

@@ -49,6 +49,7 @@
 #'     \item{jn_all}{Yearly journal output}
 #'     \item{prop}{Proportion of CC licensed articles}
 #'     }
+#'
 #' @keywords jndatasets
 #' @examples
 #' cc_jn_ind
@@ -75,6 +76,7 @@
 #'     \item{cc_total}{Number of articles under Creative Commons variant by journal, year and country affiliation}
 #'     \item{jn_all}{Yearly journal output by year and country affiliation}
 #'     \item{prop}{Proportion of articles under CC license variant by journal, year and country affiliation}
+#'     }
 #' @keywords jndatasets
 #' @examples
 #' cc_openalex_inst_jn_ind
@@ -108,7 +110,7 @@
 #' @keywords articledatasets
 #' @examples
 #' # Hybrid OA articles with lead author from Uni Göttingen
-#' cr_olax_inst[cr_olax_inst$id %in% "https://openalex.org/I74656192",]
+#' cc_openalex_inst[cc_openalex_inst$id %in% "https://openalex.org/I74656192",]
 "cc_openalex_inst"
 
 #' @importFrom tibble tibble

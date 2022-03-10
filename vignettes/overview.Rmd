@@ -40,11 +40,20 @@ license variants by year and hybrid journal as obtained from Crossref.
 cc_jn_ind
 ```
 
-### `cr_olax_inst`
+### `cc_openalex_inst_jn_ind`
+
+First author country affiliations per journal, 
+year and Creative Commons license
+
+```{r}
+cc_openalex_inst_jn_ind
+```
+
+### `cc_openalex_inst`
 
 Article-level affiliation data from first authors as obtained
 from OpenAlex.
 
 ```{r}
-cr_olax_inst
+cc_openalex_inst
 ```
