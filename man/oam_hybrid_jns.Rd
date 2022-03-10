@@ -23,7 +23,7 @@ The dataset was unified and enriched with ISSN variants and ISSN-L.
 Variables:
 
 \describe{
-    \item{vertrag}{Transformative aggrement from a German consortium (in brakets)}
+    \item{vertrag}{Transformative aggrement from a German consortium (in brackets)}
     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
     }

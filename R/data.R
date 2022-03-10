@@ -7,7 +7,7 @@
 #' Variables:
 #'
 #' \describe{
-#'     \item{vertrag}{Transformative aggrement from a German consortium (in brakets)}
+#'     \item{vertrag}{Transformative aggrement from a German consortium (in brackets)}
 #'     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
 #'     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
 #'     }
@@ -54,7 +54,7 @@
 #' cc_jn_ind
 "cc_jn_ind"
 
-#' First author country affiliations per journal and Creative Commons license
+#' First author country affiliations per journal, year and Creative Commons license
 #'
 #' This dataset contains the number and proportion of open access articles in
 #' hybrid journals by country, year and Creative Commons license variant.

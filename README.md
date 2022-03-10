@@ -9,9 +9,9 @@ This package contains information about the open access uptake of
 hybrid journals. These journals belong to national transformative agreements in 
 Germany as listed by the [Open Access Monitor](https://open-access-monitor.de/#/publications). 
 
-The main purpose of {hoaddata} is to ship data for hybrid open access monitoring 
+The main purpose of hoaddata is to ship data for hybrid open access monitoring 
 dashboards, which are currently under development at the SUB Göttingen with the 
-support of the [Deutsche Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&). By providing the data as an R package, {hoaddata} can be also 
+support of the [Deutsche Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&). By providing the data as an R package, hoaddata can be also 
 used for other data analytics tasks with R.
 
 Data cover the publication period 2017 - 2022.
@@ -34,8 +34,11 @@ This package provides the following data tables.
 gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>, validated and 
 enriched with ISSN variants. 
 
-- `?cc_jn_ind` Prevalence of Creative Commons license variants by year and 
+- `?cc_jn_ind`: Prevalence of Creative Commons license variants by year and 
 hybrid journal as obtained from Crossref.
+
+- `?cc_openalex_inst_jn_ind`: First author country affiliations per journal, 
+year and Creative Commons license
 
 ### Article-level data
 
@@ -60,7 +63,7 @@ The data package is automatically build with GitHub Actions. Each merge event
 into the main branch triggers a data update by calling the scripts in the
 `data-raw/` folder. Data changes will be incorporated in the package and 
 tracked with Git. This makes it easy to update and reproduce different version 
-of the data contained in {hoaddata}.
+of the data contained in hoaddata.
 
 
 ## Data re-use and licenses
