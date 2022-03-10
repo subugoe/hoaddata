@@ -27,6 +27,8 @@ Suggests:
     gargle,
     testthat (>= 3.0.0),
     dplyr,
+    tidyr,
+    usethis,
     rmarkdown,
     knitr
 Depends: 
