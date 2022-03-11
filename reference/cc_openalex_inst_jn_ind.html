@@ -62,7 +62,7 @@ hybrid journals by country, year and Creative Commons license variant.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 481506 rows and 7 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 563999 rows and 6 columns.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -72,6 +72,11 @@ A first author is often considered as lead
 author(<a href="https://en.wikipedia.org/wiki/Lead_author" class="external-link">https://en.wikipedia.org/wiki/Lead_author</a>)
 who has usually undertaken most of the research presented in the article,
 although author roles can vary across disciplines.</p>
+<p>Note that whole counting in which every original article or review was
+counted once per country of affiliation of the first authors were used.
+Because first authors can have multiple affiliations from different countries,
+please use <code><a href="cc_jn_ind.html">cc_jn_ind</a></code> to determine a journal's publication
+volume.</p>
 <p>Variables:</p><dl><dt>issn_l</dt>
 <dd><p>Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal</p></dd>
 
@@ -82,37 +87,42 @@ although author roles can vary across disciplines.</p>
 <dd><p>The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)</p></dd>
 
     <dt>cc</dt>
-<dd><p>Normalized Creative Commons variant.</p></dd>
+<dd><p>Normalized Creative Commons variant. <code>NA</code> represents articles, which were not provided under a CC license</p></dd>
 
-    <dt>cc_total</dt>
-<dd><p>Number of articles under Creative Commons variant by journal, year and country affiliation</p></dd>
+    <dt>articles_under_cc_variant</dt>
+<dd><p>Number of articles under Creative Commons variant, grouped by journal, year and country affiliation</p></dd>
 
-    <dt>jn_all</dt>
+    <dt>articles_total</dt>
 <dd><p>Yearly journal output by year and country affiliation</p></dd>
-
-    <dt>prop</dt>
-<dd><p>Proportion of articles under CC license variant by journal, year and country affiliation</p></dd>
 
     
 </dl></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="va">cc_openalex_inst_jn_ind</span><span class="op">[</span><span class="va">cc_openalex_inst_jn_ind</span><span class="op">$</span><span class="va">issn_l</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span>  <span class="st">"0138-9130"</span> <span class="op">&amp;</span></span>
-<span class="r-in">                         <span class="va">cc_openalex_inst_jn_ind</span><span class="op">$</span><span class="va">country_code</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"DE"</span>, <span class="st">"CN"</span><span class="op">)</span>,<span class="op">]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    issn_l    cr_year country_code cc    cc_articles articles   prop</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 DE           CC BY          24       27 0.889 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 DE           CC BY          20       23 0.870 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 DE           CC BY           6       18 0.333 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 0138-9130    <span style="text-decoration: underline;">2</span>017 DE           CC BY           7       27 0.259 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 0138-9130    <span style="text-decoration: underline;">2</span>018 DE           CC BY           4       20 0.2   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 CN           CC BY           8       90 0.088<span style="text-decoration: underline;">9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 CN           CC BY           6       90 0.066<span style="text-decoration: underline;">7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 CN           CC BY           1       65 0.015<span style="text-decoration: underline;">4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 0138-9130    <span style="text-decoration: underline;">2</span>017 CN           <span style="color: #BB0000;">NA</span>              0       68 0     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 0138-9130    <span style="text-decoration: underline;">2</span>018 CN           <span style="color: #BB0000;">NA</span>              0       64 0     </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">cc_openalex_inst_jn_ind</span>,</span>
+<span class="r-in">    <span class="va">issn_l</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="st">"0138-9130"</span> <span class="op">&amp;</span> <span class="va">country_code</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"DE"</span>, <span class="st">"CN"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    issn_l    cr_year country_code cc    articles_under_cc_variant articles_total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 CN           <span style="color: #BB0000;">NA</span>                           84             90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 CN           CC BY                         6             90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 DE           CC BY                        20             23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 0138-9130    <span style="text-decoration: underline;">2</span>021 DE           <span style="color: #BB0000;">NA</span>                            3             23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 CN           <span style="color: #BB0000;">NA</span>                           82             90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 DE           CC BY                        24             27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 CN           CC BY                         8             90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 0138-9130    <span style="text-decoration: underline;">2</span>020 DE           <span style="color: #BB0000;">NA</span>                            3             27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 CN           <span style="color: #BB0000;">NA</span>                           64             65</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 DE           CC BY                         6             18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 DE           <span style="color: #BB0000;">NA</span>                           12             18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 0138-9130    <span style="text-decoration: underline;">2</span>019 CN           CC BY                         1             65</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 0138-9130    <span style="text-decoration: underline;">2</span>018 CN           <span style="color: #BB0000;">NA</span>                           64             64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 0138-9130    <span style="text-decoration: underline;">2</span>018 DE           CC BY                         4             20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 0138-9130    <span style="text-decoration: underline;">2</span>018 DE           <span style="color: #BB0000;">NA</span>                           16             20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> 0138-9130    <span style="text-decoration: underline;">2</span>017 CN           <span style="color: #BB0000;">NA</span>                           68             68</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> 0138-9130    <span style="text-decoration: underline;">2</span>017 DE           <span style="color: #BB0000;">NA</span>                           20             27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> 0138-9130    <span style="text-decoration: underline;">2</span>017 DE           CC BY                         7             27</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

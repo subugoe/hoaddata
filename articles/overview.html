@@ -134,20 +134,20 @@
 <p>First author country affiliations per journal, year and Creative Commons license</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cc_openalex_inst_jn_ind</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 487,639 × 7</span></span>
-<span class="co">#&gt;    issn_l    cr_year country_code cc          cc_articles articles  prop</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 0253-5068    <span style="text-decoration: underline;">2</span>018 DE           CC BY-NC-ND           1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 1552-4841    <span style="text-decoration: underline;">2</span>018 DE           CC BY-NC-ND           2        2     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 1751-5521    <span style="text-decoration: underline;">2</span>018 DE           CC BY-NC              1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2511-249X    <span style="text-decoration: underline;">2</span>018 DE           CC BY                 1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 0882-0783    <span style="text-decoration: underline;">2</span>018 DE           CC BY                 1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 0364-152X    <span style="text-decoration: underline;">2</span>018 DK           CC BY                 1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 0167-6806    <span style="text-decoration: underline;">2</span>018 DK           CC BY                 2        2     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 1434-6001    <span style="text-decoration: underline;">2</span>018 DK           CC BY                 1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 1066-5099    <span style="text-decoration: underline;">2</span>018 ES           CC BY-NC              1        1     1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 1568-4555    <span style="text-decoration: underline;">2</span>018 ES           CC BY                 1        1     1</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 487,629 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 563,999 × 6</span></span>
+<span class="co">#&gt;    issn_l    cr_year country_code cc    articles_under_cc_variant articles_total</span>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2151-464X    <span style="text-decoration: underline;">2</span>022 NZ           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 1328-8067    <span style="text-decoration: underline;">2</span>022 VN           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 0360-0300    <span style="text-decoration: underline;">2</span>022 SA           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2050-7526    <span style="text-decoration: underline;">2</span>022 AT           CC BY                         1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 1533-5399    <span style="text-decoration: underline;">2</span>022 PK           <span style="color: #BB0000;">NA</span>                            4              4</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 1550-4859    <span style="text-decoration: underline;">2</span>022 SG           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2375-4699    <span style="text-decoration: underline;">2</span>022 AE           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 0360-0300    <span style="text-decoration: underline;">2</span>022 PK           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 0360-0300    <span style="text-decoration: underline;">2</span>022 CL           <span style="color: #BB0000;">NA</span>                            2              2</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2053-1400    <span style="text-decoration: underline;">2</span>022 EC           <span style="color: #BB0000;">NA</span>                            1              1</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 563,989 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="cc_openalex_inst">
