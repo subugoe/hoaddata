@@ -22,7 +22,7 @@ You can install hoaddata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("njahn82/hoaddashtest", dependencies = "Imports")
+remotes::install_github("subugoe/hoaddash", dependencies = "Imports")
 ```
 ## Datasets
 
