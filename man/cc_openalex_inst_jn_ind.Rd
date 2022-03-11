@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst_jn_ind}
 \title{First author country affiliations per journal, year and Creative Commons license}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 481506 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 563999 rows and 6 columns.
 }
 \usage{
 cc_openalex_inst_jn_ind
@@ -22,19 +22,24 @@ author(\url{https://en.wikipedia.org/wiki/Lead_author})
 who has usually undertaken most of the research presented in the article,
 although author roles can vary across disciplines.
 
+Note that whole counting in which every original article or review was
+counted once per country of affiliation of the first authors were used.
+Because first authors can have multiple affiliations from different countries,
+please use \code{\link{cc_jn_ind}} to determine a journal's publication
+volume.
+
 Variables:
 \describe{
     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
-    \item{cc}{Normalized Creative Commons variant.}
-    \item{cc_total}{Number of articles under Creative Commons variant by journal, year and country affiliation}
-    \item{jn_all}{Yearly journal output by year and country affiliation}
-    \item{prop}{Proportion of articles under CC license variant by journal, year and country affiliation}
+    \item{cc}{Normalized Creative Commons variant. \code{NA} represents articles, which were not provided under a CC license}
+    \item{articles_under_cc_variant}{Number of articles under Creative Commons variant, grouped by journal, year and country affiliation}
+    \item{articles_total}{Yearly journal output by year and country affiliation}
     }
 }
 \examples{
-  cc_openalex_inst_jn_ind[cc_openalex_inst_jn_ind$issn_l \%in\%  "0138-9130" &
-                         cc_openalex_inst_jn_ind$country_code \%in\% c("DE", "CN"),]
+  subset(cc_openalex_inst_jn_ind,
+    issn_l \%in\% "0138-9130" & country_code \%in\% c("DE", "CN"))
 }
 \keyword{jndatasets}

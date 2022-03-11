@@ -1,43 +1,72 @@
 WITH
-  cc_country AS (
+ -- CC publication volume by journal, year and first author country affiliation
+  country_by_cc AS (
   SELECT
     issn_l,
     cr_year,
     country_code,
     cc,
-    COUNT(DISTINCT doi) AS cc_articles
-  FROM
-    `hoad-dash.oam.cc_openalex_inst`
+    COUNT(DISTINCT doi) AS articles
+  FROM (
+    SELECT
+      alex.doi,
+      issn_l,
+      cr_year,
+      country_code,
+      cc
+    FROM
+      `hoad-dash.oam.cr_openalex_inst_full` alex
+    LEFT JOIN (
+      SELECT
+        cc,
+        doi
+      FROM
+        `hoad-dash.oam.cc_openalex_inst` ) AS cc_oa
+    ON
+      alex.doi = cc_oa.doi )
   GROUP BY
     issn_l,
     cr_year,
     country_code,
-    cc )
-SELECT
-  DISTINCT inst.issn_l,
-  inst.cr_year,
-  inst.country_code,
-  cc,
-  cc_articles,
-  articles,
-  cc_articles / articles AS prop
-FROM (
+    cc
+  ORDER BY
+    issn_l,
+    cr_year,
+    country_code,
+    cc DESC ),
+    -- Publication volume by journal, year and first author country affiliation
+  all_articles AS (
   SELECT
     issn_l,
     cr_year,
     country_code,
-    COUNT(DISTINCT doi) AS articles
+    SUM(articles) AS all_articles
   FROM
-    `hoad-dash.oam.cr_openalex_inst_full`
+    country_by_cc
   GROUP BY
-    country_code,
     issn_l,
-    cr_year ) AS inst
+    cr_year,
+    country_code
+  ORDER BY
+    cr_year DESC )
+ -- Join into a single dataset
+SELECT
+  all_articles.issn_l,
+  all_articles.cr_year,
+  all_articles.country_code,
+  cc,
+  articles AS articles_under_cc_variant,
+  all_articles.all_articles AS articles_total
+FROM
+  country_by_cc
 LEFT JOIN
-  cc_country
+  all_articles
 ON
-  inst.issn_l = cc_country.issn_l
-  AND inst.cr_year = cc_country.cr_year
-  AND inst.country_code = cc_country.country_code
+  country_by_cc.cr_year = all_articles.cr_year
+  AND country_by_cc.issn_l = all_articles.issn_l
+  -- There are journals without Open Alex affiliation!
+  AND (country_by_cc.country_code = all_articles.country_code
+    OR (country_by_cc.country_code IS NULL
+      AND all_articles.country_code IS NULL))
 ORDER BY
-  prop DESC
+  cr_year DESC

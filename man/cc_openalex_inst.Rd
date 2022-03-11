@@ -27,6 +27,7 @@ Variables:
     \item{doi}{DOI for the OA article}
     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
+    \item{cc}{Normalized Creative Commons variant.}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
     \item{id}{The OpenAlex ID for this institution}
     \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}

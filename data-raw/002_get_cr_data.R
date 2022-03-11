@@ -78,11 +78,8 @@ usethis::use_data(cc_openalex_inst, overwrite = TRUE)
 
 ### Aggregated first-author country affiliations per hybrid journal and year ----
 
-cc_openalex_inst_jn_ind_tmp <-
+cc_openalex_inst_jn_ind <-
   create_bq_table("cc_openalex_inst_jn_ind",
                   download = TRUE)
-
-cc_openalex_inst_jn_ind <- cc_openalex_inst_jn_ind_tmp |>
-  dplyr::mutate(across(c(cc_articles, prop), ~ tidyr::replace_na(., 0)))
 
 usethis::use_data(cc_openalex_inst_jn_ind, overwrite = TRUE)
