@@ -19,7 +19,6 @@ WITH
     `hoad-dash.oam.cc_md` AS cc_md
   WHERE
     vor = 1
-    AND immediate = 1
     AND NOT cc IS NULL # there are few cases where the cc regex extraction did not work
     )
   # Bringing it together
