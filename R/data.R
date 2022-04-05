@@ -99,6 +99,9 @@
 #' although author roles can vary across disciplines.
 #' We used OpenAlex as data source for determining the lead author's affiliation.
 #'
+#' In case where OpenALEX did not record an country affiliation, we extracted
+#' country names from the display_name using regular expressions.
+#'
 #' Variables:
 #'
 #' \describe{
@@ -106,7 +109,7 @@
 #'     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{cc}{Normalized Creative Commons variant.}
-#'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
+#'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)}
 #'     \item{id}{The OpenAlex ID for this institution}
 #'     \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
 #'     }
