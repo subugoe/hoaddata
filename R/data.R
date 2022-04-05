@@ -35,8 +35,7 @@
 #' include patterns indicating corrections.
 #'
 #' CC licenses were also identified through Crossref metadata records.
-#' License information for author accepted manuscripts ("aam") and
-#' with time lag between licensing and publication (delayed OA) were not
+#' License information for author accepted manuscripts ("aam") were not
 #' considered.
 #'
 #' Variables:
