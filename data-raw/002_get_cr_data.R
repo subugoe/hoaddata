@@ -67,7 +67,25 @@ usethis::use_data(cc_jn_ind, overwrite = TRUE)
 
 # Article-level first author affiliation data, including dois
 # where no affiliation data could be found
+create_bq_table("cr_openalex_inst_full_raw")
+
+# Extract iso2 country codes from adress strings where OpenALEX
+# found no match country code
+
+# 1. Upload countrycode list
+
+countrycodes <- countrycode::codelist[,c("iso2c", "country.name.en")]
+colnames(countrycodes) <- c("iso2c", "country_name_en")
+bg_countrycodes <- bigrquery::bq_table("hoad-dash", "oam", "countrycodes")
+
+if (bigrquery::bq_table_exists(bg_countrycodes))
+  bigrquery::bq_table_delete(bg_countrycodes)
+bigrquery::bq_table_upload(bg_countrycodes,
+                           countrycodes)
+
+# 2. Extract and match country strings
 create_bq_table("cr_openalex_inst_full")
+
 
 ### First-author affiliation data CC articles ----
 
