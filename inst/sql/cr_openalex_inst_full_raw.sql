@@ -19,7 +19,7 @@ WITH
     UNNEST(institutions) )
 SELECT
   cr_raw.doi,
-  issn_l,
+  cr_journal_id,
   cr_year,
   id,
   country_code,
@@ -29,4 +29,4 @@ FROM
 LEFT OUTER JOIN
   first_aff
 ON
-  cr_raw.doi = first_aff.doi
+  cr_raw.doi = LOWER(first_aff.doi)

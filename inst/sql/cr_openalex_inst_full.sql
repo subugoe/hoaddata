@@ -32,7 +32,7 @@ WITH
 SELECT
   DISTINCT
   cr_openalex_inst_full_raw.doi,
-  issn_l,
+  cr_journal_id,
   cr_year,
 --  country_code,
   id,

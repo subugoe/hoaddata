@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst_jn_ind}
 \title{First author country affiliations per journal, year and Creative Commons license}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 640031 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 657336 rows and 6 columns.
 }
 \usage{
 cc_openalex_inst_jn_ind
@@ -30,7 +30,7 @@ volume.
 
 Variables:
 \describe{
-    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+    \item{cr_journal_id}{Crossref journal ID}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
     \item{cc}{Normalized Creative Commons variant. \code{NA} represents articles, which were not provided under a CC license}
@@ -39,7 +39,8 @@ Variables:
     }
 }
 \examples{
+# Scientometrics (Crossref journal ID: 2795)
   subset(cc_openalex_inst_jn_ind,
-    issn_l \%in\% "0138-9130" & country_code \%in\% c("DE", "CN"))
+    cr_journal_id \%in\% "2795" & country_code \%in\% c("DE", "CN"))
 }
 \keyword{jndatasets}

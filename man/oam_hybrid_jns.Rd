@@ -8,8 +8,9 @@
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11638 rows and 4 columns.
 }
 \source{
-Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2022,
-Open Access Monitor: Zeitschriftenlisten (v2) \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
+Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene,
+Stanzel, Franziska 2022, Open Access Monitor: Zeitschriftenlisten (v2)
+\url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 }
 \usage{
 oam_hybrid_jns
@@ -25,6 +26,10 @@ There's no direct data exchange between Crossref and the ISSN agency.
 Instead, publishers register journal-level metadata when they first deposit
 metadata for a given journal, including all ISSN(s). Crossref makes sure that
 article and journal metadata match.
+
+More info about Crossref's handling of ISSN registration can be found in this
+support thread:
+\url{https://community.crossref.org/t/parallel-titles-for-a-given-issn/2183}
 
 
 Variables:

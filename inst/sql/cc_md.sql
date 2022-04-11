@@ -12,7 +12,7 @@ WITH
     REGEXP_CONTAINS(LOWER(lic.url), "creativecommons.org") )
 SELECT
   DISTINCT cr_raw.doi,
-  issn_l,
+  cr_journal_id,
   cr_year,
   CASE
     WHEN (`cc` = 'by') THEN ('CC BY')

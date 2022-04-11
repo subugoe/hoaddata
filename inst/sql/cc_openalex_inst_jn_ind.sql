@@ -2,7 +2,7 @@ WITH
  -- CC publication volume by journal, year and first author country affiliation
   country_by_cc AS (
   SELECT
-    issn_l,
+    cr_journal_id,
     cr_year,
     country_code,
     cc,
@@ -10,7 +10,7 @@ WITH
   FROM (
     SELECT
       alex.doi,
-      issn_l,
+      cr_journal_id,
       cr_year,
       country_code,
       cc
@@ -25,33 +25,33 @@ WITH
     ON
       alex.doi = cc_oa.doi )
   GROUP BY
-    issn_l,
+    cr_journal_id,
     cr_year,
     country_code,
     cc
   ORDER BY
-    issn_l,
+    cr_journal_id,
     cr_year,
     country_code,
     cc DESC ),
     -- Publication volume by journal, year and first author country affiliation
   all_articles AS (
   SELECT
-    issn_l,
+    cr_journal_id,
     cr_year,
     country_code,
     SUM(articles) AS all_articles
   FROM
     country_by_cc
   GROUP BY
-    issn_l,
+    cr_journal_id,
     cr_year,
     country_code
   ORDER BY
     cr_year DESC )
  -- Join into a single dataset
 SELECT
-  all_articles.issn_l,
+  all_articles.cr_journal_id,
   all_articles.cr_year,
   all_articles.country_code,
   cc,
@@ -63,7 +63,7 @@ LEFT JOIN
   all_articles
 ON
   country_by_cc.cr_year = all_articles.cr_year
-  AND country_by_cc.issn_l = all_articles.issn_l
+  AND country_by_cc.cr_journal_id = all_articles.cr_journal_id
   -- There are journals without Open Alex affiliation!
   AND (country_by_cc.country_code = all_articles.country_code
     OR (country_by_cc.country_code IS NULL

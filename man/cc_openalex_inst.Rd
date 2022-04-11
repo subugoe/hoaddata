@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 363501 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 376463 rows and 7 columns.
 }
 \usage{
 cc_openalex_inst
@@ -28,7 +28,7 @@ Variables:
 
 \describe{
     \item{doi}{DOI for the OA article}
-    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+    \item{cr_journal_id}{Crossref journal ID}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{cc}{Normalized Creative Commons variant.}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)}

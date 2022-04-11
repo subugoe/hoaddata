@@ -3,18 +3,18 @@
 WITH
   jn_total AS (
   SELECT
-    DISTINCT issn_l,
+    DISTINCT cr_journal_id,
     cr_year,
-    COUNT(DISTINCT doi) OVER (PARTITION BY issn_l, cr_year) AS jn_all
+    COUNT(DISTINCT doi) OVER (PARTITION BY cr_journal_id, cr_year) AS jn_all
   FROM
     `hoad-dash.oam.cc_md` ),
   # Immediate cc license
   cc_year AS (
   SELECT
-    DISTINCT issn_l,
+    DISTINCT cr_journal_id,
     cr_year,
     cc,
-    COUNT(DISTINCT doi) OVER (PARTITION BY issn_l, cr_year, cc) AS cc_total
+    COUNT(DISTINCT doi) OVER (PARTITION BY cr_journal_id, cr_year, cc) AS cc_total
   FROM
     `hoad-dash.oam.cc_md` AS cc_md
   WHERE
@@ -27,7 +27,7 @@ SELECT
   cc_total / jn_all as prop
 FROM (
   SELECT
-    jn_total.issn_l,
+    jn_total.cr_journal_id,
     jn_total.cr_year,
     cc,
     cc_total,
@@ -37,5 +37,5 @@ FROM (
   LEFT JOIN
     cc_year
   ON
-    jn_total.issn_l = cc_year.issn_l
+    jn_total.cr_journal_id = cc_year.cr_journal_id
     AND jn_total.cr_year = cc_year.cr_year )

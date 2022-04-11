@@ -1,7 +1,7 @@
 SELECT
   DISTINCT
   cc_md.doi,
-  cc_md.issn_l,
+  cc_md.cr_journal_id,
   cc_md.cr_year,
   cc,
   country_code,

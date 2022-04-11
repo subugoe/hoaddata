@@ -5,7 +5,7 @@
 \alias{cc_jn_ind}
 \title{Prevalence of Creative Commons licenses by variant, year and journal}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 43236 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 44621 rows and 6 columns.
 }
 \usage{
 cc_jn_ind
@@ -31,7 +31,7 @@ considered.
 Variables:
 
 \describe{
-    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+    \item{cr_journal_id}{Crossref journal ID}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{cc}{Normalized Creative Commons variant. Ordered factor by license variant permissiveness}
     \item{cc_total}{Number of articles under Creative Commons variant}
