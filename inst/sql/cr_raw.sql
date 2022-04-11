@@ -2,9 +2,9 @@ SELECT
   *
 FROM (
   SELECT
-    issn_l,
-    vertrag,
-    doi,
+    cr_journal_id,
+    agreement,
+    LOWER(doi) as doi,
     EXTRACT (YEAR
     FROM
       issued) AS cr_year,

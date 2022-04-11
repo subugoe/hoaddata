@@ -6,7 +6,7 @@ testthat::test_that("cc_jn_ind can be loaded as tibble", {
 testthat::test_that("cc_jn_ind format is correct", {
   testthat::expect_equal(ncol(cc_jn_ind), 6)
   testthat::expect_named(cc_jn_ind,
-                         c("issn_l", "cr_year", "cc",
+                         c("cr_journal_id", "cr_year", "cc",
                            "cc_total", "jn_all", "prop"))
   testthat::expect_gt(nrow(cc_jn_ind), 35000)
 

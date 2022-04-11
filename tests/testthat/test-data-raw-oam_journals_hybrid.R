@@ -13,12 +13,10 @@ testthat::test_that("Loading OAM journal file", {
 testthat::test_that("Checking OAM journal data structure", {
   tt <- suppressMessages(readr::read_csv(oam_hybrid_jns))
 
-  testthat::expect_equal(ncol(tt), 3)
-  testthat::expect_named(tt, c("vertrag", "issn_l", "issn"))
+  testthat::expect_equal(ncol(tt), 4)
+  testthat::expect_named(tt, c("vertrag", "journal", "issn", "issn_l"))
   testthat::expect_gt(nrow(tt), 10000)
 
   testthat::expect_equal(nrow(tt[is.na(tt$vertrag),]), 0)
-  testthat::expect_equal(nrow(tt[is.na(tt$issn_l),]), 0)
-  testthat::expect_equal(nrow(tt[is.na(tt$issn),]), 0)
 
 })
