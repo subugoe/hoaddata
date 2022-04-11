@@ -5,26 +5,34 @@
 \alias{oam_hybrid_jns}
 \title{Hybrid Journals listed in the Open Access Monitor}
 \format{
-An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 10765 rows and 3 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11638 rows and 4 columns.
 }
 \source{
-Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021,
-Open Access Monitor: Zeitschriftenlisten \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
+Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2022,
+Open Access Monitor: Zeitschriftenlisten (v2) \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 }
 \usage{
 oam_hybrid_jns
 }
 \description{
-The dataset contains hybrid journals available as filter in the
+The dataset contains hybrid journals available as a filter in the
 \href{https://open-access-monitor.de/}{German Open Access Monitor}.
-The dataset was unified and enriched with ISSN variants and ISSN-L.
+The dataset was unified and mapped to the
+\href{https://www.crossref.org/titleList/}{Crossref title list}.
 }
 \details{
+There's no direct data exchange between Crossref and the ISSN agency.
+Instead, publishers register journal-level metadata when they first deposit
+metadata for a given journal, including all ISSN(s). Crossref makes sure that
+article and journal metadata match.
+
+
 Variables:
 
 \describe{
-    \item{vertrag}{Transformative aggrement from a German consortium (in brackets)}
-    \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+    \item{agreement}{Transformative agreement from a German consortium}
+    \item{lead}{Institution leading the nationwide consortium}
+    \item{cr_journal_id}{Crossref journal ID}
     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
     }
 }

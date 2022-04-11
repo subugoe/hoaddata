@@ -28,6 +28,7 @@ Suggests:
     testthat (>= 3.0.0),
     dplyr,
     tidyr,
+    stringi,
     countrycode,
     rmarkdown,
     knitr

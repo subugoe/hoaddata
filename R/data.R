@@ -1,19 +1,27 @@
 #' Hybrid Journals listed in the Open Access Monitor
 #'
-#' The dataset contains hybrid journals available as filter in the
+#' The dataset contains hybrid journals available as a filter in the
 #' \href{https://open-access-monitor.de/}{German Open Access Monitor}.
-#' The dataset was unified and enriched with ISSN variants and ISSN-L.
+#' The dataset was unified and mapped to the
+#' \href{https://www.crossref.org/titleList/}{Crossref title list}.
+#'
+#' There's no direct data exchange between Crossref and the ISSN agency.
+#' Instead, publishers register journal-level metadata when they first deposit
+#' metadata for a given journal, including all ISSN(s). Crossref makes sure that
+#' article and journal metadata match.
+#'
 #'
 #' Variables:
 #'
 #' \describe{
-#'     \item{vertrag}{Transformative aggrement from a German consortium (in brackets)}
-#'     \item{issn_l}{Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal}
+#'     \item{agreement}{Transformative agreement from a German consortium}
+#'     \item{lead}{Institution leading the nationwide consortium}
+#'     \item{cr_journal_id}{Crossref journal ID}
 #'     \item{issn}{International Standard Serial Number (ISSN), a ID to refer to a specific journal's media version}
 #'     }
 #'
-#' @source Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021,
-#' Open Access Monitor: Zeitschriftenlisten \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
+#' @source Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2022,
+#' Open Access Monitor: Zeitschriftenlisten (v2) \url{https://doi.org/10.26165/JUELICH-DATA/VTQXLM}
 #'
 #' @keywords jndatasets
 #' @examples

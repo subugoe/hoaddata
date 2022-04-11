@@ -5,7 +5,7 @@
 \alias{cc_jn_ind}
 \title{Prevalence of Creative Commons licenses by variant, year and journal}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 42416 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 43236 rows and 6 columns.
 }
 \usage{
 cc_jn_ind
@@ -25,8 +25,7 @@ following Unpaywall's paratext recognition approach, which was expanded to
 include patterns indicating corrections.
 
 CC licenses were also identified through Crossref metadata records.
-License information for author accepted manuscripts ("aam") and
-with time lag between licensing and publication (delayed OA) were not
+License information for author accepted manuscripts ("aam") were not
 considered.
 
 Variables:
