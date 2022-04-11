@@ -65,7 +65,7 @@ open access article published in hybrid journals as listed in
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 330551 rows and 7 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 376463 rows and 7 columns.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -79,8 +79,8 @@ country names from the display_name using regular expressions.</p>
 <dl><dt>doi</dt>
 <dd><p>DOI for the OA article</p></dd>
 
-    <dt>issn_l</dt>
-<dd><p>Linking International Standard Serial Number (ISSN-L), an umbrella ID for all media versions of the journal</p></dd>
+    <dt>cr_journal_id</dt>
+<dd><p>Crossref journal ID</p></dd>
 
     <dt>cr_year</dt>
 <dd><p>Earliest publication year (Crossref field `issued`)</p></dd>
@@ -106,20 +106,20 @@ country names from the display_name using regular expressions.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Hybrid OA articles with lead author from Uni Göttingen</span></span>
 <span class="r-in"><span class="va">cc_openalex_inst</span><span class="op">[</span><span class="va">cc_openalex_inst</span><span class="op">$</span><span class="va">id</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="st">"https://openalex.org/I74656192"</span>,<span class="op">]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,010 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    doi                     issn_l  cr_year cc    country_code id    display_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10.1002/1873-3468.13978 0014-5…    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10.1002/adma.201907693  0935-9…    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10.1002/adma.202000717  0935-9…    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10.1002/adma.202104075  0935-9…    <span style="text-decoration: underline;">2</span>021 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10.1002/admi.202000473  2196-7…    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10.1002/admi.202002049  2196-7…    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/adom.202000547  2195-1…    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adom.202001814  2195-1…    <span style="text-decoration: underline;">2</span>021 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/adom.202100314  2195-1…    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/adsc.202100481  1615-4…    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,000 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,209 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    doi               cr_journal_id cr_year cc    country_code id    display_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10.1002/1873-346…          <span style="text-decoration: underline;">1</span>140    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10.1002/1873-346…          <span style="text-decoration: underline;">1</span>140    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10.1002/adma.201…           174    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10.1002/adma.202…           174    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10.1002/adma.202…           174    <span style="text-decoration: underline;">2</span>021 CC BY DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10.1002/admi.202…        <span style="text-decoration: underline;">230</span>447    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/admi.202…        <span style="text-decoration: underline;">230</span>447    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adom.202…        <span style="text-decoration: underline;">201</span>185    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/adom.202…        <span style="text-decoration: underline;">201</span>185    <span style="text-decoration: underline;">2</span>021 CC BY DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/adom.202…        <span style="text-decoration: underline;">201</span>185    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,199 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
