@@ -90,7 +90,7 @@
 <p>Hybrid Journals listed in the Open Access Monitor. Data were gathered from <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link uri">https://doi.org/10.26165/JUELICH-DATA/VTQXLM</a> and enriched with ISSN variants.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">oam_hybrid_jns</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 11,638 × 4</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 10,798 × 4</span></span>
 <span class="co">#&gt;    agreement  lead          cr_journal_id issn     </span>
 <span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> De Gruyter SUB Göttingen         <span style="text-decoration: underline;">70</span>719 0306-0322</span>
@@ -103,7 +103,7 @@
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> De Gruyter SUB Göttingen         <span style="text-decoration: underline;">75</span>760 2196-6761</span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> De Gruyter SUB Göttingen        <span style="text-decoration: underline;">124</span>445 0003-6390</span>
 <span class="co">#&gt; <span style="color: #BCBCBC;">10</span> De Gruyter SUB Göttingen        <span style="text-decoration: underline;">124</span>445 2156-7093</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 11,628 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># … with 10,788 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="cc_jn_ind">
@@ -112,20 +112,20 @@
 <p>Aggregated data about the prevalence of Creative Commons license variants by year and hybrid journal as obtained from Crossref.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cc_jn_ind</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 44,621 × 6</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 43,752 × 6</span></span>
 <span class="co">#&gt;    cr_journal_id cr_year cc          cc_total jn_all    prop</span>
 <span class="co">#&gt;            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>        <span style="text-decoration: underline;">144</span>347 2019    <span style="color: #BB0000;">NA</span>                 0    256 0      </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>         <span style="text-decoration: underline;">24</span>919 2019    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>        <span style="text-decoration: underline;">208</span>685 2021    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>         <span style="text-decoration: underline;">98</span>185 2021    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>          <span style="text-decoration: underline;">3</span>428 2018    CC BY-SA           1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>         <span style="text-decoration: underline;">98</span>185 2021    CC BY              1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>         <span style="text-decoration: underline;">25</span>438 2019    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>            16 2018    CC BY-NC           3    256 0.011<span style="text-decoration: underline;">7</span> </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>         <span style="text-decoration: underline;">55</span>414 2018    CC BY-NC           3    256 0.011<span style="text-decoration: underline;">7</span> </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span>          <span style="text-decoration: underline;">5</span>668 2022    CC BY              3    256 0.011<span style="text-decoration: underline;">7</span> </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 44,611 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>         <span style="text-decoration: underline;">98</span>185 2021    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>        <span style="text-decoration: underline;">208</span>685 2021    CC BY-NC-ND        1    256 0.003<span style="text-decoration: underline;">91</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>         <span style="text-decoration: underline;">98</span>185 2021    CC BY              1    256 0.003<span style="text-decoration: underline;">91</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>          <span style="text-decoration: underline;">3</span>428 2018    CC BY-SA           1    256 0.003<span style="text-decoration: underline;">91</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>         <span style="text-decoration: underline;">55</span>414 2018    CC BY-NC           3    256 0.011<span style="text-decoration: underline;">7</span> </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>          <span style="text-decoration: underline;">3</span>428 2018    CC BY-NC-ND        3    256 0.011<span style="text-decoration: underline;">7</span> </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>            16 2018    CC BY-NC           3    256 0.011<span style="text-decoration: underline;">7</span> </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span>          <span style="text-decoration: underline;">3</span>428 2018    CC BY-NC-SA        3    256 0.011<span style="text-decoration: underline;">7</span> </span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 43,742 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="cc_openalex_inst_jn_ind">
@@ -134,20 +134,20 @@
 <p>First author country affiliations per journal, year and Creative Commons license</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cc_openalex_inst_jn_ind</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 657,336 × 6</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 639,293 × 6</span></span>
 <span class="co">#&gt;    cr_journal_id cr_year country_code cc    articles_under_cc_va… articles_total</span>
 <span class="co">#&gt;            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>         <span style="text-decoration: underline;">15</span>180    <span style="text-decoration: underline;">2</span>022 MX           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>         <span style="text-decoration: underline;">40</span>618    <span style="text-decoration: underline;">2</span>022 VN           <span style="color: #BB0000;">NA</span>                        1              2</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>          <span style="text-decoration: underline;">3</span>457    <span style="text-decoration: underline;">2</span>022 EE           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>          <span style="text-decoration: underline;">2</span>969    <span style="text-decoration: underline;">2</span>022 MX           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>         <span style="text-decoration: underline;">42</span>138    <span style="text-decoration: underline;">2</span>022 NG           <span style="color: #BB0000;">NA</span>                        6              6</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>           790    <span style="text-decoration: underline;">2</span>022 NZ           <span style="color: #BB0000;">NA</span>                        2              2</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>          <span style="text-decoration: underline;">4</span>256    <span style="text-decoration: underline;">2</span>022 NO           <span style="color: #BB0000;">NA</span>                        1              2</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>          <span style="text-decoration: underline;">3</span>761    <span style="text-decoration: underline;">2</span>022 OM           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>         <span style="text-decoration: underline;">14</span>063    <span style="text-decoration: underline;">2</span>022 BD           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span>        <span style="text-decoration: underline;">297</span>440    <span style="text-decoration: underline;">2</span>022 KN           <span style="color: #BB0000;">NA</span>                        1              1</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 657,326 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>          <span style="text-decoration: underline;">2</span>968    <span style="text-decoration: underline;">2</span>022 TH           <span style="color: #BB0000;">NA</span>                        1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>          <span style="text-decoration: underline;">1</span>038    <span style="text-decoration: underline;">2</span>022 CL           <span style="color: #BB0000;">NA</span>                        1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>         <span style="text-decoration: underline;">22</span>143    <span style="text-decoration: underline;">2</span>022 VN           <span style="color: #BB0000;">NA</span>                        2              2</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>          <span style="text-decoration: underline;">3</span>496    <span style="text-decoration: underline;">2</span>022 CM           <span style="color: #BB0000;">NA</span>                        1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>          <span style="text-decoration: underline;">2</span>740    <span style="text-decoration: underline;">2</span>022 SA           <span style="color: #BB0000;">NA</span>                        8              8</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>         <span style="text-decoration: underline;">71</span>138    <span style="text-decoration: underline;">2</span>022 ZA           CC BY                     1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>         <span style="text-decoration: underline;">58</span>712    <span style="text-decoration: underline;">2</span>022 SG           <span style="color: #BB0000;">NA</span>                        1              1</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>          <span style="text-decoration: underline;">2</span>846    <span style="text-decoration: underline;">2</span>022 GR           <span style="color: #BB0000;">NA</span>                        2              2</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>        <span style="text-decoration: underline;">119</span>885    <span style="text-decoration: underline;">2</span>022 PK           <span style="color: #BB0000;">NA</span>                       16             16</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span>          <span style="text-decoration: underline;">2</span>851    <span style="text-decoration: underline;">2</span>022 PT           <span style="color: #BB0000;">NA</span>                        2              2</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 639,283 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="cc_openalex_inst">
@@ -156,7 +156,7 @@
 <p>Article-level affiliation data from first authors as obtained from OpenAlex.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cc_openalex_inst</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 376,463 × 7</span></span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 358,726 × 7</span></span>
 <span class="co">#&gt;    doi               cr_journal_id cr_year cc    country_code id    display_name</span>
 <span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 10.1002/1438-390…           835    <span style="text-decoration: underline;">2</span>019 CC BY AT           http… Universität…</span>
@@ -169,7 +169,7 @@
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 10.1002/1438-390…           835    <span style="text-decoration: underline;">2</span>019 CC BY US           http… Duke Univer…</span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 10.1002/1438-390…           835    <span style="text-decoration: underline;">2</span>019 CC BY JP           http… University …</span>
 <span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 10.1002/1438-390…           835    <span style="text-decoration: underline;">2</span>019 CC BY FI           http… University …</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 376,453 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># … with 358,716 more rows</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -185,7 +185,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
