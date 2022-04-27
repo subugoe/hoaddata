@@ -34,7 +34,7 @@ FROM (
     FROM
       `subugoe-collaborative.cr_instant.snapshot`
     WHERE
-      NOT REGEXP_CONTAINS(title,'^Author Index$|^Back Cover|^Contents$|^Contents:|^Cover Image|^Cover Picture|^Editorial Board|^Front Cover|^Frontispiece|^Inside Back Cover|^Inside Cover|^Inside Front Cover|^Issue Information|^List of contents|^Masthead|^Title page|^Correction$|^Corrections to|^Corrections$|^Withdrawn')
+      NOT REGEXP_CONTAINS(title,'^Author Index$|^Back Cover|^Contents$|^Contents:|^Cover Image|^Cover Picture|^Editorial Board|^Front Cover|^Frontispiece|^Inside Back Cover|^Inside Cover|^Inside Front Cover|^Issue Information|^List of contents|^Masthead|^Title page|^Correction$|^Corrections to|^Corrections$|^Withdrawn|^Frontmatter')
       AND (NOT REGEXP_CONTAINS(page, '^S')
         OR page IS NULL) -- include online only articles, lacking page or issue
       AND (NOT REGEXP_CONTAINS(issue, '^S')
