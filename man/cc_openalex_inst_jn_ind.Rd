@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst_jn_ind}
 \title{First author country affiliations per journal, year and Creative Commons license}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 657336 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 639293 rows and 6 columns.
 }
 \usage{
 cc_openalex_inst_jn_ind
