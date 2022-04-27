@@ -14,33 +14,53 @@ oam_new <- oam_jns %>%
 
 # Load Crossref journal title list
 cr_title_list <-
-  readr::read_csv("http://ftp.crossref.org/titlelist/titleFile.csv")
+  readr::read_csv("http://ftp.crossref.org/titlelist/titleFile.csv") %>%
+  dplyr::mutate(years = stringr::str_extract_all(`(year1)[volume1]issue1,issue2,issue3(year2)[volume2]issue4,issues5`,
+                                                                                                    "[0-9]{4}+"))
+
 # Clean Crossref journal title list
 cr_issn_list <- cr_title_list %>%
-  dplyr::select(JournalID, pissn, eissn, additionalIssns) %>%
-  tidyr::separate(
-    additionalIssns,
-    c("additional_1", "additional_2"),
-    sep = "; ",
-    fill = "right"
-  ) %>%
+  dplyr::select(JournalID, pissn, eissn, years) %>%
   tidyr::pivot_longer(
-    c(pissn, eissn, additional_1, additional_2),
+    c(pissn, eissn),
     names_to = "issn_type",
     values_to = "issn",
     values_drop_na = TRUE
   ) %>%
   dplyr::mutate(issn_norm = gsub("-", "", issn)) %>%
   dplyr::mutate(issn_norm = stringi::stri_sub_replace(issn_norm, 5, 4, value = "-"))
+
+
+# Manual fix missing journals
+manual_fixed_jns <- tibble::tribble(
+  ~vertrag, ~cr_journal_id, ~issn, ~journal,
+  "Springer Hybrid (DEAL)",49459,"2373-8529","Financial Markets and Portfolio Management",
+  # Europe Economics Review and Eurasian Business Review share the same Journal
+  # ID, we created an id for Eurasian Economic Review
+  "Springer Hybrid (DEAL)", 11111111, "1309-422X","Eurasian Economic Review",
+  "Springer Hybrid (DEAL)", 11111111, "2147-429X","Eurasian Economic Review",
+)
+
 # Add Crossref info to OAM subset
 oam_cr <- oam_new %>%
   dplyr::inner_join(cr_issn_list, by = c("issn" = "issn_norm")) %>%
-  dplyr::distinct(vertrag, cr_journal_id = JournalID, issn, journal)
+  dplyr::distinct(vertrag, cr_journal_id = JournalID, issn, journal, years) %>%
+  dplyr::mutate(years = purrr::map(years, function(x) grep("^20[0-2]", x, value = TRUE))) %>%
+  dplyr::mutate(years = purrr::map(years, function(x) sort(x))) %>%
+  dplyr::mutate(end_year = purrr::map_chr(years, dplyr::last)) %>%
+  # manual curation
+  # 1. add missing journals
+  dplyr::bind_rows(manual_fixed_jns) %>%
+  # Exclude journals with duplicated ids
+  dplyr::filter(!cr_journal_id %in% c("180565", "14676")) %>%
+  # Exclude journals that ended before 2017
+  dplyr::filter(end_year %in% c(as.character(2017:2029), NA))
 
 # Print journals, which could not be matched
 oam_new %>%
   dplyr::filter(!journal %in% oam_cr$journal) %>%
   dplyr::distinct(journal)
+
 # Obtain Crossref Journal IDs for all OAM journals that could be matched
 oam_hybrid_jns <- oam_cr %>%
   dplyr::distinct(vertrag, cr_journal_id) %>%
