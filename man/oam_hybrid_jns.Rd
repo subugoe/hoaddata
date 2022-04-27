@@ -5,7 +5,7 @@
 \alias{oam_hybrid_jns}
 \title{Hybrid Journals listed in the Open Access Monitor}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11638 rows and 4 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10798 rows and 4 columns.
 }
 \source{
 Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene,

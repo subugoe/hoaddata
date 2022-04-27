@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 376463 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 358726 rows and 7 columns.
 }
 \usage{
 cc_openalex_inst

@@ -1,7 +1,7 @@
 # hoaddata
 
 <!-- badges: start -->
-[![update-data.yaml](https://github.com/njahn82/hoaddashtest/actions/workflows/update-data.yaml/badge.svg)](https://github.com/njahn82/hoaddashtest/actions/workflows/update-data.yaml)
+[![update-data.yaml](https://github.com/subugoe/hoaddata/actions/workflows/update-data.yaml/badge.svg)](https://github.com/subugoe/hoaddata/actions/workflows/update-data.yaml)
 
 <!-- badges: end -->
 
