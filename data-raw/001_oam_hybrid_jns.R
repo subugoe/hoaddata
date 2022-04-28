@@ -35,10 +35,13 @@ cr_issn_list <- cr_title_list %>%
 manual_fixed_jns <- tibble::tribble(
   ~vertrag, ~cr_journal_id, ~issn, ~journal,
   "Springer Hybrid (DEAL)",49459,"2373-8529","Financial Markets and Portfolio Management",
+  "Wiley Hybrid (DEAL)",65389,"0942-5616","MATHEMATICAL LOGIC QUARTERLY",
   # Europe Economics Review and Eurasian Business Review share the same Journal
   # ID, we created an id for Eurasian Economic Review
   "Springer Hybrid (DEAL)", 11111111, "1309-422X","Eurasian Economic Review",
   "Springer Hybrid (DEAL)", 11111111, "2147-429X","Eurasian Economic Review",
+  "Springer Hybrid (DEAL)", 75379, "1983-2052","Tropical Plant Pathology",
+  "Karger (BSB)",9157,"2235-3186","Nephron"
 )
 
 # Add Crossref info to OAM subset
