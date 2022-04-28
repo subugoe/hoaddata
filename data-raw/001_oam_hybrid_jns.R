@@ -52,10 +52,10 @@ oam_cr <- oam_new %>%
   # 1. add missing journals
   dplyr::bind_rows(manual_fixed_jns) %>%
   # Exclude journals with duplicated ids
-  dplyr::filter(!cr_journal_id %in% c("180565", "14676", "32798", "170806",
-                                      "312652", "36938", "18036", "45500",
-                                      "32278", "32798", "776", "72787",
-                                      "466211", "114285", "265229", "306690")) %>%
+  dplyr::filter(!cr_journal_id %in% c(180565, 14676, 32798, 170806,
+                                      312652, 36938, 18036, 45500,
+                                      32278, 32798, 776, 72787,
+                                      466211, 114285, 265229, 306690)) %>%
   # Exclude journals that ended before 2017
   dplyr::filter(end_year %in% c(as.character(2017:2029), NA))
 
@@ -66,12 +66,8 @@ oam_new %>%
 
 # Obtain Crossref Journal IDs for all OAM journals that could be matched
 oam_hybrid_jns <- oam_cr %>%
-  dplyr::distinct(vertrag, cr_journal_id) %>%
-  dplyr::inner_join(cr_issn_list, by = c("cr_journal_id" = "JournalID")) %>%
-  dplyr::select(-issn,-issn_type) %>%
-  dplyr::rename(issn = issn_norm, agreement = vertrag) %>%
   # Extract consortium leader
-  tidyr::separate(agreement, c("agreement", "lead"), sep = " \\(") %>%
+  tidyr::separate(vertrag, c("agreement", "lead"), sep = " \\(") %>%
   dplyr::mutate(lead = gsub(")", "", lead)) %>%
   dplyr::select(-years)
 
