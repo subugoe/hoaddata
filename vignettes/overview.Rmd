@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(hoaddata)
+library(dplyr)
 ```
 
 ## Datasets
@@ -31,13 +32,40 @@ ISSN variants.
 ```{r}
 oam_hybrid_jns
 ```
+Number of investigated journals: `r length(unique(oam_hybrid_jns$cr_journal_id))`
+
+By agreement
+
+```{r}
+oam_hybrid_jns %>%
+  group_by(agreement, lead) %>%
+  summarise(journals = n_distinct(cr_journal_id)) %>%
+  arrange(desc(journals))
+```
+
 
 ### `cc_jn_ind`
+
 Aggregated data about the prevalence of Creative Commons 
 license variants by year and hybrid journal as obtained from Crossref.
 
 ```{r}
 cc_jn_ind
+```
+
+Number of active journals: `r length(unique(cc_jn_ind$cr_journal_id))`
+
+Number of open access articles with Creative Commons license: 
+`r cc_jn_ind %>% filter(!is.na(cc)) %>% .$cc_total %>% sum()`
+
+Creative Commons Breakdown:
+
+```{r}
+cc_jn_ind %>%
+  filter(!is.na(cc)) %>%
+  group_by(cc) %>%
+  summarise(articles = sum(cc_total)) %>%
+  arrange(desc(articles))
 ```
 
 ### `cc_openalex_inst_jn_ind`
@@ -57,3 +85,11 @@ from OpenAlex.
 ```{r}
 cc_openalex_inst
 ```
+
+```{r}
+cc_openalex_inst %>%
+  group_by(cc) %>%
+  summarise(articles = n_distinct(doi))
+```
+
+
