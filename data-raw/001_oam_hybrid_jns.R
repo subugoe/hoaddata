@@ -35,10 +35,13 @@ cr_issn_list <- cr_title_list %>%
 manual_fixed_jns <- tibble::tribble(
   ~vertrag, ~cr_journal_id, ~issn, ~journal,
   "Springer Hybrid (DEAL)",49459,"2373-8529","Financial Markets and Portfolio Management",
+  "Wiley Hybrid (DEAL)",65389,"0942-5616","MATHEMATICAL LOGIC QUARTERLY",
   # Europe Economics Review and Eurasian Business Review share the same Journal
   # ID, we created an id for Eurasian Economic Review
   "Springer Hybrid (DEAL)", 11111111, "1309-422X","Eurasian Economic Review",
   "Springer Hybrid (DEAL)", 11111111, "2147-429X","Eurasian Economic Review",
+  "Springer Hybrid (DEAL)", 75379, "1983-2052","Tropical Plant Pathology",
+  "Karger (BSB)",9157,"2235-3186","Nephron"
 )
 
 # Add Crossref info to OAM subset
@@ -52,10 +55,10 @@ oam_cr <- oam_new %>%
   # 1. add missing journals
   dplyr::bind_rows(manual_fixed_jns) %>%
   # Exclude journals with duplicated ids
-  dplyr::filter(!cr_journal_id %in% c("180565", "14676", "32798", "170806",
-                                      "312652", "36938", "18036", "45500",
-                                      "32278", "32798", "776", "72787",
-                                      "466211", "114285", "265229", "306690")) %>%
+  dplyr::filter(!cr_journal_id %in% c(180565, 14676, 32798, 170806,
+                                      312652, 36938, 18036, 45500,
+                                      32278, 32798, 776, 72787,
+                                      466211, 114285, 265229, 306690)) %>%
   # Exclude journals that ended before 2017
   dplyr::filter(end_year %in% c(as.character(2017:2029), NA))
 
@@ -66,12 +69,8 @@ oam_new %>%
 
 # Obtain Crossref Journal IDs for all OAM journals that could be matched
 oam_hybrid_jns <- oam_cr %>%
-  dplyr::distinct(vertrag, cr_journal_id) %>%
-  dplyr::inner_join(cr_issn_list, by = c("cr_journal_id" = "JournalID")) %>%
-  dplyr::select(-issn,-issn_type) %>%
-  dplyr::rename(issn = issn_norm, agreement = vertrag) %>%
   # Extract consortium leader
-  tidyr::separate(agreement, c("agreement", "lead"), sep = " \\(") %>%
+  tidyr::separate(vertrag, c("agreement", "lead"), sep = " \\(") %>%
   dplyr::mutate(lead = gsub(")", "", lead)) %>%
   dplyr::select(-years)
 
