@@ -38,7 +38,7 @@ enriched with ISSN variants.
 hybrid journal as obtained from Crossref.
 
 - `?cc_openalex_inst_jn_ind`: First author country affiliations per journal, 
-year and Creative Commons license
+year and Creative Commons license.
 
 ### Article-level data
 
@@ -51,7 +51,8 @@ in a hybrid journal.
 The `data-raw` folder contains code used to generate the hoaddata datasets.
 
 Most of the data was obtained by interfacing the [subugoe-collaborative 
-scholarly data warehouse](https://github.com/naustica/bqsub), a collection of 
+scholarly data warehouse](https://subugoe.github.io/scholcomm_analytics/data.html),
+a collection of 
 big scholarly datasets hosted on Google Big Query and maintained by the 
 SUB Göttingen. [Crossref](https://www.crossref.org/) was used for determining 
 the publication volume and articles provided under a CC license, 
@@ -83,7 +84,7 @@ OpenAlex data is made available under the CC0 license.
 
 This work re-used the following dataset: 
 
-Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, 2021, "Open Access Monitor: 
-Zeitschriftenlisten", <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>.
+Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, Stanzel, Franziska, 2021, "Open Access Monitor: 
+Zeitschriftenlisten (V2)", <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>.
 
 published under CC BY 4.0.
