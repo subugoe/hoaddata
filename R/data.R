@@ -39,15 +39,15 @@
 #' Commons license (CC) by license variant and year for hybrid journals as
 #' listed by the German Open Access monitor since 2017.
 #'
-#' Journal's article volume was calculated using the Crossref database snapshot.
+#' Journal's article volume was calculated using Crossref metadata snapshot.
 #' Note that only articles published in regular issues aside from supplements
 #' containing conference contributions like meeting abstracts,
-#' indicated by non-numeric pagination were included. Also, non-scholarly
-#' journal content, such as the table of contents were excluded,
-#' following Unpaywall's paratext recognition approach, which was expanded to
+#' indicated by non-numeric pagination, were included. Also, non-scholarly
+#' journal content, such as the table of contents were excluded. In doing so,
+#' we followed Unpaywall's paratext recognition approach, which we expanded to
 #' include patterns indicating corrections.
 #'
-#' CC licenses were also identified through Crossref metadata records.
+#' CC licenses were also identified through Crossref.
 #' License information for author accepted manuscripts ("aam") were not
 #' considered.
 #'
@@ -79,11 +79,11 @@
 #' who has usually undertaken most of the research presented in the article,
 #' although author roles can vary across disciplines.
 #'
-#' Note that whole counting in which every original article or review was
-#' counted once per country of affiliation of the first authors were used.
+#' Note that full counting in which every original article or review was
+#' counted once per country of affiliation of the first authors was applied.
 #' Because first authors can have multiple affiliations from different countries,
-#' please use \code{\link{cc_jn_ind}} to determine a journal's publication
-#' volume.
+#' don't use this dataset, but \code{\link{cc_jn_ind}} to determine a journal's
+#' publication volume.
 #'
 #' Variables:
 #' \describe{
@@ -107,12 +107,12 @@
 #' open access article published in hybrid journals as listed in
 #' \link[hoaddata]{oam_hybrid_jns}.
 #'
-#' A first author is often considered as lead author(\url{https://en.wikipedia.org/wiki/Lead_author})
+#' A first author is often considered as lead author (\url{https://en.wikipedia.org/wiki/Lead_author})
 #' who has usually undertaken most of the research presented in the article,
 #' although author roles can vary across disciplines.
 #' We used OpenAlex as data source for determining the lead author's affiliation.
 #'
-#' In case where OpenALEX did not record an country affiliation, we extracted
+#' In case where OpenAlex did not record an country affiliation, we extracted
 #' country names from the display_name using regular expressions.
 #'
 #' Variables:
