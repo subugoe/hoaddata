@@ -72,7 +72,7 @@ oam_hybrid_jns <- oam_cr %>%
   # Extract consortium leader
   tidyr::separate(vertrag, c("agreement", "lead"), sep = " \\(") %>%
   dplyr::mutate(lead = gsub(")", "", lead)) %>%
-  dplyr::select(-years)
+  dplyr::select(agreement, lead, cr_journal_id, issn)
 
 ### Save as package data
 usethis::use_data(oam_hybrid_jns, overwrite = TRUE)

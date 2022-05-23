@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 358726 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 388712 rows and 7 columns.
 }
 \usage{
 cc_openalex_inst
@@ -16,12 +16,12 @@ open access article published in hybrid journals as listed in
 \link[hoaddata]{oam_hybrid_jns}.
 }
 \details{
-A first author is often considered as lead author(\url{https://en.wikipedia.org/wiki/Lead_author})
+A first author is often considered as lead author (\url{https://en.wikipedia.org/wiki/Lead_author})
 who has usually undertaken most of the research presented in the article,
 although author roles can vary across disciplines.
 We used OpenAlex as data source for determining the lead author's affiliation.
 
-In case where OpenALEX did not record an country affiliation, we extracted
+In case where OpenAlex did not record an country affiliation, we extracted
 country names from the display_name using regular expressions.
 
 Variables:

@@ -5,7 +5,7 @@
 \alias{cc_openalex_inst_jn_ind}
 \title{First author country affiliations per journal, year and Creative Commons license}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 639293 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 664657 rows and 6 columns.
 }
 \usage{
 cc_openalex_inst_jn_ind
@@ -22,11 +22,11 @@ author(\url{https://en.wikipedia.org/wiki/Lead_author})
 who has usually undertaken most of the research presented in the article,
 although author roles can vary across disciplines.
 
-Note that whole counting in which every original article or review was
-counted once per country of affiliation of the first authors were used.
+Note that full counting in which every original article or review was
+counted once per country of affiliation of the first authors was applied.
 Because first authors can have multiple affiliations from different countries,
-please use \code{\link{cc_jn_ind}} to determine a journal's publication
-volume.
+don't use this dataset, but \code{\link{cc_jn_ind}} to determine a journal's
+publication volume.
 
 Variables:
 \describe{

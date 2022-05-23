@@ -5,7 +5,7 @@
 \alias{cc_jn_ind}
 \title{Prevalence of Creative Commons licenses by variant, year and journal}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 43752 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 44940 rows and 6 columns.
 }
 \usage{
 cc_jn_ind
@@ -16,15 +16,15 @@ Commons license (CC) by license variant and year for hybrid journals as
 listed by the German Open Access monitor since 2017.
 }
 \details{
-Journal's article volume was calculated using the Crossref database snapshot.
+Journal's article volume was calculated using Crossref metadata snapshot.
 Note that only articles published in regular issues aside from supplements
 containing conference contributions like meeting abstracts,
-indicated by non-numeric pagination were included. Also, non-scholarly
-journal content, such as the table of contents were excluded,
-following Unpaywall's paratext recognition approach, which was expanded to
+indicated by non-numeric pagination, were included. Also, non-scholarly
+journal content, such as the table of contents were excluded. In doing so,
+we followed Unpaywall's paratext recognition approach, which we expanded to
 include patterns indicating corrections.
 
-CC licenses were also identified through Crossref metadata records.
+CC licenses were also identified through Crossref.
 License information for author accepted manuscripts ("aam") were not
 considered.
 
