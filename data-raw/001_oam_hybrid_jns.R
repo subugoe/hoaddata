@@ -65,7 +65,7 @@ oam_cr <- oam_new %>%
 # Print journals, which could not be matched
 oam_new %>%
   dplyr::filter(!journal %in% oam_cr$journal) %>%
-  dplyr::distinct(journal) %>% View()
+  dplyr::distinct(journal)
 
 # Obtain Crossref Journal IDs for all OAM journals that could be matched
 oam_hybrid_jns <- oam_cr %>%
