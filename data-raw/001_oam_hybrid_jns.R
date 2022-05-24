@@ -65,7 +65,7 @@ oam_cr <- oam_new %>%
 # Print journals, which could not be matched
 oam_new %>%
   dplyr::filter(!journal %in% oam_cr$journal) %>%
-  dplyr::distinct(journal)
+  dplyr::distinct(journal) %>% View()
 
 # Obtain Crossref Journal IDs for all OAM journals that could be matched
 oam_hybrid_jns <- oam_cr %>%
@@ -76,6 +76,8 @@ oam_hybrid_jns <- oam_cr %>%
 
 ### Save as package data
 usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
+### Save as csv
+readr::write_csv(oam_hybrid_jns, "data-raw/oam_hybrid_jns.csv")
 
 ## Load hybrid oa journal list to Big Query
 
