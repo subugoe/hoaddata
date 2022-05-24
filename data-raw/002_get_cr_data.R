@@ -61,7 +61,7 @@ cc_jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
 
 usethis::use_data(cc_jn_ind, overwrite = TRUE)
 # Save as cvs
-readr::write_csv(cc_jn_ind, "cc_jn_ind.csv")
+readr::write_csv(cc_jn_ind, "data-raw/cc_jn_ind.csv")
 
 ## Affiliations (OpenAlex)  ----
 
@@ -96,7 +96,7 @@ cc_openalex_inst <-
   create_bq_table("cc_openalex_inst", download = TRUE)
 usethis::use_data(cc_openalex_inst, overwrite = TRUE)
 # Save as csv
-readr::write_csv(cc_openalex_inst, "cc_openalex_inst")
+readr::write_csv(cc_openalex_inst, "data-raw/cc_openalex_inst.csv")
 
 
 ### Aggregated first-author country affiliations per hybrid journal and year ----
@@ -107,4 +107,4 @@ cc_openalex_inst_jn_ind <-
 
 usethis::use_data(cc_openalex_inst_jn_ind, overwrite = TRUE)
 # Save as csv
-readr::write_csv(cc_openalex_inst_jn_ind, "cc_openalex_inst_jn_ind")
+readr::write_csv(cc_openalex_inst_jn_ind, "data-raw/cc_openalex_inst_jn_ind.csv")
