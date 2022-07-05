@@ -4,7 +4,7 @@ pkgload::load_all()
 # Load cleaned and enriched list of journals under transformative agreements in
 # Germany from FZ Jülich
 oam_jns <- system.file(package = "hoaddata",
-                              "inst/extdata/oam_hybrid_jns.csv") %>%
+                              "extdata/oam_hybrid_jns.csv") %>%
   readr::read_csv()
 oam_new <- oam_jns %>%
   tidyr::pivot_longer(c(issn, issn_l),
