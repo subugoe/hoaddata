@@ -2,9 +2,12 @@
 title: "Overview: Hybrid OA data"
 output: rmarkdown::html_vignette
 vignette: >
+  %\VignetteEncoding{UTF-8}
   %\VignetteIndexEntry{Overview: Hybrid OA data}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r, include = FALSE}
@@ -25,14 +28,16 @@ This package provides the following data tables.
 
 ### `oam_hybrid_jns`
 
-Hybrid Journals listed in the Open Access Monitor. Data were 
-gathered from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
+Hybrid Journals listed in the Open Access Monitor. Data were gathered
+from <https://doi.org/10.26165/JUELICH-DATA/VTQXLM> and enriched with
 ISSN variants.
 
 ```{r}
 oam_hybrid_jns
 ```
-Number of investigated journals: `r length(unique(oam_hybrid_jns$cr_journal_id))`
+
+Number of investigated journals:
+`r length(unique(oam_hybrid_jns$cr_journal_id))`
 
 By agreement
 
@@ -43,11 +48,10 @@ oam_hybrid_jns %>%
   arrange(desc(journals))
 ```
 
-
 ### `cc_jn_ind`
 
-Aggregated data about the prevalence of Creative Commons 
-license variants by year and hybrid journal as obtained from Crossref.
+Aggregated data about the prevalence of Creative Commons license
+variants by year and hybrid journal as obtained from Crossref.
 
 ```{r}
 cc_jn_ind
@@ -55,7 +59,7 @@ cc_jn_ind
 
 Number of active journals: `r length(unique(cc_jn_ind$cr_journal_id))`
 
-Number of open access articles with Creative Commons license: 
+Number of open access articles with Creative Commons license:
 `r cc_jn_ind %>% filter(!is.na(cc)) %>% .$cc_total %>% sum()`
 
 Creative Commons Breakdown:
@@ -70,8 +74,8 @@ cc_jn_ind %>%
 
 ### `cc_openalex_inst_jn_ind`
 
-First author country affiliations per journal, 
-year and Creative Commons license
+First author country affiliations per journal, year and Creative Commons
+license
 
 ```{r}
 cc_openalex_inst_jn_ind
@@ -79,8 +83,8 @@ cc_openalex_inst_jn_ind
 
 ### `cc_openalex_inst`
 
-Article-level affiliation data from first authors as obtained
-from OpenAlex.
+Article-level affiliation data from first authors as obtained from
+OpenAlex.
 
 ```{r}
 cc_openalex_inst
@@ -91,5 +95,3 @@ cc_openalex_inst %>%
   group_by(cc) %>%
   summarise(articles = n_distinct(doi))
 ```
-
-
