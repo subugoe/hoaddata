@@ -21,7 +21,7 @@ create_bq_table <- function(sql_basename = NULL,
 
   # Read sql query
   sql_string <-
-    system.file(package = "hoaddata", paste0("inst/sql/", sql_basename, ".sql"))
+    system.file(package = "hoaddata", paste0("sql/", sql_basename, ".sql"))
   if (sql_string == "")
     stop(paste(sql, "file not found"))
   sql_ <-  readr::read_file(sql_string)
