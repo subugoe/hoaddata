@@ -36,6 +36,6 @@ Suggests:
     knitr
 Depends: 
     R (>= 2.10)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 Config/testthat/edition: 3
 VignetteBuilder: knitr

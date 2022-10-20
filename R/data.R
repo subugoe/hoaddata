@@ -136,5 +136,25 @@
 #' cc_openalex_inst[cc_openalex_inst$id %in% "https://openalex.org/I74656192",]
 "cc_openalex_inst"
 
+#' Crossref Metadata Coverage
+#'
+#' This dataset gives information about metadata coverage per year and agreement.
+#'
+#' The following Crossref metadata were analysed:
+#'
+#' #' \describe{
+#'     \item{tdm_total}{The number of articles containing full text URLs in the metadata}
+#'     \item{orcid_total}{The number of articles containing at least one ORCID in the metadata}
+#'     \item{funder_total}{The number of articles with funding metadata}
+#'     \item{abstract_total}{The number of articles with open abstracts}
+#'     \item{ref_total}{The number of articles with open reference lists)}
+#'     }
+#'
+#' @keywords articledatasets
+#' @examples
+#' # Wiley metadata coverage
+#' cc_md_indicators[cc_md_indicators$agreement == "Wiley Hybrid",]
+"cc_md_indicators"
+
 #' @importFrom tibble tibble
 NULL
