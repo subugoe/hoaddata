@@ -108,3 +108,12 @@ cc_openalex_inst_jn_ind <-
 usethis::use_data(cc_openalex_inst_jn_ind, overwrite = TRUE)
 # Save as csv
 readr::write_csv(cc_openalex_inst_jn_ind, "data-raw/cc_openalex_inst_jn_ind.csv")
+
+## Metadata assessment
+
+cc_md_indicators <- create_bq_table("cc_md_indicators",
+                                    download = TRUE)
+
+usethis::use_data(cc_md_indicators, overwrite = TRUE)
+
+
