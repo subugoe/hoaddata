@@ -95,3 +95,12 @@ cc_openalex_inst %>%
   group_by(cc) %>%
   summarise(articles = n_distinct(doi))
 ```
+
+### `cc_md_indicators`
+ 
+Crossref metadata coverage.
+
+```{r}
+cc_md_indicators
+```
+

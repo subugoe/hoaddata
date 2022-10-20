@@ -46,6 +46,10 @@ year and Creative Commons license.
 from OpenAlex. Covers only open access articles under a Creative Commons license
 in a hybrid journal.
 
+### Open Metadata
+
+- `?cc_md_indicators`: Crossref metadata coverage
+
 ## Data gathering
 
 The `data-raw` folder contains code used to generate the hoaddata datasets.
