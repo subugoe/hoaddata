@@ -115,5 +115,5 @@ cc_md_indicators <- create_bq_table("cc_md_indicators",
                                     download = TRUE)
 
 usethis::use_data(cc_md_indicators, overwrite = TRUE)
-
-
+# Save as csv
+readr::write_csv(cc_md_indicators, "data-raw/cc_md_indicators.csv")
