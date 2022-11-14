@@ -64,8 +64,8 @@
 #'
 #' @keywords jndatasets
 #' @examples
-#' cc_jn_ind
-"cc_jn_ind"
+#' oam_jn_ind
+"oam_jn_ind"
 
 #' First author country affiliations per journal, year and Creative Commons license
 #'
@@ -82,7 +82,7 @@
 #' Note that full counting in which every original article or review was
 #' counted once per country of affiliation of the first authors was applied.
 #' Because first authors can have multiple affiliations from different countries,
-#' don't use this dataset, but \code{\link{cc_jn_ind}} to determine a journal's
+#' don't use this dataset, but \code{\link{oam_jn_ind}} to determine a journal's
 #' publication volume.
 #'
 #' Variables:
@@ -97,9 +97,9 @@
 #' @keywords jndatasets
 #' @examples
 #' # Scientometrics (Crossref journal ID: 2795)
-#'   subset(cc_openalex_inst_jn_ind,
+#'   subset(oam_jn_aff,
 #'     cr_journal_id %in% "2795" & country_code %in% c("DE", "CN"))
-"cc_openalex_inst_jn_ind"
+"oam_jn_aff"
 
 #' Hybrid OA publishing output from first authors
 #'
@@ -133,8 +133,8 @@
 #' @keywords articledatasets
 #' @examples
 #' # Hybrid OA articles with lead author from Uni Göttingen
-#' cc_openalex_inst[cc_openalex_inst$id %in% "https://openalex.org/I74656192",]
-"cc_openalex_inst"
+#' oam_cc_inst[oam_cc_inst$id %in% "https://openalex.org/I74656192",]
+"oam_cc_inst"
 
 #' Crossref Metadata Coverage
 #'
@@ -153,8 +153,8 @@
 #' @keywords articledatasets
 #' @examples
 #' # Wiley metadata coverage
-#' cc_md_indicators[cc_md_indicators$agreement == "Wiley Hybrid",]
-"cc_md_indicators"
+#' oam_cr_md[oam_cr_md$agreement == "Wiley Hybrid",]
+"oam_cr_md"
 
 #' @importFrom tibble tibble
 NULL
