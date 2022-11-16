@@ -156,5 +156,33 @@
 #' oam_cr_md[oam_cr_md$agreement == "Wiley Hybrid",]
 "oam_cr_md"
 
+
+#' Journal Checker Tool
+
+#' JCT Hybrid Journals
+"jct_hybrid_jns"
+
+#' JCT Hybrid Journals: Article Volume
+"jct_jn_ind"
+
+#' JCT Hybrid Journals: First Author Country Affiliation
+"jct_jn_aff"
+
+#' JCT Hybrid Journals: Article-level data first author affiliation
+"jct_cc_inst"
+
+#' JCT Hybrid Journals: Crossref Metadata Coverage
+"jct_cr_md"
+
+#' JCT Hybrid Journals: License Coverage 
+"jct_cr_upw"
+
+#' JCT Hybrid Journals: Institutions involved in transformative agreements by country
+"jct_ta_country_output"
+
+#' JCT Hybrid Journals: Venues Metadata
+"jct_oalex_venues"
+
+
 #' @importFrom tibble tibble
 NULL
