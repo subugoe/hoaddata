@@ -1,4 +1,6 @@
 #' Hybrid Journals
+#' @examples
+#' jct_hybrid_jns
 "jct_hybrid_jns"
 
 #' Hybrid Journals listed in the Open Access Monitor
@@ -166,12 +168,21 @@
 "cr_md"
 
 #' License coverage Crossref vs Unpaywall
+#' 
+#' @examples 
+#' cr_upw
 "cr_upw"
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
+#' 
+#' @examples 
+#' ta_country_output
 "ta_country_output"
 
 #' Hybrid Journals: Venues Metadata
+#' 
+#' @examples 
+#' jct_oalex_venues
 "jct_oalex_venues"
 
 

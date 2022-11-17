@@ -13,4 +13,7 @@ jct_hybrid_jns
 \description{
 Hybrid Journals
 }
+\examples{
+jct_hybrid_jns
+}
 \keyword{datasets}

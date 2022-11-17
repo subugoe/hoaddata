@@ -13,4 +13,7 @@ cr_upw
 \description{
 License coverage Crossref vs Unpaywall
 }
+\examples{
+cr_upw
+}
 \keyword{datasets}

@@ -13,4 +13,7 @@ ta_country_output
 \description{
 JCT Hybrid Journals: Institutions involved in transformative agreements by country
 }
+\examples{
+ta_country_output
+}
 \keyword{datasets}

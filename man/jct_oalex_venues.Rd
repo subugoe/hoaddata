@@ -13,4 +13,7 @@ jct_oalex_venues
 \description{
 Hybrid Journals: Venues Metadata
 }
+\examples{
+jct_oalex_venues
+}
 \keyword{datasets}
