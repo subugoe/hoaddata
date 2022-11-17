@@ -7,17 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Scholarly data about hybrid open access publsihing since 2017. 
   It includes data about Creative Commons licensing and lead author affiliations.
-  Data were gathered from the German Open Access Monitor, Crossref and OpenAlex.">
+  Data were gathered from the cOAlition S Journal Checker Tool, ESAC, 
+  German Open Access Monitor, Crossref and OpenAlex.">
 <title>Data about hybrid open access journal publishing • hoaddata</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.2/font.css" rel="stylesheet">
-<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Data about hybrid open access journal publishing">
 <meta property="og:description" content="Scholarly data about hybrid open access publsihing since 2017. 
   It includes data about Creative Commons licensing and lead author affiliations.
-  Data were gathered from the German Open Access Monitor, Crossref and OpenAlex.">
+  Data were gathered from the cOAlition S Journal Checker Tool, ESAC, 
+  German Open Access Monitor, Crossref and OpenAlex.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -31,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="index.html">hoaddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +73,7 @@
 <div class="page-header"><h1 id="hoaddata">hoaddata<a class="anchor" aria-label="anchor" href="#hoaddata"></a>
 </h1></div>
 <!-- badges: start -->
-<!-- badges: end --><p>This package contains information about the open access uptake of hybrid journals. These journals belong to national transformative agreements in Germany as listed by the <a href="https://open-access-monitor.de/#/publications" class="external-link">Open Access Monitor</a>.</p>
+<!-- badges: end --><p>This package contains information about the open access uptake of hybrid journals.</p>
 <p>The main purpose of hoaddata is to ship data for hybrid open access monitoring dashboards, which are currently under development at the SUB Göttingen with the support of the <a href="https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&amp;task=showDetail&amp;id=416115939&amp;" class="external-link">Deutsche Forschungsgemeinschaft</a>. By providing the data as an R package, hoaddata can be also used for other data analytics tasks with R.</p>
 <p>Data cover the publication period 2017 - 2022.</p>
 <div class="section level2">
@@ -82,32 +83,6 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"subugoe/hoaddash"</span>, dependencies <span class="op">=</span> <span class="st">"Imports"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="datasets">Datasets<a class="anchor" aria-label="anchor" href="#datasets"></a>
-</h2>
-<p>This package provides the following data tables.</p>
-<div class="section level3">
-<h3 id="journal-level-data">Journal-level data<a class="anchor" aria-label="anchor" href="#journal-level-data"></a>
-</h3>
-<ul>
-<li><p><code><a href="reference/oam_hybrid_jns.html">?oam_hybrid_jns</a></code>: Hybrid Journals listed in the Open Access Monitor. Data were gathered from <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link uri">https://doi.org/10.26165/JUELICH-DATA/VTQXLM</a>, validated and enriched with ISSN variants.</p></li>
-<li><p><code><a href="reference/cc_jn_ind.html">?cc_jn_ind</a></code>: Prevalence of Creative Commons license variants by year and hybrid journal as obtained from Crossref.</p></li>
-<li><p><code><a href="reference/cc_openalex_inst_jn_ind.html">?cc_openalex_inst_jn_ind</a></code>: First author country affiliations per journal, year and Creative Commons license.</p></li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="article-level-data">Article-level data<a class="anchor" aria-label="anchor" href="#article-level-data"></a>
-</h3>
-<ul><li>
-<code><a href="reference/cc_openalex_inst.html">?cc_openalex_inst</a></code>: Article-level affiliation data from first authors as obtained from OpenAlex. Covers only open access articles under a Creative Commons license in a hybrid journal.</li></ul>
-</div>
-<div class="section level3">
-<h3 id="open-metadata">Open Metadata<a class="anchor" aria-label="anchor" href="#open-metadata"></a>
-</h3>
-<ul><li>
-<code><a href="reference/cc_md_indicators.html">?cc_md_indicators</a></code>: Crossref metadata coverage</li></ul>
-</div>
 </div>
 <div class="section level2">
 <h2 id="data-gathering">Data gathering<a class="anchor" aria-label="anchor" href="#data-gathering"></a>
@@ -124,6 +99,7 @@
 <p>Anyone is free to copy, modify, publish, use, compile, sell, or distribute these materials in any form, for any purpose, commercial or non-commercial, and by any means.</p>
 <p>Crossref asserts no claims of ownership to individual items of bibliographic metadata and associated Digital Object Identifiers (DOIs) acquired through the use of the Crossref Free Services. Individual items of bibliographic metadata and associated DOIs may be cached and incorporated into the user’s content and systems.</p>
 <p>OpenAlex data is made available under the CC0 license.</p>
+<p><a href="https://journalcheckertool.org/transformative-agreements/" class="external-link">Transformative Agreements Public Data</a> is made available under the CC0 license.</p>
 <p>This work re-used the following dataset:</p>
 <p>Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, Stanzel, Franziska, 2021, “Open Access Monitor: Zeitschriftenlisten (V2)”, <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link uri">https://doi.org/10.26165/JUELICH-DATA/VTQXLM</a>.</p>
 <p>published under CC BY 4.0.</p>

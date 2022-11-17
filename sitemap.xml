@@ -19,21 +19,33 @@
     <loc>https://subugoe.github.io/hoaddata/index.html</loc>
   </url>
   <url>
-    <loc>https://subugoe.github.io/hoaddata/reference/cc_jn_ind.html</loc>
+    <loc>https://subugoe.github.io/hoaddata/reference/cc_articles.html</loc>
   </url>
   <url>
-    <loc>https://subugoe.github.io/hoaddata/reference/cc_md_indicators.html</loc>
+    <loc>https://subugoe.github.io/hoaddata/reference/cr_md.html</loc>
   </url>
   <url>
-    <loc>https://subugoe.github.io/hoaddata/reference/cc_openalex_inst.html</loc>
-  </url>
-  <url>
-    <loc>https://subugoe.github.io/hoaddata/reference/cc_openalex_inst_jn_ind.html</loc>
+    <loc>https://subugoe.github.io/hoaddata/reference/cr_upw.html</loc>
   </url>
   <url>
     <loc>https://subugoe.github.io/hoaddata/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://subugoe.github.io/hoaddata/reference/jct_hybrid_jns.html</loc>
+  </url>
+  <url>
+    <loc>https://subugoe.github.io/hoaddata/reference/jct_oalex_venues.html</loc>
+  </url>
+  <url>
+    <loc>https://subugoe.github.io/hoaddata/reference/jn_aff.html</loc>
+  </url>
+  <url>
+    <loc>https://subugoe.github.io/hoaddata/reference/jn_ind.html</loc>
+  </url>
+  <url>
     <loc>https://subugoe.github.io/hoaddata/reference/oam_hybrid_jns.html</loc>
+  </url>
+  <url>
+    <loc>https://subugoe.github.io/hoaddata/reference/ta_country_output.html</loc>
   </url>
 </urlset>
