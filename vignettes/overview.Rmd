@@ -37,70 +37,70 @@ oam_hybrid_jns
 ```
 
 Number of investigated journals:
-`r length(unique(oam_hybrid_jns$cr_journal_id))`
+`r length(unique(oam_hybrid_jns$issn_l))`
 
 By agreement
 
 ```{r}
 oam_hybrid_jns %>%
-  group_by(agreement, lead) %>%
-  summarise(journals = n_distinct(cr_journal_id)) %>%
+  group_by(vertrag) %>%
+  summarise(journals = n_distinct(issn_l)) %>%
   arrange(desc(journals))
 ```
 
-### `oam_jn_ind`
+### `jn_ind`
 
 Aggregated data about the prevalence of Creative Commons license
 variants by year and hybrid journal as obtained from Crossref.
 
 ```{r}
-oam_jn_ind
+jn_ind
 ```
 
-Number of active journals: `r length(unique(oam_jn_ind$cr_journal_id))`
+Number of active journals: `r length(unique(jn_ind$issn_l))`
 
 Number of open access articles with Creative Commons license:
-`r oam_jn_ind %>% filter(!is.na(cc)) %>% .$cc_total %>% sum()`
+`r jn_ind %>% filter(!is.na(cc)) %>% .$cc_total %>% sum()`
 
 Creative Commons Breakdown:
 
 ```{r}
-oam_jn_ind %>%
+jn_ind %>%
   filter(!is.na(cc)) %>%
   group_by(cc) %>%
   summarise(articles = sum(cc_total)) %>%
   arrange(desc(articles))
 ```
 
-### `oam_jn_aff`
+### `jn_aff`
 
 First author country affiliations per journal, year and Creative Commons
 license
 
 ```{r}
-oam_jn_aff
+jn_aff
 ```
 
-### `oam_cc_inst`
+### `cc_articles`
 
 Article-level affiliation data from first authors as obtained from
 OpenAlex.
 
 ```{r}
-oam_cc_inst
+cc_articles
 ```
 
 ```{r}
-oam_cc_inst %>%
+cc_articles %>%
   group_by(cc) %>%
   summarise(articles = n_distinct(doi))
 ```
 
-### `oam_cr_md`
+### `cr_md`
  
 Crossref metadata coverage.
 
 ```{r}
-oam_cr_md
+cr_md
 ```
 

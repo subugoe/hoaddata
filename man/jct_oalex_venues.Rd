@@ -3,7 +3,7 @@
 \docType{data}
 \name{jct_oalex_venues}
 \alias{jct_oalex_venues}
-\title{JCT Hybrid Journals: Venues Metadata}
+\title{Hybrid Journals: Venues Metadata}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11839 rows and 4 columns.
 }
@@ -11,6 +11,6 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 jct_oalex_venues
 }
 \description{
-JCT Hybrid Journals: Venues Metadata
+Hybrid Journals: Venues Metadata
 }
 \keyword{datasets}

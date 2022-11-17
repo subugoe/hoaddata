@@ -1,3 +1,6 @@
+#' Hybrid Journals
+"jct_hybrid_jns"
+
 #' Hybrid Journals listed in the Open Access Monitor
 #'
 #' The dataset contains hybrid journals available as a filter in the
@@ -35,9 +38,11 @@
 
 #' Prevalence of Creative Commons licenses by variant, year and journal
 #'
-#' This dataset contains the number and proportion of articles with Creative
-#' Commons license (CC) by license variant and year for hybrid journals as
-#' listed by the German Open Access monitor since 2017.
+#' This dataset contains the number and proportion of open access articles 
+#' with Creative Commons license (CC) by license variant and year for hybrid journals 
+#' included in the cOAlition S Journal Checker Tool. 
+#' 
+#' Publication period is 2017 - 2022.
 #'
 #' Journal's article volume was calculated using Crossref metadata snapshot.
 #' Note that only articles published in regular issues aside from supplements
@@ -54,7 +59,7 @@
 #' Variables:
 #'
 #' \describe{
-#'     \item{cr_journal_id}{Crossref journal ID}
+#'     \item{issn_l}{Linking ISSN}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{cc}{Normalized Creative Commons variant. Ordered factor by license variant permissiveness}
 #'     \item{cc_total}{Number of articles under Creative Commons variant}
@@ -64,8 +69,8 @@
 #'
 #' @keywords jndatasets
 #' @examples
-#' oam_jn_ind
-"oam_jn_ind"
+#' jn_ind
+"jn_ind"
 
 #' First author country affiliations per journal, year and Creative Commons license
 #'
@@ -82,12 +87,12 @@
 #' Note that full counting in which every original article or review was
 #' counted once per country of affiliation of the first authors was applied.
 #' Because first authors can have multiple affiliations from different countries,
-#' don't use this dataset, but \code{\link{oam_jn_ind}} to determine a journal's
+#' don't use this dataset, but \code{\link{jn_ind}} to determine a journal's
 #' publication volume.
 #'
 #' Variables:
 #' \describe{
-#'     \item{cr_journal_id}{Crossref journal ID}
+#'     \item{issn_l}{Linking ISSN}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code`)}
 #'     \item{cc}{Normalized Creative Commons variant. \code{NA} represents articles, which were not provided under a CC license}
@@ -96,10 +101,10 @@
 #'     }
 #' @keywords jndatasets
 #' @examples
-#' # Scientometrics (Crossref journal ID: 2795)
-#'   subset(oam_jn_aff,
-#'     cr_journal_id %in% "2795" & country_code %in% c("DE", "CN"))
-"oam_jn_aff"
+#' # Country output China vs Germany in Scientometrics (ISSN-L: 0138-9130)
+#'   subset(jn_aff,
+#'     issn_l %in% "0138-9130" & country_code %in% c("DE", "CN"))
+"jn_aff"
 
 #' Hybrid OA publishing output from first authors
 #'
@@ -119,7 +124,7 @@
 #'
 #' \describe{
 #'     \item{doi}{DOI for the OA article}
-#'     \item{cr_journal_id}{Crossref journal ID}
+#'     \item{issn_l}{Linking ISSN}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{cc}{Normalized Creative Commons variant.}
 #'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)}
@@ -133,8 +138,8 @@
 #' @keywords articledatasets
 #' @examples
 #' # Hybrid OA articles with lead author from Uni Göttingen
-#' oam_cc_inst[oam_cc_inst$id %in% "https://openalex.org/I74656192",]
-"oam_cc_inst"
+#' cc_articles[cc_articles$id %in% "https://openalex.org/I74656192",]
+"cc_articles"
 
 #' Crossref Metadata Coverage
 #'
@@ -143,44 +148,30 @@
 #' The following Crossref metadata were analysed:
 #'
 #' #' \describe{
+#'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
+#'     \item{issn_l}{Linking ISSN}
+#'     \item{articles_total}{Yearly journal output by year and country affiliation}
 #'     \item{tdm_total}{The number of articles containing full text URLs in the metadata}
 #'     \item{orcid_total}{The number of articles containing at least one ORCID in the metadata}
 #'     \item{funder_total}{The number of articles with funding metadata}
 #'     \item{abstract_total}{The number of articles with open abstracts}
 #'     \item{ref_total}{The number of articles with open reference lists)}
+#'     \item{cat}{Global output or from first-authors based in Germany}
 #'     }
 #'
 #' @keywords articledatasets
 #' @examples
-#' # Wiley metadata coverage
-#' oam_cr_md[oam_cr_md$agreement == "Wiley Hybrid",]
-"oam_cr_md"
+#' # OA Articles in Scientometrics from first-authors in Germany: Metadata coverage
+#' cr_md[cr_md$issn_l == "0138-9130" & cr_md$cat == "Germany",]
+"cr_md"
 
-
-#' Journal Checker Tool
-
-#' JCT Hybrid Journals
-"jct_hybrid_jns"
-
-#' JCT Hybrid Journals: Article Volume
-"jct_jn_ind"
-
-#' JCT Hybrid Journals: First Author Country Affiliation
-"jct_jn_aff"
-
-#' JCT Hybrid Journals: Article-level data first author affiliation
-"jct_cc_inst"
-
-#' JCT Hybrid Journals: Crossref Metadata Coverage
-"jct_cr_md"
-
-#' JCT Hybrid Journals: License Coverage 
-"jct_cr_upw"
+#' License coverage Crossref vs Unpaywall
+"cr_upw"
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
-"jct_ta_country_output"
+"ta_country_output"
 
-#' JCT Hybrid Journals: Venues Metadata
+#' Hybrid Journals: Venues Metadata
 "jct_oalex_venues"
 
 

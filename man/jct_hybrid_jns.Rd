@@ -3,8 +3,7 @@
 \docType{data}
 \name{jct_hybrid_jns}
 \alias{jct_hybrid_jns}
-\title{Journal Checker Tool
-JCT Hybrid Journals}
+\title{Hybrid Journals}
 \format{
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 325348 rows and 4 columns.
 }
@@ -12,7 +11,6 @@ An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, 
 jct_hybrid_jns
 }
 \description{
-Journal Checker Tool
-JCT Hybrid Journals
+Hybrid Journals
 }
 \keyword{datasets}
