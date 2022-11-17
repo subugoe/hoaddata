@@ -33,8 +33,7 @@ jobs:
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
-          source("data-raw/001_oam_hybrid_jns.R")
-          source("data-raw/002_get_cr_data.R")
+          source("data-raw/jct_001_get_cr_data.R")
         shell: Rscript {0}
 
       - name: Commit files
