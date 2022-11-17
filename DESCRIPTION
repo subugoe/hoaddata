@@ -1,7 +1,7 @@
 Package: hoaddata
 Type: Package
 Title: Data about hybrid open access journal publishing
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
     role = c("aut", "cre"),
@@ -9,7 +9,8 @@ Authors@R:
     )
 Description: Scholarly data about hybrid open access publsihing since 2017. 
   It includes data about Creative Commons licensing and lead author affiliations.
-  Data were gathered from the German Open Access Monitor, Crossref and OpenAlex.
+  Data were gathered from the cOAlition S Journal Checker Tool, ESAC, 
+  German Open Access Monitor, Crossref and OpenAlex.
 License: CC0
 Encoding: UTF-8
 LazyData: true
@@ -28,9 +29,6 @@ Suggests:
     testthat (>= 3.0.0),
     dplyr,
     tidyr,
-    stringi,
-    stringr,
-    purrr,
     countrycode,
     rmarkdown,
     knitr
