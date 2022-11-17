@@ -6,13 +6,13 @@ WITH
     lic.content_version,
     lic.delay_in_days
   FROM
-    `hoad-dash.oam.cr_raw`,
+    `hoad-dash.hoaddata.cr_raw`,
     UNNEST(license) AS lic
   WHERE
     REGEXP_CONTAINS(LOWER(lic.url), "creativecommons.org") )
 SELECT
   DISTINCT cr_raw.doi,
-  cr_journal_id,
+  issn_l,
   cr_year,
   CASE
     WHEN (`cc` = 'by') THEN ('CC BY')
@@ -40,6 +40,6 @@ END
 FROM
   normalized_cc AS cc_df
 RIGHT OUTER JOIN
-  `hoad-dash.oam.cr_raw` AS cr_raw
+  `hoad-dash.hoaddata.cr_raw` AS cr_raw
 ON
   cc_df.doi = cr_raw.doi

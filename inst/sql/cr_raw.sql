@@ -2,9 +2,11 @@ SELECT
   *
 FROM (
   SELECT
-    cr_journal_id,
-    agreement,
+    issn_l,
+    esac_publisher,
     LOWER(doi) as doi,
+    publisher as cr_publisher,
+    container_title as cr_journal_title,
     EXTRACT (YEAR
     FROM
       issued) AS cr_year,
@@ -24,6 +26,8 @@ FROM (
     SELECT
       SPLIT(issn, ",") AS issn,
       doi,
+      publisher,
+      container_title,
       issued,
       license,
       abstract,
@@ -41,8 +45,9 @@ FROM (
         OR issue IS NULL) ) AS `tbl_cr`,
     UNNEST(issn) AS issn
   INNER JOIN
-    `hoad-dash.oam.oam_hybrid_jns`
+    `hoad-dash.hoaddata.jct_hybrid_jns`
   ON
-    issn = `hoad-dash.oam.oam_hybrid_jns`.`issn` )
+    issn = `hoad-dash.hoaddata.jct_hybrid_jns`.`issn` )
 WHERE
-  cr_year BETWEEN 2017 AND 2022
+  (cr_year BETWEEN 2017 AND 2022)
+  

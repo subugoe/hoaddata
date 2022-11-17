@@ -8,17 +8,6 @@ template:
     navbar-light-hover-color: "#bfbfbf"
     navbar-light-color: "#fff"
     font_scale: 1.2
-    base_font: {google: "Roboto"}
-
-reference:
-- title: Data
-  desc: Datasets about hybrid open access publishing
-- subtitle: Journal-level data
-- contents:
-  - has_keyword("jndatasets")
-- subtitle: Article-level data
-- contents:
-  - has_keyword("articledatasets")
 
 home:
   sidebar:

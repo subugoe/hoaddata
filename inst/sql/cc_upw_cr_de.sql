@@ -2,15 +2,15 @@ WITH
   cr_upw AS (
   SELECT
     cc_cr.doi,
-    cc_cr.cr_journal_id,
+    cc_cr.issn_l,
     cc_cr.cr_year,
     cc_cr.cc,
     oalex.country_code,
     upw.oa_status
   FROM
-    `hoad-dash.oam.cc_md` AS cc_cr
+    `hoad-dash.hoaddata.cc_md` AS cc_cr
   INNER JOIN
-    `hoad-dash.oam.cr_openalex_inst_full` AS oalex
+    `hoad-dash.hoaddata.cr_openalex_inst_full` AS oalex
   ON
     cc_cr.doi = oalex.doi
   LEFT JOIN
@@ -21,16 +21,16 @@ WITH
     cc_cr.cr_year < 2022
     AND country_code = "DE")
 SELECT
-  DISTINCT agreement, lead,
+  DISTINCT issn_l,
   cr_year,
-  COUNT(DISTINCT doi) OVER (PARTITION BY agreement, lead, cr_year) AS article_total,
-  SUM(upw_hybrid) OVER (PARTITION BY agreement, lead, cr_year) AS upw_hybrid_total,
-  SUM(cr_hybrid) OVER (PARTITION BY agreement, lead, cr_year) AS cr_hybrid_total,
+  COUNT(DISTINCT doi) OVER (PARTITION BY issn_l, cr_year) AS article_total,
+  SUM(upw_hybrid) OVER (PARTITION BY issn_l, cr_year) AS upw_hybrid_total,
+  SUM(cr_hybrid) OVER (PARTITION BY issn_l, cr_year) AS cr_hybrid_total,
 FROM (
   SELECT
-    DISTINCT agreement, lead,
+    DISTINCT 
     doi,
-    agg.cr_journal_id,
+    agg.issn_l,
     cr_year,
     CASE
       WHEN oa_status = "hybrid" THEN 1
@@ -47,8 +47,8 @@ FROM (
   FROM
     cr_upw AS agg
   INNER JOIN
-    `hoad-dash.oam.oam_hybrid_jns` AS jns
+    `hoad-dash.hoaddata.jct_hybrid_jns` AS jns
   ON
-    agg.cr_journal_id = jns.cr_journal_id )
+    agg.issn_l = jns.issn_l )
 ORDER BY
   cr_hybrid_total DESC
