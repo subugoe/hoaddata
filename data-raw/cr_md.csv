@@ -1355,7 +1355,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0006-3835,23,23,22,20,23,23,Global
 2021,0006-3835,6,6,5,6,6,6,Germany
 2022,0006-3835,17,17,17,16,17,17,Global
-2022,0006-3835,3,3,3,3,3,3,Germany
+2022,0006-3835,4,4,4,4,4,4,Germany
 2018,0006-8055,6,6,0,1,6,6,Global
 2018,0006-8055,2,2,0,0,2,2,Germany
 2019,0006-8055,5,5,1,0,5,5,Global
@@ -1950,7 +1950,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0009-286X,164,164,0,85,0,164,Global
 2021,0009-286X,144,144,0,74,0,144,Germany
 2022,0009-286X,112,112,0,71,0,112,Global
-2022,0009-286X,98,98,0,61,0,98,Germany
+2022,0009-286X,99,99,0,61,0,99,Germany
 2017,0009-3084,2,2,0,1,0,2,Global
 2018,0009-3084,4,4,1,3,0,4,Global
 2019,0009-3084,9,9,1,7,0,9,Global
@@ -2733,6 +2733,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0013-1644,9,9,9,3,9,9,Global
 2021,0013-1644,3,3,3,0,3,3,Germany
 2022,0013-1644,9,9,9,4,9,9,Global
+2022,0013-1644,1,1,1,0,1,1,Germany
 2017,0013-1857,4,4,0,0,0,4,Global
 2018,0013-1857,8,7,3,0,0,8,Global
 2019,0013-1857,1,0,0,0,0,1,Global
@@ -3149,6 +3150,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2022,0014-5858,1,1,0,0,1,1,Global
 2021,0014-6242,3,3,0,0,3,2,Global
 2022,0014-6242,3,3,0,0,2,0,Global
+2022,0014-6242,2,2,0,0,1,0,Germany
 2017,0014-7370,1,1,0,1,0,1,Global
 2019,0014-7370,1,1,0,0,0,1,Global
 2019,0014-7370,1,1,0,0,0,1,Germany
@@ -3229,7 +3231,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0015-7899,90,90,78,89,89,90,Global
 2021,0015-7899,79,79,68,79,79,79,Germany
 2022,0015-7899,20,20,16,20,19,19,Global
-2022,0015-7899,16,16,13,16,15,15,Germany
+2022,0015-7899,17,17,14,17,16,16,Germany
 2018,0015-8208,4,4,1,4,0,4,Global
 2018,0015-8208,1,1,0,1,0,1,Germany
 2019,0015-8208,4,4,2,1,0,4,Global
@@ -7568,6 +7570,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2019,0031-2746,6,0,2,2,4,0,Global
 2020,0031-2746,7,0,2,2,7,0,Global
 2021,0031-2746,15,0,5,0,15,0,Global
+2021,0031-2746,1,0,0,0,1,0,Germany
 2022,0031-2746,13,0,7,1,12,0,Global
 2017,0031-2789,4,4,0,2,0,4,Global
 2018,0031-2789,1,1,1,0,0,1,Global
@@ -7906,7 +7909,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0032-079X,78,78,71,65,77,78,Global
 2021,0032-079X,17,17,17,16,16,17,Germany
 2022,0032-079X,132,132,119,113,125,127,Global
-2022,0032-079X,33,33,30,31,31,32,Germany
+2022,0032-079X,34,34,31,32,32,33,Germany
 2017,0032-0862,10,10,1,9,0,10,Global
 2017,0032-0862,1,1,0,1,0,1,Germany
 2018,0032-0862,17,17,13,15,0,17,Global
@@ -8063,6 +8066,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,0032-5899,2,0,2,2,0,2,Germany
 2021,0032-5899,5,0,2,4,0,5,Global
 2022,0032-5899,5,0,3,3,0,5,Global
+2022,0032-5899,1,0,0,1,0,1,Germany
 2017,0032-5910,16,16,9,13,0,16,Global
 2017,0032-5910,1,1,1,1,0,1,Germany
 2018,0032-5910,15,15,10,12,0,15,Global
@@ -8165,7 +8169,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0033-2917,235,0,211,45,222,235,Global
 2021,0033-2917,17,0,16,0,14,17,Germany
 2022,0033-2917,178,0,168,62,170,178,Global
-2022,0033-2917,13,0,12,3,13,13,Germany
+2022,0033-2917,14,0,13,3,14,14,Germany
 2017,0033-2933,2,2,0,1,0,2,Global
 2019,0033-2933,2,2,2,1,1,2,Global
 2020,0033-2933,6,6,3,5,6,6,Global
@@ -9214,7 +9218,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0040-747X,13,13,6,3,0,13,Global
 2021,0040-747X,4,4,1,1,0,4,Germany
 2022,0040-747X,12,12,9,1,0,12,Global
-2022,0040-747X,6,6,5,0,0,6,Germany
+2022,0040-747X,7,7,6,0,0,7,Germany
 2020,0040-7496,1,1,0,0,1,0,Global
 2021,0040-7496,3,3,0,0,2,0,Global
 2021,0040-7496,1,1,0,0,1,0,Germany
@@ -9294,7 +9298,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0042-0980,80,80,78,46,78,79,Global
 2021,0042-0980,4,4,4,2,4,4,Germany
 2022,0042-0980,49,49,49,22,41,47,Global
-2022,0042-0980,7,7,7,4,7,7,Germany
+2022,0042-0980,8,8,8,4,8,8,Germany
 2017,0042-1138,4,4,1,0,4,0,Global
 2017,0042-1138,1,1,0,0,1,0,Germany
 2018,0042-1138,5,5,3,0,5,2,Global
@@ -9530,7 +9534,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0044-2275,19,19,16,19,19,19,Global
 2021,0044-2275,8,8,7,8,8,8,Germany
 2022,0044-2275,22,22,16,17,21,21,Global
-2022,0044-2275,2,2,2,2,2,2,Germany
+2022,0044-2275,3,3,3,3,3,3,Germany
 2018,0044-2305,1,1,0,0,1,1,Global
 2019,0044-2305,1,1,0,0,1,1,Global
 2020,0044-2305,3,3,0,0,0,0,Global
@@ -9799,7 +9803,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0046-5755,16,16,15,14,16,16,Global
 2021,0046-5755,5,5,5,5,5,5,Germany
 2022,0046-5755,21,21,20,21,21,21,Global
-2022,0046-5755,2,2,2,2,2,2,Germany
+2022,0046-5755,3,3,3,3,3,3,Germany
 2017,0046-760X,2,2,1,1,0,0,Global
 2018,0046-760X,3,2,2,3,0,0,Global
 2018,0046-760X,1,1,0,1,0,0,Germany
@@ -11443,7 +11447,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0140-2382,35,0,30,14,0,35,Global
 2021,0140-2382,3,0,3,1,0,3,Germany
 2022,0140-2382,28,0,24,11,0,28,Global
-2022,0140-2382,2,0,2,1,0,2,Germany
+2022,0140-2382,3,0,3,2,0,3,Germany
 2017,0140-2390,1,1,0,0,0,1,Global
 2018,0140-2390,2,1,1,1,0,2,Global
 2019,0140-2390,4,2,1,1,0,3,Global
@@ -13933,7 +13937,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0167-806X,15,15,5,10,15,15,Global
 2021,0167-806X,3,3,1,3,3,3,Germany
 2022,0167-806X,8,8,3,5,8,8,Global
-2022,0167-806X,1,1,0,1,1,1,Germany
+2022,0167-806X,2,2,0,2,2,2,Germany
 2017,0167-8094,5,5,2,5,0,5,Global
 2018,0167-8094,3,3,1,3,0,3,Global
 2019,0167-8094,9,9,6,5,3,8,Global
@@ -14760,7 +14764,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0173-5322,13,13,10,11,10,10,Global
 2021,0173-5322,10,10,7,8,7,7,Germany
 2022,0173-5322,18,18,18,18,17,18,Global
-2022,0173-5322,12,12,12,12,11,12,Germany
+2022,0173-5322,13,13,13,13,12,13,Germany
 2017,0173-5373,1,1,0,0,1,1,Global
 2018,0173-5373,2,2,0,0,2,1,Global
 2019,0173-5373,2,2,0,0,2,0,Global
@@ -15031,7 +15035,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0178-7667,3,3,1,3,3,3,Global
 2021,0178-7667,2,2,0,2,2,2,Germany
 2022,0178-7667,4,4,1,4,4,4,Global
-2022,0178-7667,3,3,0,3,3,3,Germany
+2022,0178-7667,4,4,1,4,4,4,Germany
 2017,0178-7675,16,16,6,13,0,16,Global
 2017,0178-7675,1,1,0,1,0,1,Germany
 2018,0178-7675,17,17,5,15,1,17,Global
@@ -16673,7 +16677,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2018,0264-8377,55,55,15,37,0,55,Global
 2018,0264-8377,7,7,3,6,0,7,Germany
 2019,0264-8377,51,51,31,36,0,51,Global
-2019,0264-8377,4,4,2,3,0,4,Germany
+2019,0264-8377,5,5,3,4,0,5,Germany
 2020,0264-8377,76,76,6,59,0,76,Global
 2020,0264-8377,4,4,0,2,0,4,Germany
 2021,0264-8377,116,116,34,77,0,116,Global
@@ -16949,7 +16953,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0266-7215,37,0,30,30,37,37,Global
 2021,0266-7215,10,0,6,5,10,10,Germany
 2022,0266-7215,21,0,13,17,20,20,Global
-2022,0266-7215,4,0,1,4,4,4,Germany
+2022,0266-7215,5,0,2,5,5,5,Germany
 2020,0266-7363,1,0,1,0,0,1,Global
 2021,0266-7363,3,0,2,0,0,3,Global
 2022,0266-7363,8,0,5,3,0,8,Global
@@ -18231,6 +18235,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,0282-7581,14,0,10,7,0,14,Global
 2021,0282-7581,17,0,10,10,0,17,Global
 2022,0282-7581,12,0,8,10,0,12,Global
+2022,0282-7581,1,0,1,0,0,1,Germany
 2017,0283-2631,16,16,0,0,0,0,Global
 2018,0283-2631,16,16,1,1,15,15,Global
 2019,0283-2631,7,7,4,4,7,7,Global
@@ -18852,7 +18857,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0303-402X,9,9,2,7,8,8,Global
 2021,0303-402X,5,5,1,4,4,4,Germany
 2022,0303-402X,10,10,5,8,9,9,Global
-2022,0303-402X,4,4,2,3,3,3,Germany
+2022,0303-402X,5,5,3,4,4,4,Germany
 2020,0303-4178,1,1,0,0,1,0,Global
 2019,0303-4259,1,0,0,0,1,0,Global
 2019,0303-4259,1,0,0,0,1,0,Germany
@@ -19465,6 +19470,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,0305-7925,5,0,4,3,0,5,Global
 2021,0305-7925,18,0,16,6,0,18,Global
 2022,0305-7925,15,0,13,6,0,15,Global
+2022,0305-7925,1,0,0,0,0,1,Germany
 2017,0305-8034,1,1,0,1,0,0,Global
 2020,0305-8034,1,0,1,0,0,0,Global
 2021,0305-8034,5,0,3,2,0,0,Global
@@ -20270,7 +20276,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0340-1804,6,6,0,0,6,6,Global
 2021,0340-1804,5,5,0,0,5,5,Germany
 2022,0340-1804,17,17,6,0,17,17,Global
-2022,0340-1804,11,11,2,0,11,11,Germany
+2022,0340-1804,14,14,3,0,14,14,Germany
 2017,0340-1855,2,2,0,1,0,2,Global
 2017,0340-1855,1,1,0,0,0,1,Germany
 2018,0340-1855,3,3,0,2,0,3,Global
@@ -20301,7 +20307,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0340-2444,31,31,0,30,28,29,Global
 2021,0340-2444,26,26,0,25,23,24,Germany
 2022,0340-2444,20,20,0,17,12,17,Global
-2022,0340-2444,16,16,0,16,10,14,Germany
+2022,0340-2444,17,17,0,17,11,15,Germany
 2020,0340-2479,1,1,0,0,1,0,Global
 2017,0340-2592,2,2,0,0,0,2,Global
 2017,0340-2592,1,1,0,0,0,1,Germany
@@ -20333,7 +20339,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0340-4099,46,46,39,44,43,44,Global
 2021,0340-4099,30,30,26,28,28,29,Germany
 2022,0340-4099,18,18,17,18,17,18,Global
-2022,0340-4099,14,14,14,14,14,14,Germany
+2022,0340-4099,15,15,15,15,15,15,Germany
 2017,0340-4285,2,2,2,1,0,2,Global
 2018,0340-4285,2,2,1,0,0,2,Global
 2019,0340-4285,1,1,1,1,0,1,Global
@@ -20804,7 +20810,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0361-0365,9,9,8,6,9,8,Global
 2021,0361-0365,1,1,1,1,1,1,Germany
 2022,0361-0365,14,14,13,7,13,13,Global
-2022,0361-0365,2,2,2,1,2,2,Germany
+2022,0361-0365,3,3,3,2,3,3,Germany
 2020,0361-0470,4,0,2,1,0,4,Global
 2020,0361-0470,2,0,0,0,0,2,Germany
 2021,0361-0470,14,0,13,8,0,14,Global
@@ -23500,6 +23506,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0814-6039,1,1,1,1,1,1,Global
 2021,0814-6039,1,1,1,1,1,1,Germany
 2022,0814-6039,4,4,3,4,4,4,Global
+2022,0814-6039,1,1,1,1,1,1,Germany
 2017,0814-723X,1,1,0,0,0,1,Global
 2018,0814-723X,2,2,1,0,0,2,Global
 2020,0814-723X,2,2,0,0,0,2,Global
@@ -24423,7 +24430,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0889-3268,11,11,10,7,11,11,Global
 2021,0889-3268,4,4,4,4,4,4,Germany
 2022,0889-3268,11,11,9,11,11,11,Global
-2022,0889-3268,5,5,5,5,5,5,Germany
+2022,0889-3268,6,6,6,6,6,6,Germany
 2019,0889-3675,1,0,1,0,0,1,Global
 2020,0889-3675,2,0,0,0,0,2,Global
 2021,0889-3675,7,0,2,1,0,6,Global
@@ -26340,7 +26347,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0924-6460,47,47,36,39,47,47,Global
 2021,0924-6460,11,11,7,11,11,11,Germany
 2022,0924-6460,35,35,30,27,34,34,Global
-2022,0924-6460,8,8,6,8,8,8,Germany
+2022,0924-6460,9,9,7,9,9,9,Germany
 2017,0924-6479,2,0,0,0,0,2,Global
 2018,0924-6479,3,0,0,0,0,3,Global
 2019,0924-6479,2,0,0,0,0,2,Global
@@ -27495,7 +27502,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0933-1875,24,24,15,21,20,19,Global
 2021,0933-1875,12,12,9,11,10,9,Germany
 2022,0933-1875,12,12,11,11,12,12,Global
-2022,0933-1875,7,7,7,7,7,7,Germany
+2022,0933-1875,8,8,8,8,8,8,Germany
 2020,0933-1883,4,4,0,0,4,4,Global
 2021,0933-1883,6,6,0,0,3,5,Global
 2018,0933-2790,8,8,0,2,0,8,Global
@@ -28306,7 +28313,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0944-2502,31,31,1,24,31,30,Global
 2021,0944-2502,27,27,1,20,27,26,Germany
 2022,0944-2502,25,25,5,23,25,24,Global
-2022,0944-2502,21,21,4,20,21,20,Germany
+2022,0944-2502,23,23,4,22,23,22,Germany
 2017,0944-2669,20,20,1,15,0,20,Global
 2017,0944-2669,4,4,0,4,0,4,Germany
 2018,0944-2669,16,16,3,11,0,16,Global
@@ -28650,7 +28657,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0949-1147,13,13,12,13,13,13,Global
 2021,0949-1147,11,11,10,11,11,11,Germany
 2022,0949-1147,8,8,8,8,8,8,Global
-2022,0949-1147,7,7,7,7,7,7,Germany
+2022,0949-1147,8,8,8,8,8,8,Germany
 2017,0949-1775,6,6,2,1,0,6,Global
 2018,0949-1775,3,3,2,0,0,3,Global
 2019,0949-1775,5,5,4,2,2,5,Global
@@ -28765,7 +28772,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0950-0804,18,18,18,4,0,18,Global
 2021,0950-0804,4,4,4,1,0,4,Germany
 2022,0950-0804,30,30,28,5,0,30,Global
-2022,0950-0804,3,3,3,0,0,3,Germany
+2022,0950-0804,4,4,4,0,0,4,Germany
 2017,0950-0839,3,3,1,2,0,3,Global
 2018,0950-0839,1,1,1,1,0,1,Global
 2019,0950-0839,1,1,0,1,0,1,Global
@@ -30378,7 +30385,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0960-085X,14,0,11,4,0,14,Global
 2021,0960-085X,2,0,2,2,0,2,Germany
 2022,0960-085X,14,0,13,8,0,14,Global
-2022,0960-085X,2,0,2,2,0,2,Germany
+2022,0960-085X,3,0,3,3,0,3,Germany
 2019,0960-1163,1,0,0,0,0,0,Global
 2019,0960-1295,2,0,2,0,2,2,Global
 2019,0960-1295,1,0,1,0,1,1,Germany
@@ -31047,7 +31054,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,0964-4733,93,93,81,26,0,93,Global
 2021,0964-4733,10,10,9,2,0,10,Germany
 2022,0964-4733,159,159,137,41,0,159,Global
-2022,0964-4733,21,21,17,4,0,21,Germany
+2022,0964-4733,23,23,18,6,0,23,Germany
 2019,0964-5284,2,2,2,0,2,2,Global
 2020,0964-5284,3,3,2,2,3,3,Global
 2021,0964-5284,1,1,1,1,1,1,Global
@@ -32353,7 +32360,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1019-6781,31,31,22,28,26,30,Global
 2021,1019-6781,24,24,17,21,19,23,Germany
 2022,1019-6781,50,50,41,46,43,49,Global
-2022,1019-6781,30,30,22,29,26,30,Germany
+2022,1019-6781,31,31,23,30,27,31,Germany
 2017,1019-7168,4,4,1,3,0,4,Global
 2018,1019-7168,8,8,6,7,0,8,Global
 2018,1019-7168,3,3,3,2,0,3,Germany
@@ -32835,7 +32842,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1039-8562,12,12,12,1,10,12,Global
 2022,1039-8562,2,2,2,1,1,2,Global
 2019,1040-0397,5,5,3,4,0,5,Global
-2019,1040-0397,1,1,1,1,0,1,Germany
+2019,1040-0397,2,2,2,1,0,2,Germany
 2020,1040-0397,13,13,4,7,0,13,Global
 2020,1040-0397,1,1,0,0,0,1,Germany
 2021,1040-0397,15,15,13,5,0,15,Global
@@ -32957,7 +32964,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1040-7278,6,6,4,5,6,6,Global
 2021,1040-7278,1,1,1,1,1,1,Germany
 2022,1040-7278,11,11,9,10,11,11,Global
-2022,1040-7278,1,1,0,1,1,1,Germany
+2022,1040-7278,2,2,1,2,2,2,Germany
 2017,1040-7294,3,3,2,2,0,3,Global
 2018,1040-7294,4,4,3,4,0,4,Global
 2019,1040-7294,4,4,3,4,2,4,Global
@@ -33958,6 +33965,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,1052-5629,4,4,4,0,4,4,Global
 2021,1052-5629,6,6,5,1,6,6,Global
 2022,1052-5629,4,4,4,1,4,4,Global
+2022,1052-5629,1,1,1,1,1,1,Germany
 2021,1052-6846,2,2,2,0,1,2,Global
 2022,1052-6846,1,1,1,1,1,1,Global
 2017,1052-7613,4,4,4,4,0,4,Global
@@ -34632,7 +34640,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1059-9630,27,27,11,19,27,27,Global
 2021,1059-9630,17,17,7,17,17,17,Germany
 2022,1059-9630,30,30,11,17,27,27,Global
-2022,1059-9630,9,9,3,9,9,9,Germany
+2022,1059-9630,10,10,3,10,10,10,Germany
 2019,1060-0280,1,1,1,0,1,1,Global
 2020,1060-0280,2,2,2,1,1,2,Global
 2021,1060-0280,11,11,11,4,11,11,Global
@@ -38622,6 +38630,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,1355-4786,13,0,12,9,13,13,Global
 2021,1355-4786,10,0,10,8,9,10,Global
 2022,1355-4786,11,0,11,11,11,11,Global
+2022,1355-4786,1,0,1,1,1,1,Germany
 2018,1355-4794,2,2,1,2,0,2,Global
 2019,1355-4794,2,0,2,0,0,2,Global
 2020,1355-4794,4,0,2,3,0,4,Global
@@ -39088,6 +39097,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,1359-7566,9,0,7,6,0,9,Global
 2021,1359-7566,14,0,8,7,0,14,Global
 2022,1359-7566,6,0,3,3,0,6,Global
+2022,1359-7566,1,0,1,1,0,1,Germany
 2017,1359-8139,2,2,1,1,0,2,Global
 2018,1359-8139,1,1,0,1,0,1,Global
 2021,1359-8139,1,0,1,1,0,1,Global
@@ -39959,7 +39969,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1369-118X,56,0,47,33,0,56,Global
 2021,1369-118X,4,0,3,2,0,4,Germany
 2022,1369-118X,22,0,18,13,0,22,Global
-2022,1369-118X,3,0,3,2,0,3,Germany
+2022,1369-118X,4,0,4,2,0,4,Germany
 2017,1369-1457,4,4,0,4,0,4,Global
 2018,1369-1457,9,2,3,6,0,9,Global
 2019,1369-1457,13,8,5,4,0,13,Global
@@ -41580,7 +41590,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1430-6387,52,52,12,52,32,51,Global
 2021,1430-6387,46,46,10,46,27,45,Germany
 2022,1430-6387,22,22,8,21,19,20,Global
-2022,1430-6387,17,17,7,16,14,15,Germany
+2022,1430-6387,18,18,8,17,15,16,Germany
 2020,1430-6921,2,2,1,0,2,0,Global
 2020,1430-6921,1,1,1,0,1,0,Germany
 2022,1430-6921,3,3,0,0,0,0,Global
@@ -41795,7 +41805,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1433-7541,9,9,8,5,9,9,Global
 2022,1433-7541,4,4,2,3,4,4,Global
 2017,1433-7851,223,223,195,185,0,223,Global
-2017,1433-7851,37,37,32,30,0,37,Germany
+2017,1433-7851,38,38,32,30,0,38,Germany
 2018,1433-7851,212,212,211,192,0,212,Global
 2018,1433-7851,41,41,41,34,0,41,Germany
 2019,1433-7851,369,369,369,335,0,369,Global
@@ -41963,7 +41973,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1434-663X,69,69,53,66,60,63,Global
 2021,1434-663X,55,55,43,52,49,52,Germany
 2022,1434-663X,58,58,50,56,54,56,Global
-2022,1434-663X,51,51,43,50,47,49,Germany
+2022,1434-663X,52,52,44,51,48,50,Germany
 2017,1434-7229,2,2,1,1,0,2,Global
 2018,1434-7229,1,1,1,0,0,1,Global
 2019,1434-7229,9,9,8,2,5,8,Global
@@ -44323,7 +44333,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1477-9226,190,0,177,168,190,178,Global
 2021,1477-9226,25,0,25,21,25,25,Germany
 2022,1477-9226,207,0,188,175,207,187,Global
-2022,1477-9226,23,0,22,19,23,21,Germany
+2022,1477-9226,24,0,22,19,24,21,Germany
 2019,1477-9757,1,0,0,0,0,1,Global
 2020,1477-9757,3,0,1,1,0,3,Global
 2021,1477-9757,2,0,0,0,0,2,Global
@@ -48904,7 +48914,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1616-301X,308,308,305,239,0,308,Global
 2021,1616-301X,107,107,107,89,0,107,Germany
 2022,1616-301X,250,250,249,192,0,250,Global
-2022,1616-301X,66,66,66,47,0,66,Germany
+2022,1616-301X,67,67,67,47,0,67,Germany
 2018,1616-5047,3,3,1,3,0,3,Global
 2020,1616-5047,21,21,15,13,21,21,Global
 2020,1616-5047,5,5,4,3,5,5,Germany
@@ -48977,7 +48987,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2019,1617-7061,411,411,0,0,0,411,Global
 2019,1617-7061,330,330,0,0,0,330,Germany
 2021,1617-7061,529,529,0,0,0,529,Global
-2021,1617-7061,448,448,0,0,0,448,Germany
+2021,1617-7061,449,449,0,0,0,449,Germany
 2017,1617-7940,26,26,13,26,0,26,Global
 2018,1617-7940,19,19,11,17,0,19,Global
 2019,1617-7940,45,45,39,36,19,44,Global
@@ -49099,7 +49109,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1619-1366,60,60,35,49,53,54,Global
 2021,1619-1366,10,10,4,10,10,10,Germany
 2022,1619-1366,41,41,24,36,35,35,Global
-2022,1619-1366,6,6,3,6,6,6,Germany
+2022,1619-1366,7,7,3,6,7,7,Germany
 2017,1619-5507,3,3,0,2,0,3,Global
 2018,1619-5507,1,1,0,1,0,1,Global
 2019,1619-5507,1,1,0,1,0,1,Global
@@ -49823,6 +49833,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,1742-1705,19,0,19,0,18,19,Global
 2021,1742-1705,18,0,18,2,18,18,Global
 2022,1742-1705,12,0,12,2,12,12,Global
+2022,1742-1705,1,0,1,0,1,1,Germany
 2017,1742-1772,3,3,1,2,0,3,Global
 2019,1742-1772,1,1,0,1,0,1,Global
 2020,1742-1772,6,0,6,4,0,6,Global
@@ -51689,7 +51700,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2017,1759-9954,16,0,12,8,16,13,Global
 2017,1759-9954,4,0,4,3,4,4,Germany
 2018,1759-9954,39,0,33,28,39,33,Global
-2018,1759-9954,6,0,6,5,6,6,Germany
+2018,1759-9954,7,0,7,6,7,7,Germany
 2019,1759-9954,67,0,59,56,67,58,Global
 2019,1759-9954,20,0,16,15,20,16,Germany
 2020,1759-9954,96,0,83,67,96,84,Global
@@ -51993,7 +52004,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1861-3829,27,27,16,24,25,25,Global
 2021,1861-3829,9,9,4,8,8,8,Germany
 2022,1861-3829,23,23,16,22,23,23,Global
-2022,1861-3829,10,10,7,9,10,10,Germany
+2022,1861-3829,11,11,8,10,11,11,Germany
 2017,1861-471X,3,3,3,2,0,3,Global
 2018,1861-471X,2,2,2,2,0,2,Global
 2018,1861-471X,1,1,1,1,0,1,Germany
@@ -52294,7 +52305,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1863-6683,41,41,38,34,41,40,Global
 2021,1863-6683,24,24,22,23,24,24,Germany
 2022,1863-6683,41,41,38,38,40,41,Global
-2022,1863-6683,14,14,13,14,13,14,Germany
+2022,1863-6683,15,15,14,15,14,15,Germany
 2017,1863-6705,5,5,3,1,0,4,Global
 2018,1863-6705,11,11,3,3,0,11,Global
 2019,1863-6705,12,12,8,2,6,11,Global
@@ -52666,7 +52677,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1867-0202,39,39,5,33,22,35,Global
 2021,1867-0202,30,30,4,27,17,27,Germany
 2022,1867-0202,33,33,3,29,18,28,Global
-2022,1867-0202,22,22,2,20,10,19,Germany
+2022,1867-0202,24,24,2,22,10,21,Germany
 2020,1867-030X,1,1,0,0,1,0,Global
 2017,1867-0334,9,9,1,9,0,9,Global
 2018,1867-0334,5,5,2,3,0,5,Global
@@ -52857,7 +52868,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1868-2502,30,30,27,23,28,27,Global
 2021,1868-2502,15,15,14,13,13,12,Germany
 2022,1868-2502,40,40,34,36,37,37,Global
-2022,1868-2502,14,14,11,13,12,12,Germany
+2022,1868-2502,15,15,12,14,13,13,Germany
 2017,1868-2529,18,18,6,13,0,18,Global
 2017,1868-2529,2,2,1,1,0,2,Germany
 2018,1868-2529,6,6,5,4,0,6,Global
@@ -53237,6 +53248,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1871-9791,24,24,20,15,20,9,Global
 2021,1871-9791,5,5,4,5,5,1,Germany
 2022,1871-9791,8,8,8,5,5,4,Global
+2022,1871-9791,1,1,1,1,1,1,Germany
 2017,1872-0218,5,5,3,5,0,5,Global
 2018,1872-0218,6,6,4,6,0,6,Global
 2019,1872-0218,3,3,2,3,0,3,Global
@@ -53348,7 +53360,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,1873-9318,23,23,19,16,23,23,Global
 2021,1873-9318,1,1,0,1,1,1,Germany
 2022,1873-9318,15,15,9,11,15,15,Global
-2022,1873-9318,1,1,0,1,1,1,Germany
+2022,1873-9318,2,2,1,2,2,2,Germany
 2017,1873-9601,9,9,7,9,0,9,Global
 2018,1873-9601,4,4,4,4,0,4,Global
 2019,1873-9601,4,4,3,3,0,4,Global
@@ -57125,6 +57137,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,2156-3950,1,0,1,1,0,1,Germany
 2021,2156-3950,10,0,10,6,0,10,Global
 2022,2156-3950,9,0,9,7,0,9,Global
+2022,2156-3950,1,0,1,1,0,1,Germany
 2022,2156-4574,1,0,1,0,0,1,Global
 2022,2156-4574,1,0,1,0,0,1,Germany
 2018,2156-5503,1,1,1,1,0,1,Global
@@ -57873,7 +57886,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,2191-2203,4,4,3,4,4,4,Global
 2021,2191-2203,13,13,10,6,12,12,Global
 2022,2191-2203,31,31,24,24,28,30,Global
-2022,2191-2203,8,8,5,8,7,7,Germany
+2022,2191-2203,9,9,6,9,8,8,Germany
 2017,2191-4281,3,3,2,1,0,3,Global
 2018,2191-4281,5,5,1,3,0,5,Global
 2019,2191-4281,7,7,5,4,2,7,Global
@@ -58027,6 +58040,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,2193-3804,1,1,0,0,1,1,Global
 2021,2193-3804,1,1,0,0,1,1,Germany
 2022,2193-3804,2,2,1,0,1,2,Global
+2022,2193-3804,1,1,1,0,1,1,Germany
 2017,2193-4126,1,1,1,0,0,1,Global
 2018,2193-4126,4,4,1,1,0,4,Global
 2019,2193-4126,7,7,5,2,0,7,Global
@@ -58653,7 +58667,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,2199-160X,86,86,83,74,0,86,Global
 2021,2199-160X,25,25,25,21,0,25,Germany
 2022,2199-160X,95,95,89,66,0,95,Global
-2022,2199-160X,18,18,18,13,0,18,Germany
+2022,2199-160X,19,19,19,13,0,19,Germany
 2017,2199-174X,13,13,0,1,13,13,Global
 2017,2199-174X,7,7,0,0,7,7,Germany
 2019,2199-174X,26,26,1,6,26,26,Global
@@ -60080,6 +60094,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,2328-9554,2,2,0,0,2,2,Global
 2021,2328-9554,1,1,0,0,1,1,Germany
 2022,2328-9554,1,1,0,0,1,1,Global
+2022,2328-9554,1,1,0,0,1,1,Germany
 2021,2329-194X,2,0,0,0,0,2,Global
 2018,2329-2229,2,2,0,0,2,2,Global
 2019,2329-2229,1,1,0,0,1,1,Global
@@ -62389,7 +62404,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,2512-2789,17,17,16,15,15,15,Global
 2021,2512-2789,9,9,9,9,9,9,Germany
 2022,2512-2789,20,20,17,17,16,16,Global
-2022,2512-2789,16,16,13,16,14,14,Germany
+2022,2512-2789,17,17,14,16,14,14,Germany
 2018,2513-0390,2,2,2,2,0,2,Global
 2019,2513-0390,14,14,14,14,0,14,Global
 2019,2513-0390,4,4,4,4,0,4,Germany
@@ -62669,6 +62684,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2020,2523-3653,1,1,1,1,1,1,Germany
 2021,2523-3653,5,5,4,4,5,5,Global
 2022,2523-3653,13,13,12,9,11,11,Global
+2022,2523-3653,1,1,1,0,0,0,Germany
 2019,2523-367X,4,4,2,4,2,4,Global
 2020,2523-367X,4,4,3,4,4,4,Global
 2021,2523-367X,4,4,2,4,4,4,Global
@@ -62880,6 +62896,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2022,2542-3835,1,0,0,0,1,1,Global
 2019,2542-3851,1,0,1,0,1,1,Global
 2022,2542-3851,2,0,1,0,2,2,Global
+2022,2542-3851,1,0,1,0,1,1,Germany
 2021,2542-4238,1,1,0,0,1,0,Global
 2017,2542-4351,2,2,0,2,0,2,Global
 2018,2542-4351,7,7,4,5,0,5,Global
@@ -62930,7 +62947,7 @@ cr_year,issn_l,article_total,tdm_total,orcid_total,funder_total,abstract_total,r
 2021,2567-1111,3,3,0,0,2,0,Global
 2021,2567-1111,2,2,0,0,1,0,Germany
 2022,2567-1111,2,2,0,0,1,0,Global
-2022,2567-1111,1,1,0,0,1,0,Germany
+2022,2567-1111,2,2,0,0,1,0,Germany
 2020,2568-9347,1,1,0,0,1,1,Global
 2019,2570-4206,7,7,7,6,0,7,Global
 2019,2570-4206,3,3,3,3,0,3,Germany
