@@ -9,8 +9,6 @@ template:
     navbar-light-color: "#fff"
     font_scale: 1.2
     base_font: "Roboto"
-  includes:
-    in_header: '<link href="css/roboto.css" rel="stylesheet">'
 
 home:
   sidebar:
