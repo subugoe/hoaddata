@@ -21,7 +21,7 @@ You can install hoaddata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("subugoe/hoaddash", dependencies = "Imports")
+remotes::install_github("subugoe/hoaddata", dependencies = "Imports")
 ```
 
 ## Data gathering
