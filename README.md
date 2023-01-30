@@ -10,8 +10,9 @@ hybrid journals.
 
 The main purpose of hoaddata is to ship data for hybrid open access monitoring 
 dashboards, which are currently under development at the SUB Göttingen with the 
-support of the [Deutsche Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&). By providing the data as an R package, hoaddata can be also 
-used for other data analytics tasks with R.
+support of the [Deutsche Forschungsgemeinschaft](https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&task=showDetail&id=416115939&). 
+By providing the data as an R package, hoaddata can be also used for 
+other data analytics tasks with R.
 
 Data cover the publication period 2017 - 2022.
 
