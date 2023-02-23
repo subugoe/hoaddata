@@ -5,15 +5,32 @@
 \alias{cr_upw}
 \title{License coverage Crossref vs Unpaywall}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 92018 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 91889 rows and 6 columns.
 }
 \usage{
 cr_upw
 }
 \description{
-License coverage Crossref vs Unpaywall
+Comparision of license metadata in Crossref with Unpaywall per year.
+}
+\details{
+Iternal note: this data was created by combining the rows `upw_cr` and `upw_cr_de` from `cc_upw_cr.csv` and `cc_upw_cr_de.csv`
+
+\describe{
+    \item{issn_l}{Linking ISSN}
+    \item{cr_year}{Earliest publication year (Crossref field `issued`)}
+    \item{articles_total}{Yearly journal output by year}
+    \item{upw_hybrid_total}{Total number of unpaywall hybrid articles}
+    \item{cr_hybrid_total}{Total number of crossref hybrid articles}
+    \item{cat}{Global output or from first-authors based in Germany}
+    }
 }
 \examples{
-cr_upw
+# Number of crossref hybrid articles vs all unpaywall hybrid articles (Global)
+sum(subset(cr_upw, cat == "Germany")$upw_hybrid_total)
+sum(subset(cr_upw, cat == "Germany")$cr_hybrid_total)
+# Number of crossref hybrid articles vs all unpaywall hybrid articles (Germany)
+sum(subset(cr_upw, cat == "Global")$upw_hybrid_total)
+sum(subset(cr_upw, cat == "Global")$cr_hybrid_total)
 }
 \keyword{datasets}

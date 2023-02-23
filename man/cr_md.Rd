@@ -5,7 +5,7 @@
 \alias{cr_md}
 \title{Crossref Metadata Coverage}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 63905 rows and 9 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 64497 rows and 9 columns.
 }
 \usage{
 cr_md
@@ -16,7 +16,7 @@ This dataset gives information about metadata coverage per year and agreement.
 \details{
 The following Crossref metadata were analysed:
 
-#' \describe{
+\describe{
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{issn_l}{Linking ISSN}
     \item{articles_total}{Yearly journal output by year and country affiliation}

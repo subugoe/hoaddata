@@ -14,7 +14,7 @@
 #' Instead, publishers register journal-level metadata when they first deposit
 #' metadata for a given journal, including all ISSN(s). Crossref makes sure that
 #' article and journal metadata match.
-#'
+#' 
 #' More info about Crossref's handling of ISSN registration can be found in this
 #' support thread:
 #' \url{https://community.crossref.org/t/parallel-titles-for-a-given-issn/2183}
@@ -149,7 +149,7 @@
 #'
 #' The following Crossref metadata were analysed:
 #'
-#' #' \describe{
+#' \describe{
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{issn_l}{Linking ISSN}
 #'     \item{articles_total}{Yearly journal output by year and country affiliation}
@@ -167,10 +167,29 @@
 #' cr_md[cr_md$issn_l == "0138-9130" & cr_md$cat == "Germany",]
 "cr_md"
 
+
 #' License coverage Crossref vs Unpaywall
 #' 
+#' Comparision of license metadata in Crossref with Unpaywall per year. 
+#' 
+#' Iternal note: this data was created by combining the rows `upw_cr` and `upw_cr_de` from `cc_upw_cr.csv` and `cc_upw_cr_de.csv`
+#' 
+#' \describe{
+#'     \item{issn_l}{Linking ISSN}
+#'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
+#'     \item{articles_total}{Yearly journal output by year}
+#'     \item{upw_hybrid_total}{Total number of unpaywall hybrid articles}
+#'     \item{cr_hybrid_total}{Total number of crossref hybrid articles}
+#'     \item{cat}{Global output or from first-authors based in Germany}
+#'     }
+#' 
 #' @examples 
-#' cr_upw
+#' # Number of crossref hybrid articles vs all unpaywall hybrid articles (Global)
+#' sum(subset(cr_upw, cat == "Germany")$upw_hybrid_total)
+#' sum(subset(cr_upw, cat == "Germany")$cr_hybrid_total)
+#' # Number of crossref hybrid articles vs all unpaywall hybrid articles (Germany)
+#' sum(subset(cr_upw, cat == "Global")$upw_hybrid_total)
+#' sum(subset(cr_upw, cat == "Global")$cr_hybrid_total)
 "cr_upw"
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
