@@ -177,8 +177,8 @@ usethis::use_data(jn_aff, overwrite = TRUE)
 
 ### Open Metadata ----
 
-#### All
-upw_cr <-  create_bq_table("cc_upw_cr", download = TRUE)
+#### License gaps
+cr_upw <-  create_bq_table("cc_upw_cr", download = TRUE)
 # Save in package
 usethis::use_data(cr_upw, overwrite = TRUE)
 
