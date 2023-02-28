@@ -5,14 +5,14 @@
 \alias{jn_ind}
 \title{Prevalence of Creative Commons licenses by variant, year and journal}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 94496 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 95057 rows and 6 columns.
 }
 \usage{
 jn_ind
 }
 \description{
-This dataset contains the number and proportion of open access articles 
-with Creative Commons license (CC) by license variant and year for hybrid journals 
+This dataset contains the number and proportion of open access articles
+with Creative Commons license (CC) by license variant and year for hybrid journals
 included in the cOAlition S Journal Checker Tool.
 }
 \details{

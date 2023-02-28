@@ -5,13 +5,14 @@
 \alias{cr_upw}
 \title{License coverage Crossref vs Unpaywall}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 92018 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 91889 rows and 6 columns.
 }
 \usage{
 cr_upw
 }
 \description{
-License coverage Crossref vs Unpaywall
+Comparision of license metadata in Crossref with Unpaywall
+via OpenALEX per journal, year and country affiliation (Germany).
 }
 \examples{
 cr_upw

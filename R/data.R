@@ -40,10 +40,10 @@
 
 #' Prevalence of Creative Commons licenses by variant, year and journal
 #'
-#' This dataset contains the number and proportion of open access articles 
-#' with Creative Commons license (CC) by license variant and year for hybrid journals 
-#' included in the cOAlition S Journal Checker Tool. 
-#' 
+#' This dataset contains the number and proportion of open access articles
+#' with Creative Commons license (CC) by license variant and year for hybrid journals
+#' included in the cOAlition S Journal Checker Tool.
+#'
 #' Publication period is 2017 - 2022.
 #'
 #' Journal's article volume was calculated using Crossref metadata snapshot.
@@ -149,7 +149,7 @@
 #'
 #' The following Crossref metadata were analysed:
 #'
-#' #' \describe{
+#' \describe{
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{issn_l}{Linking ISSN}
 #'     \item{articles_total}{Yearly journal output by year and country affiliation}
@@ -168,20 +168,26 @@
 "cr_md"
 
 #' License coverage Crossref vs Unpaywall
-#' 
-#' @examples 
+#'
+#' Comparision of license metadata in Crossref with Unpaywall
+#' via OpenALEX per journal, year and country affiliation (Germany).
+#'
+#' @examples
 #' cr_upw
 "cr_upw"
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
-#' 
-#' @examples 
+#'
+#' @examples
 #' ta_country_output
 "ta_country_output"
 
 #' Hybrid Journals: Venues Metadata
-#' 
-#' @examples 
+#'
+#' This datasets contains information about journals. These journals come from
+#' the Journal Checker Tool.
+#'
+#' @examples
 #' jct_oalex_venues
 "jct_oalex_venues"
 

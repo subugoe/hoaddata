@@ -5,13 +5,14 @@
 \alias{jct_oalex_venues}
 \title{Hybrid Journals: Venues Metadata}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11839 rows and 4 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11820 rows and 4 columns.
 }
 \usage{
 jct_oalex_venues
 }
 \description{
-Hybrid Journals: Venues Metadata
+This datasets contains information about journals. These journals come from
+the Journal Checker Tool.
 }
 \examples{
 jct_oalex_venues
