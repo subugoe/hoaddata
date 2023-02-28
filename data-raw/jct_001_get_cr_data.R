@@ -81,7 +81,6 @@ bigrquery::bq_table_upload(
 )
 usethis::use_data(jct_hybrid_jns, overwrite = TRUE)
 
-
 # OAM data
 
 # Cleaned and enriched version of OAM data
@@ -158,7 +157,6 @@ bigrquery::bq_table_upload(bg_countrycodes,
 # 2. Extract and match country strings
 create_bq_table("cr_openalex_inst_full")
 
-
 ### First-author affiliation data CC articles ----
 
 # Article-level first author affiliation data CC licenses
@@ -180,14 +178,7 @@ usethis::use_data(jn_aff, overwrite = TRUE)
 ### Open Metadata ----
 
 #### All
-upw_cr <-  create_bq_table("cc_upw_cr", download = TRUE) |>
-  dplyr::mutate(cat = "Global")
-
-#### Germany
-upw_cr_de <- create_bq_table("cc_upw_cr_de", download = TRUE) |>
-  dplyr::mutate(cat = "Germany")
-
-cr_upw <- dplyr::bind_rows(upw_cr, upw_cr_de)
+upw_cr <-  create_bq_table("cc_upw_cr", download = TRUE)
 # Save in package
 usethis::use_data(cr_upw, overwrite = TRUE)
 
