@@ -1,7 +1,7 @@
 # JCT data gathering
 pkgload::load_all()
 
-#' Authentificate with Big Query
+#' Authenticate with Big Query
 #'
 #'Decrypting-ability using internal secret_* functions from gargle
 # package following bigrquery test setup.
