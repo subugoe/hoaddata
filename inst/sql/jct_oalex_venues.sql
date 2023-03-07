@@ -6,6 +6,6 @@ SELECT
 FROM
   `hoad-dash.hoaddata.cc_md` AS jct
 LEFT JOIN
-  `subugoe-collaborative.openalex.venues` oalex
+  `subugoe-collaborative.openalex.sources` oalex
 ON
   jct.issn_l = oalex.issn_l
