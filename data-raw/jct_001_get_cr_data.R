@@ -101,6 +101,24 @@ bigrquery::bq_table_upload(
 )
 usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
 
+# Combine both journal tables
+hybrid_jns <- oam_hybrid_jns |>
+  dplyr::filter(!issn_l %in% jct_hybrid_jns$issn_l) |>
+  dplyr::bind_rows(jct_hybrid_jns) |>
+  dplyr::distinct()
+
+# Upload to BQ
+hybrid_jns_path <-
+  bigrquery::bq_table("hoad-dash", "hoaddata", "hybrid_jns")
+
+if (bigrquery::bq_table_exists(hybrid_jns_path)) {
+  bigrquery::bq_table_delete(hybrid_jns_path)
+}
+bigrquery::bq_table_upload(
+  hybrid_jns_path,
+  hybrid_jns
+)
+
 # Article data
 
 # Create Crossref metadata subset ----
