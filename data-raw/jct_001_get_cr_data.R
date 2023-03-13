@@ -66,7 +66,8 @@ jct_hybrid_jns <- jct_hybrid_jns_raw |>
     issn_l == "1042-1467" ~ "1389-0166",
     TRUE ~ as.character(issn_l)
     )) |>
-    dplyr::distinct()
+    dplyr::distinct() |>
+    dplyr::mutate(esac_publisher = gsub("&", "and", esac_publisher))
 
 # Upload to BQ
 jct_hybrid_jns_path <-
