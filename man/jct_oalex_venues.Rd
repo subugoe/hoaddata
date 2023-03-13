@@ -5,7 +5,7 @@
 \alias{jct_oalex_venues}
 \title{Hybrid Journals: Venues Metadata}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 11977 rows and 4 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12387 rows and 4 columns.
 }
 \usage{
 jct_oalex_venues
