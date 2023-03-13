@@ -31,7 +31,6 @@ License information for author accepted manuscripts ("aam") were not
 considered.
 
 Variables:
-
 \describe{
     \item{issn_l}{Linking ISSN}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}

@@ -59,7 +59,6 @@
 #' considered.
 #'
 #' Variables:
-#'
 #' \describe{
 #'     \item{issn_l}{Linking ISSN}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
@@ -123,7 +122,6 @@
 #' country names from the display_name using regular expressions.
 #'
 #' Variables:
-#'
 #' \describe{
 #'     \item{doi}{DOI for the OA article}
 #'     \item{issn_l}{Linking ISSN}
@@ -172,8 +170,7 @@
 #' 
 #' Comparision of license metadata in Crossref with Unpaywall per year. 
 #' 
-#' Iternal note: this data was created by combining the rows `upw_cr` and `upw_cr_de` from `cc_upw_cr.csv` and `cc_upw_cr_de.csv`
-#' 
+#' Variables:
 #' \describe{
 #'     \item{issn_l}{Linking ISSN}
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
@@ -185,23 +182,41 @@
 #' 
 #' @examples 
 #' # Number of crossref hybrid articles vs all unpaywall hybrid articles (Global)
-#' sum(subset(cr_upw, cat == "Germany")$upw_hybrid_total)
-#' sum(subset(cr_upw, cat == "Germany")$cr_hybrid_total)
+#' sum(subset(cr_upw, cat == "Germany"& cr_year == 2020)$upw_hybrid_total)
+#' sum(subset(cr_upw, cat == "Germany"& cr_year == 2020)$cr_hybrid_total)
 #' # Number of crossref hybrid articles vs all unpaywall hybrid articles (Germany)
-#' sum(subset(cr_upw, cat == "Global")$upw_hybrid_total)
-#' sum(subset(cr_upw, cat == "Global")$cr_hybrid_total)
+#' sum(subset(cr_upw, cat == "Global" & cr_year == 2020)$upw_hybrid_total)
+#' sum(subset(cr_upw, cat == "Global" & cr_year == 2020)$cr_hybrid_total)
 "cr_upw"
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
 #' 
+#' Variables: 
+#' \describe{
+#'     \item{issn_l}{Linking ISSN}				
+#'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code.}				
+#'     \item{cr_year}{Earliest publication year (Crossref field `issued`)} 			
+#'     \item{oa_n}{Number of distinct open access articles}				
+#'     \item{n}{Number of distinct articles}			
+#'     \item{has_ta}{Involvement in transformative agreements}
+#'     }
 #' @examples 
-#' ta_country_output
+#' # Article numbers (total `n` and open access `oa_n`) for journals involved in transformative agreements in Germany
+#' subset(ta_country_output, country_code == "DE" & has_ta == TRUE)
 "ta_country_output"
 
 #' Hybrid Journals: Venues Metadata
 #' 
-#' @examples 
-#' jct_oalex_venues
+#' Variables:
+#' \describe{
+#'     \item{issn_l}{Linking ISSN}
+#'     \item{id}{The OpenAlex ID for this institution}
+#'     \item{display_name}{Journal name}
+#'     \item{homepage_url}{Journal url}
+#'     }
+#' @examples
+#' # Venues metadata for an issn_l
+#' jct_oalex_venues[jct_oalex_venues$issn_l == "0006-3568",]
 "jct_oalex_venues"
 
 

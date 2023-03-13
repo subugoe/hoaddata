@@ -11,9 +11,16 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 jct_oalex_venues
 }
 \description{
-Hybrid Journals: Venues Metadata
+Variables:
+\describe{
+    \item{issn_l}{Linking ISSN}
+    \item{id}{The OpenAlex ID for this institution}
+    \item{display_name}{Journal name}
+    \item{homepage_url}{Journal url}
+    }
 }
 \examples{
-jct_oalex_venues
+# Venues metadata for an issn_l
+jct_oalex_venues[jct_oalex_venues$issn_l == "0006-3568",]
 }
 \keyword{datasets}

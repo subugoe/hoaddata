@@ -14,8 +14,7 @@ cr_upw
 Comparision of license metadata in Crossref with Unpaywall per year.
 }
 \details{
-Iternal note: this data was created by combining the rows `upw_cr` and `upw_cr_de` from `cc_upw_cr.csv` and `cc_upw_cr_de.csv`
-
+Variables:
 \describe{
     \item{issn_l}{Linking ISSN}
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
@@ -27,10 +26,10 @@ Iternal note: this data was created by combining the rows `upw_cr` and `upw_cr_d
 }
 \examples{
 # Number of crossref hybrid articles vs all unpaywall hybrid articles (Global)
-sum(subset(cr_upw, cat == "Germany")$upw_hybrid_total)
-sum(subset(cr_upw, cat == "Germany")$cr_hybrid_total)
+sum(subset(cr_upw, cat == "Germany"& cr_year == 2020)$upw_hybrid_total)
+sum(subset(cr_upw, cat == "Germany"& cr_year == 2020)$cr_hybrid_total)
 # Number of crossref hybrid articles vs all unpaywall hybrid articles (Germany)
-sum(subset(cr_upw, cat == "Global")$upw_hybrid_total)
-sum(subset(cr_upw, cat == "Global")$cr_hybrid_total)
+sum(subset(cr_upw, cat == "Global" & cr_year == 2020)$upw_hybrid_total)
+sum(subset(cr_upw, cat == "Global" & cr_year == 2020)$cr_hybrid_total)
 }
 \keyword{datasets}

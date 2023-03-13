@@ -11,9 +11,18 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 ta_country_output
 }
 \description{
-JCT Hybrid Journals: Institutions involved in transformative agreements by country
+Variables: 
+\describe{
+    \item{issn_l}{Linking ISSN}				
+    \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code.}				
+    \item{cr_year}{Earliest publication year (Crossref field `issued`)} 			
+    \item{oa_n}{Number of distinct open access articles}				
+    \item{n}{Number of distinct articles}			
+    \item{has_ta}{Involvement in transformative agreements}
+    }
 }
 \examples{
-ta_country_output
+# Article numbers (total `n` and open access `oa_n`) for journals involved in transformative agreements in Germany
+subset(ta_country_output, country_code == "DE" & has_ta == TRUE)
 }
 \keyword{datasets}

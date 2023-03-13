@@ -25,7 +25,6 @@ In case where OpenAlex did not record an country affiliation, we extracted
 country names from the display_name using regular expressions.
 
 Variables:
-
 \describe{
     \item{doi}{DOI for the OA article}
     \item{issn_l}{Linking ISSN}
