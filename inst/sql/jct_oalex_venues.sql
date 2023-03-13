@@ -4,7 +4,7 @@ WITH
     issn_l,
     ARRAY_AGG(STRUCT(container_title)
     ORDER BY
-      year DESC, n DESC
+      n DESC
     LIMIT
       1)[
   OFFSET
@@ -13,9 +13,6 @@ WITH
     SELECT
       issn_l,
       container_title,
-      EXTRACT (YEAR
-      FROM
-        issued) AS year,
       COUNT(DISTINCT md.doi) AS n
     FROM
       `hoad-dash.hoaddata.cc_md` AS md
@@ -25,7 +22,6 @@ WITH
       md.doi = cr.doi
     GROUP BY
       issn_l,
-      year,
       container_title
     ORDER BY
       n DESC )
