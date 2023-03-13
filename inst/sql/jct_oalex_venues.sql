@@ -33,7 +33,7 @@ WITH
     issn_l),
   oalex AS (
   SELECT
-    homepage_url as display_name,
+    homepage_url,
     issn_l
   FROM
     `subugoe-collaborative.openalex.sources`
@@ -41,7 +41,9 @@ WITH
     works_count > 10
     AND homepage_url IS NOT NULL )
 SELECT
-  *
+  my_jns.issn_l,
+  container_title AS display_name,
+  oalex.homepage_url
 FROM
   my_jns
 LEFT JOIN
