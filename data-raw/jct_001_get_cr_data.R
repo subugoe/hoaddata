@@ -220,6 +220,9 @@ usethis::use_data(cr_md, overwrite = TRUE)
 
 ### OpenAlex Journal metadata ----
 jct_oalex_venues <- create_bq_table("jct_oalex_venues", download = TRUE)
+# Fix duplicate URLs
+jct_oalex_venues <- jct_oalex_venues |>
+  dplyr::distinct(issn_l, .keep_all = TRUE)
 # Save in package
 usethis::use_data(jct_oalex_venues, overwrite = TRUE)
 
