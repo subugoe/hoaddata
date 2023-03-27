@@ -168,7 +168,7 @@
 
 #' License coverage Crossref vs Unpaywall
 #' 
-#' Comparision of license metadata in Crossref with Unpaywall per year. 
+#' This dataset provides the data for the comparision of license metadata in Crossref with Unpaywall per year. 
 #' 
 #' Variables:
 #' \describe{
@@ -191,6 +191,8 @@
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
 #' 
+#' This dataset presents information on the number of open access articles as well the number of all articles to compare with by the publication year and by country.
+#' 
 #' Variables: 
 #' \describe{
 #'     \item{issn_l}{Linking ISSN}				
@@ -206,6 +208,8 @@
 "ta_country_output"
 
 #' Hybrid Journals: Venues Metadata
+#' 
+#' This dataset gives information on the venue of hybrid journals providing an url link to journals that are listed with their issn number, OpenAlex id and the name.
 #' 
 #' Variables:
 #' \describe{
