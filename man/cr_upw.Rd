@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 cr_upw
 }
 \description{
-Comparision of license metadata in Crossref with Unpaywall per year.
+This dataset provides the data for the comparision of license metadata in Crossref with Unpaywall per year.
 }
 \details{
 Variables:

@@ -11,6 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 ta_country_output
 }
 \description{
+This dataset presents information on the involvement in transformative agreements and the number of open access articles as well as the number of all articles by the publication year and by country.
+}
+\details{
 Variables: 
 \describe{
     \item{issn_l}{Linking ISSN}				

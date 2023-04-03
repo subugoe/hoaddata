@@ -1,7 +1,7 @@
 # JCT data gathering
 pkgload::load_all()
 
-#' Authentificate with Big Query
+#' Authenticate with Big Query
 #'
 #'Decrypting-ability using internal secret_* functions from gargle
 # package following bigrquery test setup.
@@ -65,8 +65,9 @@ jct_hybrid_jns <- jct_hybrid_jns_raw |>
     # Archives and Museum Informatics > Archival Science
     issn_l == "1042-1467" ~ "1389-0166",
     TRUE ~ as.character(issn_l)
-    )) |>
-    dplyr::distinct()
+  )) |>
+  dplyr::distinct() |>
+  dplyr::mutate(esac_publisher = gsub("&", "and", esac_publisher))
 
 # Upload to BQ
 jct_hybrid_jns_path <-
@@ -81,10 +82,9 @@ bigrquery::bq_table_upload(
 )
 usethis::use_data(jct_hybrid_jns, overwrite = TRUE)
 
-
 # OAM data
 
-# Cleaned and enriched version of OAM data
+# Cleaned and enriched version of Open Access Monitor data
 # <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
 
 oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
@@ -101,6 +101,24 @@ bigrquery::bq_table_upload(
   oam_hybrid_jns
 )
 usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
+
+# Combine both journal tables
+hybrid_jns <- oam_hybrid_jns |>
+  dplyr::filter(!issn_l %in% jct_hybrid_jns$issn_l) |>
+  dplyr::bind_rows(jct_hybrid_jns) |>
+  dplyr::distinct()
+
+# Upload to BQ
+hybrid_jns_path <-
+  bigrquery::bq_table("hoad-dash", "hoaddata", "hybrid_jns")
+
+if (bigrquery::bq_table_exists(hybrid_jns_path)) {
+  bigrquery::bq_table_delete(hybrid_jns_path)
+}
+bigrquery::bq_table_upload(
+  hybrid_jns_path,
+  hybrid_jns
+)
 
 # Article data
 
@@ -141,8 +159,7 @@ usethis::use_data(jn_ind, overwrite = TRUE)
 # where no affiliation data could be found
 create_bq_table("cr_openalex_inst_full_raw")
 
-# Extract iso2 country codes from address strings where OpenALEX
-# found no match country code
+# Extract iso2 country codes from address strings where OpenALEX found no match country code
 
 # 1. Upload countrycode list
 
@@ -158,10 +175,10 @@ bigrquery::bq_table_upload(bg_countrycodes,
 # 2. Extract and match country strings
 create_bq_table("cr_openalex_inst_full")
 
+### First-author affiliation data for CC articles ----
 
-### First-author affiliation data CC articles ----
+# Article-level first author affiliation data CC licenses with OpenAlex ids and display names.
 
-# Article-level first author affiliation data CC licenses
 cc_articles <-
   create_bq_table("cc_openalex_inst", download = TRUE)
 # Save in package
@@ -170,35 +187,35 @@ usethis::use_data(cc_articles, overwrite = TRUE)
 
 ### Aggregated first-author country affiliations per hybrid journal and year ----
 
+# Data on the number of CC licences by the first author country affiliation and year.
+
 jn_aff <-
-  create_bq_table("cc_openalex_inst_jn_ind",
-  dataset = "hoaddata",
-                  download = TRUE)
+  create_bq_table("cc_openalex_inst_jn_ind", dataset = "hoaddata", download = TRUE)
 # Save in package
 usethis::use_data(jn_aff, overwrite = TRUE)
 
 ### Open Metadata ----
 
-#### All
-upw_cr <-  create_bq_table("cc_upw_cr", download = TRUE) |>
-  dplyr::mutate(cat = "Global")
+# Hybrid articles in Crossref to compare with Unpaywall in Germany and Global.
+# The differences demonstrate license gaps.
 
-#### Germany
-upw_cr_de <- create_bq_table("cc_upw_cr_de", download = TRUE) |>
-  dplyr::mutate(cat = "Germany")
-
-cr_upw <- dplyr::bind_rows(upw_cr, upw_cr_de)
+cr_upw <-  create_bq_table("cc_upw_cr", download = TRUE)
 # Save in package
 usethis::use_data(cr_upw, overwrite = TRUE)
 
 
 ### Crossref metadata coverage CC-licenses articles
 
-#### Global
+# 1. Global
 cc_md_indicators <- create_bq_table("cc_md_indicators", download = TRUE)
 
-#### Germany
+# 2. Germany
 cc_md_indicators_de <- create_bq_table("cc_md_indicators_de", download = TRUE)
+
+# 3. Combined
+
+# Crossref metadata that is publicly available for Open Access articles in hybrid journals included in transformative agreements. 
+# Data: full-texts for text-mining purposes, persistent links to authors (ORCID), funder information, abstracts and reference lists through Crossref.
 
 cr_md <- cc_md_indicators |>
   dplyr::mutate(cat = "Global") |>
@@ -210,19 +227,27 @@ usethis::use_data(cr_md, overwrite = TRUE)
 
 
 ### OpenAlex Journal metadata ----
+
+# Display names and urls of OpenAlex jounrals.
+
 jct_oalex_venues <- create_bq_table("jct_oalex_venues", download = TRUE)
+# Fix duplicate URLs
+jct_oalex_venues <- jct_oalex_venues |>
+  dplyr::distinct(issn_l, .keep_all = TRUE)
 # Save in package
 usethis::use_data(jct_oalex_venues, overwrite = TRUE)
 
 
 ### Link country affiliations and TAs ----
+
+# 1.
 jct_inst <- readr::read_csv("data-raw/jct_institutions.csv")
 jct_inst_short <- jct_inst |>
   dplyr::distinct(esac_id, ror_id) |>
   # Remove orgs without ror id
   dplyr::filter(!is.na(ror_id))
 
-# Upload to BQ
+# 2. Upload to BQ
 jct_inst_short_path <-
   bigrquery::bq_table("hoad-dash", "hoaddata", "jct_inst_short")
 
@@ -233,8 +258,12 @@ bigrquery::bq_table_upload(
   jct_inst_short_path,
   jct_inst_short
 )
-# Map institutions to journals
+# 3. Map institutions to journals
 create_bq_table("esac_jn_inst")
+
+### Involvement in transformative agreements ----
+
+# Involvement in transformative agreements and the number of open access articles as well as the number of all articles by the publication year and by country.
 
 ta_country_output <-
   create_bq_table("ta_country_output", download = TRUE)

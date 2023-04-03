@@ -11,6 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 jct_oalex_venues
 }
 \description{
+This dataset gives information on the venue of hybrid journals providing an url link to journals that are listed with their issn number, OpenAlex id and the name.
+}
+\details{
 Variables:
 \describe{
     \item{issn_l}{Linking ISSN}

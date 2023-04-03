@@ -191,8 +191,8 @@
 
 #' JCT Hybrid Journals: Institutions involved in transformative agreements by country
 #' 
-#' This dataset presents information on the number of open access articles as well the number of all articles to compare with by the publication year and by country.
-#' 
+#' This dataset presents information on the involvement in transformative agreements and the number of open access articles as well as the number of all articles by the publication year and by country. 
+#'
 #' Variables: 
 #' \describe{
 #'     \item{issn_l}{Linking ISSN}				
