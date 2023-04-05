@@ -5,7 +5,7 @@
 \alias{ta_country_output}
 \title{JCT Hybrid Journals: Institutions involved in transformative agreements by country}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1450378 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1468790 rows and 6 columns.
 }
 \usage{
 ta_country_output

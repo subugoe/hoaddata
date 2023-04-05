@@ -33,13 +33,17 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
 
-      - name: Process data
+      - name: Update data
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
           source("data-raw/jct_001_get_cr_data.R")
         shell: Rscript {0}
+      
+      - name: Check package after data update
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        uses: r-lib/actions/check-r-package@v2
 
       - name: Commit files
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
