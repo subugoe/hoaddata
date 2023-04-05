@@ -5,11 +5,11 @@ testthat::test_that("cr_upw exists", {
 
 testthat::test_that("cr_upw straight counting", {
   testthat::expect_true(unique(
-    purrr::map2_lgl(
-      cr_upw$article_total, cr_upw$cr_hybrid_total,
-      function(x, y) {
+    mapply(function(x, y) {
         x >= y
-        }
+        },
+        cr_upw$article_total,
+        cr_upw$cr_hybrid_total
       )
   ))
 })
