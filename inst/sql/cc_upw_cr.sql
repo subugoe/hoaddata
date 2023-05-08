@@ -14,7 +14,7 @@ WITH
   END
     AS upw_hybrid,
     CASE
-      WHEN cc IS NULL THEN 0
+      WHEN (cc IS NOT NULL AND vor = 1) THEN 1
     ELSE
     1
   END
@@ -55,7 +55,7 @@ WITH
     END
       AS upw_hybrid,
       CASE
-        WHEN cc IS NULL THEN 0
+        WHEN (cc IS NOT NULL AND vor = 1) THEN 1
       ELSE
       1
     END
