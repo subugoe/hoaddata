@@ -16,7 +16,7 @@ WITH
     CASE
       WHEN (cc IS NOT NULL AND vor = 1) THEN 1
     ELSE
-    1
+    0
   END
     AS cr_hybrid,
     CASE
@@ -57,7 +57,7 @@ WITH
       CASE
         WHEN (cc IS NOT NULL AND vor = 1) THEN 1
       ELSE
-      1
+      0
     END
       AS cr_hybrid
     FROM
