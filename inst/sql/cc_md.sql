@@ -43,15 +43,31 @@ WITH
   RIGHT OUTER JOIN
     `hoad-dash.hoaddata.cr_raw` AS cr_raw
   ON
-    cc_df.doi = cr_raw.doi )
+    cc_df.doi = cr_raw.doi ),
+  cc_md_raw AS (
     # Fix ambigue license information in crossref metadata, eg: "10.1111/bjd.16343"
-SELECT
-  *
-FROM (
   SELECT
-    *,
-    ROW_NUMBER() OVER(PARTITION BY doi ORDER BY cc) AS ROW
-  FROM
-    `cc_md`) AS tmp
-WHERE
-  ROW = 1
+    *
+  FROM (
+    SELECT
+      *,
+      ROW_NUMBER() OVER(PARTITION BY doi ORDER BY cc) AS ROW
+    FROM
+      `cc_md`) AS tmp
+  WHERE
+    ROW = 1 )
+SELECT
+  DISTINCT doi,
+  issn_l,
+  cr_year,
+  CASE
+  # Delayed OA Rockefeller, nasty hack
+    WHEN cc = "CC BY-NC-SA" AND issn_l IN ('0021-9525', '0022-1007', '0022-1295') THEN NULL
+  ELSE
+  cc
+END
+  AS cc,
+  vor,
+  immediate
+FROM
+  cc_md_raw
