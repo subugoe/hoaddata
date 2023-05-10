@@ -23,50 +23,6 @@ jct_hybrid_jns_raw <- readr::read_csv("data-raw/jct_hybrid_jns.csv")
 
 # Map duplicate journal issn l
 jct_hybrid_jns <- jct_hybrid_jns_raw |>
-  dplyr::mutate(issn_l = dplyr::case_when(
-    # Work, Aging and Retirement
-    issn_l == "2054-4642" ~ "2054-4650",
-    # Theoretical Medicine And Bioethics
-    issn_l == "0166-2031" ~ "1386-7415",
-    # Sudanic Africa -> Islamic Africa
-    # https://ezb.ur.de/?2050488&bibid=UBCL
-    issn_l == "0803-0685" ~ "2154-0993",
-    # European Finance Review -> Review of Finance
-    # https://ezb.ur.de/searchres.phtml?bibid=UBCL&colors=7&lang=de&jq_type1=QS&jq_term1=1572-3097
-    issn_l == "1382-6662" ~ "1572-3097",
-    # Rendiconti lincei. Scienze fisiche e naturali
-    issn_l == "1120-6349" ~ "2037-4631",
-    # Papers and Studies in Contrastive Linguistics -> Poznan Studies in Contemporary Linguistics
-    issn_l == "0137-2459" ~ "1732-0747",
-    # Österreichische botanische Zeitschrift -> Plant Systematics and Evolution
-    issn_l == "0029-8948" ~ "0378-2697",
-    # Man and world -> Continental Philosophy Review
-    issn_l == "0025-1534" ~ "1387-2842",
-    # Journal of toxicology and environmental health
-    issn_l == "0098-4108" ~ "1528-7394",
-    # Journal of Language Evolution
-    issn_l == "2058-458X" ~ "2058-4571",
-    # ITL – International Journal of Applied Linguistics
-    issn_l == "0019-0810" ~ "0019-0829",
-    # International Journal of Geographical Information Science
-    issn_l == "0269-3798" ~ "1365-8816",
-    # International Journal of Cardiac Imaging > International Journal of Cardiovascular Imaging
-    issn_l == "0167-9899" ~ "1569-5794",
-    # International Journal for Educational and Vocational Guidance
-    issn_l == "1573-1782" ~ "0251-2513",
-    # Eurasian Economic Review
-    issn_l == "2147-429X" ~ "1309-422X",
-    # Design Management Journal
-    issn_l == "1045-7194" ~ "1942-5074",
-    # Computer applications in the biosciences -> Bioinformatics
-    issn_l == "0266-7061" ~ "1367-4803",
-    # Chemistry Education. Research and Practice
-    issn_l == "1109-4028" ~ "1756-1108",
-    # Archives and Museum Informatics > Archival Science
-    issn_l == "1042-1467" ~ "1389-0166",
-    TRUE ~ as.character(issn_l)
-    )) |>
-    dplyr::distinct() |>
     dplyr::mutate(esac_publisher = gsub("&", "and", esac_publisher))
 
 # Upload to BQ
