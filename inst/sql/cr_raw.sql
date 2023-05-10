@@ -49,4 +49,4 @@ FROM (
   ON
     issn = `hoad-dash.hoaddata.hybrid_jns`.`issn` )
 WHERE
-  (cr_year BETWEEN 2017 AND 2022)
+  (cr_year BETWEEN 2017 AND 2023)
