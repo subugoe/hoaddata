@@ -74,8 +74,9 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end --><p>This package contains information about the open access uptake of hybrid journals.</p>
-<p>The main purpose of hoaddata is to ship data for hybrid open access monitoring dashboards, which are currently under development at the SUB Göttingen with the support of the <a href="https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&amp;task=showDetail&amp;id=416115939&amp;" class="external-link">Deutsche Forschungsgemeinschaft</a>. By providing the data as an R package, hoaddata can be also used for other data analytics tasks with R.</p>
-<p>Data cover the publication period 2017 - 2022.</p>
+<p>The main purpose of hoaddata is to provide data for the <a href="https://subugoe.github.io/hoaddash/" class="external-link">Hybrid Open Access<br>
+Dashboard (HOAD)</a>, being developed at the SUB Göttingen with the support of the <a href="https://gepris.dfg.de/gepris/projekt/416115939?context=projekt&amp;task=showDetail&amp;id=416115939&amp;" class="external-link">Deutsche Forschungsgemeinschaft</a>. By making the data available as an R package, hoaddata can also be used for other data analytics tasks with R.</p>
+<p>The data cover the publication period 2017 - 2023.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -85,12 +86,25 @@
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"subugoe/hoaddata"</span>, dependencies <span class="op">=</span> <span class="st">"Imports"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="data-sources">Data sources<a class="anchor" aria-label="anchor" href="#data-sources"></a>
+</h2>
+<p>The package combines open data from multiple sources as follows:</p>
+<ul>
+<li>Journals included in transformative agreements were obtained from the <a href="https://journalcheckertool.org/transformative-agreements/" class="external-link">cOAlition S Transformative Agreements Public Data</a> (July 2021, July 2022 and May 23 snapshots). Agreements with German consortia were derived from <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link">Germany’s Open Access Monitor</a> (March 2022). We enriched both journal data sources with ISSN-L, a linking identifier for ISSN variants. Then, we excluded fully open access journals from the cOAlition S Transformative Agreements Public Data by cross-checking with several datasets of fully open access journals: the <a href="https://doaj.org/" class="external-link">Directory of Open Access Journals (DOAJ)</a>, <a href="https://doi.org/10.4119/unibi/2961544" class="external-link">Bielefeld GOLD OA</a> and <a href="https://unpaywall.org/" class="external-link">Unpaywall</a>.</li>
+<li>
+<a href="https://www.crossref.org/" class="external-link">Crossref</a> is our main data source for determining the publication volume in hybrid journals including the uptake of Open Access through Creative Commons licenses. The <a href="https://esac-initiative.org/about/transformative-agreements/reference-guide/" class="external-link">ESAC guidelines</a>, a community recommendation for negotiating transformative agreements, require publishers to make key metadata elements publicly available through Crossref, such as Creative Commons licensing information for Open Access articles. As a <a href="https://www.crossref.org/services/metadata-retrieval/metadata-plus/" class="external-link">Crossref Metadata Plus subscriber</a>, we used monthly Crossref snapshots to derive publication data.</li>
+<li>
+<a href="https://openalex.org/" class="external-link">OpenAlex</a> is our data source for determining the country affiliation of lead authors. A <a href="https://en.wikipedia.org/wiki/Lead_author" class="external-link">lead author</a> is the first named author of a scholarly article who has usually carried out most of the research presented in the article, although author roles can vary across disciplines. We used OpenAlex monthly snaphots as a data source to determine lead author affiliations.</li>
+<li>To highlight potential gaps between Crossref open licensing metadata and information provided via journal webpages, we used <a href="https://unpaywall.org/" class="external-link">Unpaywall</a> via OpenAlex as a complementary data source for Open Access articles in hybrid journals.</li>
+</ul>
+</div>
+<div class="section level2">
 <h2 id="data-gathering">Data gathering<a class="anchor" aria-label="anchor" href="#data-gathering"></a>
 </h2>
-<p>The <code>data-raw</code> folder contains code used to generate the hoaddata datasets.</p>
-<p>Most of the data was obtained by interfacing the <a href="https://subugoe.github.io/scholcomm_analytics/data.html" class="external-link">subugoe-collaborative scholarly data warehouse</a>, a collection of big scholarly datasets hosted on Google Big Query and maintained by the SUB Göttingen. <a href="https://www.crossref.org/" class="external-link">Crossref</a> was used for determining the publication volume and articles provided under a CC license, while affiliation data was gathered from <a href="https://openalex.org/" class="external-link">OpenAlex</a>.</p>
+<p>The <code>data-raw</code> folder contains the R code used to generate the hoaddata datasets.</p>
+<p>Most of the data was obtained by connecting to the <a href="https://subugoe.github.io/scholcomm_analytics/data.html" class="external-link">subugoe-collaborative scholarly data warehouse</a>, a collection of big scholarly datasets hosted on Google Big Query and maintained by the SUB Göttingen. <a href="https://www.crossref.org/" class="external-link">Crossref</a> was used to determine the publication volume and articles made available under a CC license, while affiliation data was gathered from <a href="https://openalex.org/" class="external-link">OpenAlex</a>.</p>
 <p>You can find the corresponding SQL code in the <code>inst/sql/</code> folder.</p>
-<p>The data package is automatically build with GitHub Actions. Each merge event into the main branch triggers a data update by calling the scripts in the <code>data-raw/</code> folder. Data changes will be incorporated in the package and tracked with Git. This makes it easy to update and reproduce different version of the data contained in hoaddata.</p>
+<p>The data package is automatically built using GitHub Actions. Every merge event in the main branch triggers a data update by calling the scripts in the <code>data-raw/</code> folder. Data changes are merged into the package and tracked with Git. This makes it easy to update and reproduce different versions of the data contained in hoaddata.</p>
 </div>
 <div class="section level2">
 <h2 id="data-re-use-and-licenses">Data re-use and licenses<a class="anchor" aria-label="anchor" href="#data-re-use-and-licenses"></a>
@@ -98,7 +112,7 @@
 <p>Datasets are released into the public domain.</p>
 <p>Anyone is free to copy, modify, publish, use, compile, sell, or distribute these materials in any form, for any purpose, commercial or non-commercial, and by any means.</p>
 <p>Crossref asserts no claims of ownership to individual items of bibliographic metadata and associated Digital Object Identifiers (DOIs) acquired through the use of the Crossref Free Services. Individual items of bibliographic metadata and associated DOIs may be cached and incorporated into the user’s content and systems.</p>
-<p>OpenAlex data is made available under the CC0 license.</p>
+<p>OpenAlex and Journal Checker Tool data are made available under the CC0 license.</p>
 <p><a href="https://journalcheckertool.org/transformative-agreements/" class="external-link">Transformative Agreements Public Data</a> is made available under the CC0 license.</p>
 <p>This work re-used the following dataset:</p>
 <p>Pollack, Philipp; Lindstrot, Barbara; Barbers, Irene, Stanzel, Franziska, 2021, “Open Access Monitor: Zeitschriftenlisten (V2)”, <a href="https://doi.org/10.26165/JUELICH-DATA/VTQXLM" class="external-link uri">https://doi.org/10.26165/JUELICH-DATA/VTQXLM</a>.</p>
