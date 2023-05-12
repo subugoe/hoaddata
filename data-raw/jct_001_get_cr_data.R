@@ -27,7 +27,7 @@ jct_hybrid_jns <- jct_hybrid_jns_raw |>
 
 # Upload to BQ
 jct_hybrid_jns_path <-
-  bigrquery::bq_table("hoad-dash", "hoaddata", "jct_hybrid_jns")
+  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_hybrid_jns")
 
 if (bigrquery::bq_table_exists(jct_hybrid_jns_path)) {
   bigrquery::bq_table_delete(jct_hybrid_jns_path)
@@ -47,7 +47,7 @@ oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
 
 # Upload to BQ
 oam_hybrid_jns_path <-
-  bigrquery::bq_table("hoad-dash", "hoaddata", "oam_hybrid_jns")
+  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "oam_hybrid_jns")
 
 if (bigrquery::bq_table_exists(oam_hybrid_jns_path)) {
   bigrquery::bq_table_delete(oam_hybrid_jns_path)
@@ -66,7 +66,7 @@ hybrid_jns <- oam_hybrid_jns |>
 
 # Upload to BQ
 hybrid_jns_path <-
-  bigrquery::bq_table("hoad-dash", "hoaddata", "hybrid_jns")
+  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "hybrid_jns")
 
 if (bigrquery::bq_table_exists(hybrid_jns_path)) {
   bigrquery::bq_table_delete(hybrid_jns_path)
@@ -122,7 +122,7 @@ create_bq_table("cr_openalex_inst_full_raw")
 
 countrycodes <- countrycode::codelist[,c("iso2c", "country.name.en")]
 colnames(countrycodes) <- c("iso2c", "country_name_en")
-bg_countrycodes <- bigrquery::bq_table("hoad-dash", "hoaddata", "countrycodes")
+bg_countrycodes <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "countrycodes")
 
 if (bigrquery::bq_table_exists(bg_countrycodes))
   bigrquery::bq_table_delete(bg_countrycodes)
@@ -193,7 +193,7 @@ jct_inst_short <- jct_inst |>
 
 # Upload to BQ
 jct_inst_short_path <-
-  bigrquery::bq_table("hoad-dash", "hoaddata", "jct_inst_short")
+  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_inst_short")
 
 if (bigrquery::bq_table_exists(jct_inst_short_path)) {
   bigrquery::bq_table_delete(jct_inst_short_path)
