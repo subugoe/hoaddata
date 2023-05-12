@@ -12,7 +12,7 @@ WITH
       OFFSET
         (0)], ".|,") AS country
     FROM
-      `hoad-dash.hoaddata.cr_openalex_inst_full_raw`
+      `subugoe-collaborative.hoaddata.cr_openalex_inst_full_raw`
     WHERE
       country_code IS NULL )),
   my_matching AS (
@@ -22,7 +22,7 @@ WITH
     doi,
     display_name
   FROM
-    `hoad-dash.hoaddata.countrycodes` AS iso
+    `subugoe-collaborative.hoaddata.countrycodes` AS iso
   INNER JOIN
     country_missing
   ON
@@ -42,7 +42,7 @@ IF
     country_code) AS country_code,
     cr_openalex_inst_full_raw.display_name
 FROM
-  `hoad-dash.hoaddata.cr_openalex_inst_full_raw` AS cr_openalex_inst_full_raw
+  `subugoe-collaborative.hoaddata.cr_openalex_inst_full_raw` AS cr_openalex_inst_full_raw
 LEFT OUTER JOIN
  my_matching
 ON

@@ -7,7 +7,7 @@ WITH
     cr_year,
     COUNT(DISTINCT doi) OVER (PARTITION BY issn_l, cr_year) AS jn_all
   FROM
-    `hoad-dash.hoaddata.cc_md` ),
+    `subugoe-collaborative.hoaddata.cc_md` ),
   # Immediate cc license
   cc_year AS (
   SELECT
@@ -16,7 +16,7 @@ WITH
     cc,
     COUNT(DISTINCT doi) OVER (PARTITION BY issn_l, cr_year, cc) AS cc_total
   FROM
-    `hoad-dash.hoaddata.cc_md` AS cc_md
+    `subugoe-collaborative.hoaddata.cc_md` AS cc_md
   WHERE
     vor = 1
     AND NOT cc IS NULL # there are few cases where the cc regex extraction did not work

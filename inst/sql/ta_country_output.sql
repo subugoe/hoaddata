@@ -7,19 +7,19 @@ WITH
     cr_oalex.country_code,
     cr_oalex.issn_l,
     CASE
-      WHEN EXISTS ( SELECT * FROM `hoad-dash.hoaddata.esac_jn_inst` AS jct_inst WHERE jct_inst.ror_id = oalex.ror AND jct_inst.issn_l = jns.issn_l ) THEN TRUE
+      WHEN EXISTS ( SELECT * FROM `subugoe-collaborative.hoaddata.esac_jn_inst` AS jct_inst WHERE jct_inst.ror_id = oalex.ror AND jct_inst.issn_l = jns.issn_l ) THEN TRUE
     ELSE
     FALSE
   END
     AS has_ta
   FROM
-    `hoad-dash.hoaddata.cc_openalex_inst` cr_oalex
+    `subugoe-collaborative.hoaddata.cc_openalex_inst` cr_oalex
   LEFT JOIN
     `subugoe-collaborative.openalex.institutions` oalex
   ON
     cr_oalex.id = oalex.id
   LEFT JOIN
-    `hoad-dash.hoaddata.jct_hybrid_jns` jns
+    `subugoe-collaborative.hoaddata.jct_hybrid_jns` jns
   ON
     cr_oalex.issn_l = jns.issn_l
   GROUP BY
@@ -37,19 +37,19 @@ WITH
     cr_oalex.country_code,
     cr_oalex.issn_l,
     CASE
-      WHEN EXISTS ( SELECT * FROM `hoad-dash.hoaddata.esac_jn_inst` AS jct_inst WHERE jct_inst.ror_id = oalex.ror AND jct_inst.issn_l = jns.issn_l ) THEN TRUE
+      WHEN EXISTS ( SELECT * FROM `subugoe-collaborative.hoaddata.esac_jn_inst` AS jct_inst WHERE jct_inst.ror_id = oalex.ror AND jct_inst.issn_l = jns.issn_l ) THEN TRUE
     ELSE
     FALSE
   END
     AS has_ta
   FROM
-    `hoad-dash.hoaddata.cr_openalex_inst_full` cr_oalex
+    `subugoe-collaborative.hoaddata.cr_openalex_inst_full` cr_oalex
   LEFT JOIN
     `subugoe-collaborative.openalex.institutions` oalex
   ON
     cr_oalex.id = oalex.id
   LEFT JOIN
-    `hoad-dash.hoaddata.jct_hybrid_jns` jns
+    `subugoe-collaborative.hoaddata.jct_hybrid_jns` jns
   ON
     cr_oalex.issn_l = jns.issn_l
     --WHERE ror = "https://ror.org/01y9bpm73"

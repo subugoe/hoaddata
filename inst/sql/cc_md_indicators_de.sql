@@ -31,11 +31,11 @@ FROM (
     has_abstract,
     has_ref
   FROM
-    `hoad-dash.hoaddata.cr_raw` AS raw,
+    `subugoe-collaborative.hoaddata.cr_raw` AS raw,
     UNNEST(link) AS link,
     UNNEST(author) AS author 
-    INNER JOIN `hoad-dash.hoaddata.cc_md` as cc_md ON raw.doi = cc_md.doi
-    INNER JOIN `hoad-dash.hoaddata.cr_openalex_inst_full` as oalex ON raw.doi = oalex.doi
+    INNER JOIN `subugoe-collaborative.hoaddata.cc_md` as cc_md ON raw.doi = cc_md.doi
+    INNER JOIN `subugoe-collaborative.hoaddata.cr_openalex_inst_full` as oalex ON raw.doi = oalex.doi
     WHERE
    ( vor = 1
     AND NOT cc IS NULL) AND country_code = "DE") )

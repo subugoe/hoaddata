@@ -1,6 +1,6 @@
 ## Article-level license information
 CREATE OR REPLACE TABLE
-  `hoad-dash.hoaddata.cc_md_all` AS (
+  `subugoe-collaborative.hoaddata.cc_md_all` AS (
   WITH
     normalized_cc AS (
     SELECT
@@ -9,7 +9,7 @@ CREATE OR REPLACE TABLE
       lic.content_version,
       lic.delay_in_days
     FROM
-      `hoad-dash.hoaddata.cr_raw`,
+      `subugoe-collaborative.hoaddata.cr_raw`,
       UNNEST(license) AS lic
     WHERE
       REGEXP_CONTAINS(LOWER(lic.url), "creativecommons.org") ),
@@ -44,7 +44,7 @@ CREATE OR REPLACE TABLE
     FROM
       normalized_cc AS cc_df
     RIGHT OUTER JOIN
-      `hoad-dash.hoaddata.cr_raw` AS cr_raw
+      `subugoe-collaborative.hoaddata.cr_raw` AS cr_raw
     ON
       cc_df.doi = cr_raw.doi ),
     cc_md_raw AS (
@@ -77,7 +77,7 @@ CREATE OR REPLACE TABLE
 
 ## Journal OA Proportion Test
 CREATE OR REPLACE TABLE
-  `hoad-dash.hoaddata.jn_oa_prop` AS (
+  `subugoe-collaborative.hoaddata.jn_oa_prop` AS (
   WITH
     cc_prop AS (
     SELECT
@@ -118,12 +118,12 @@ CREATE OR REPLACE TABLE
 SELECT
   DISTINCT *
 FROM
- `hoad-dash.hoaddata.cc_md_all` AS cc_md
+ `subugoe-collaborative.hoaddata.cc_md_all` AS cc_md
 WHERE
   NOT EXISTS(
   SELECT
     issn_l
   FROM
-    `hoad-dash.hoaddata.jn_oa_prop` AS oa_journals
+    `subugoe-collaborative.hoaddata.jn_oa_prop` AS oa_journals
   WHERE
     cc_md.issn_l = oa_journals.issn_l)

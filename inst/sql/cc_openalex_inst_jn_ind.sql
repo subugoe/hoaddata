@@ -15,13 +15,13 @@ WITH
       country_code,
       cc
     FROM
-      `hoad-dash.hoaddata.cr_openalex_inst_full` alex
+      `subugoe-collaborative.hoaddata.cr_openalex_inst_full` alex
     LEFT JOIN (
       SELECT
         cc,
         doi
       FROM
-        `hoad-dash.hoaddata.cc_openalex_inst` ) AS cc_oa
+        `subugoe-collaborative.hoaddata.cc_openalex_inst` ) AS cc_oa
     ON
       alex.doi = cc_oa.doi )
   GROUP BY
