@@ -84,6 +84,10 @@ create_bq_table(sql_basename = "cr_raw")
 ## Creative Commons licensing ----
 
 ### Metadata ----
+create_bq_table(sql_basename = "cc_md_all")
+##### Exclude journals with OA proportion > .95
+create_bq_table(sql_basename = "cc_oa_prop")
+
 create_bq_table(sql_basename = "cc_md")
 
 ### Creative Commons per journals ----
