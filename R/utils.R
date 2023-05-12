@@ -10,7 +10,7 @@
 #'
 #' @noRd
 create_bq_table <- function(sql_basename = NULL,
-                            project = "hoad-dash",
+                            project = "subugoe-collaborative",
                             dataset = "hoaddata",
                             billing = "subugoe-collaborative",
                             download = FALSE) {

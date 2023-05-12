@@ -14,7 +14,8 @@ if (gargle:::secret_can_decrypt(package = "hoaddata")) {
 }
 
 # Note that journal-level data was gathered from the
-# Journal Checker Tool outside of this package on 15 July.
+# Journal Checker Tool outside of this package on 15 July 2022
+# and 8 May 2023.
 # Because the Journal Checker Tool only contains current
 # transformative agreements, an archived version from July 2021
 # was also used.
@@ -84,6 +85,11 @@ create_bq_table(sql_basename = "cr_raw")
 ## Creative Commons licensing ----
 
 ### Metadata ----
+# All CC-licensed articles
+create_bq_table(sql_basename = "cc_md_all")
+# Exclude journals with OA proportion > .95
+create_bq_table(sql_basename = "cc_oa_prop")
+# Final article-level CC metadata
 create_bq_table(sql_basename = "cc_md")
 
 ### Creative Commons per journals ----
@@ -120,14 +126,17 @@ create_bq_table("cr_openalex_inst_full_raw")
 
 # 1. Upload countrycode list
 
-countrycodes <- countrycode::codelist[,c("iso2c", "country.name.en")]
+countrycodes <- countrycode::codelist[, c("iso2c", "country.name.en")]
 colnames(countrycodes) <- c("iso2c", "country_name_en")
 bg_countrycodes <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "countrycodes")
 
-if (bigrquery::bq_table_exists(bg_countrycodes))
+if (bigrquery::bq_table_exists(bg_countrycodes)) {
   bigrquery::bq_table_delete(bg_countrycodes)
-bigrquery::bq_table_upload(bg_countrycodes,
-                           countrycodes)
+}
+bigrquery::bq_table_upload(
+  bg_countrycodes,
+  countrycodes
+)
 
 # 2. Extract and match country strings
 create_bq_table("cr_openalex_inst_full")
