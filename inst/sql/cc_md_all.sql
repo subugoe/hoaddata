@@ -1,6 +1,6 @@
 WITH normalized_cc AS (
     SELECT doi,
-        RTRIM(REGEXP_EXTRACT(lic.url, r 'by.*?/'), "/") AS cc,
+        RTRIM(REGEXP_EXTRACT(lic.url, r'by.*?/'), "/") AS cc,
         lic.content_version,
         lic.delay_in_days
     FROM `subugoe-collaborative.hoaddata.cr_raw`,
