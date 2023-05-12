@@ -31,10 +31,10 @@ FROM (
     has_abstract,
     has_ref
   FROM
-    `hoad-dash.hoaddata.cr_raw` AS raw,
+    `subugoe-collaborative.hoaddata.cr_raw` AS raw,
     UNNEST(link) AS link,
     UNNEST(author) AS author 
-    INNER JOIN `hoad-dash.hoaddata.cc_md` as cc_md ON raw.doi = cc_md.doi
+    INNER JOIN `subugoe-collaborative.hoaddata.cc_md` as cc_md ON raw.doi = cc_md.doi
     WHERE
     vor = 1
     AND NOT cc IS NULL) )

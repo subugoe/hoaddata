@@ -25,7 +25,7 @@ id,
 country_code,
 display_name
 FROM
-`hoad-dash.hoaddata.cc_md` AS cc_md
+`subugoe-collaborative.hoaddata.cc_md` AS cc_md
 LEFT OUTER JOIN
 first_aff
 ON

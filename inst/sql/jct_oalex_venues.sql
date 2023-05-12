@@ -15,7 +15,7 @@ WITH
       container_title,
       COUNT(DISTINCT md.doi) AS n
     FROM
-      `hoad-dash.hoaddata.cc_md` AS md
+      `subugoe-collaborative.hoaddata.cc_md` AS md
     INNER JOIN
       `subugoe-collaborative.cr_instant.snapshot` AS cr
     ON

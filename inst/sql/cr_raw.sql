@@ -45,8 +45,8 @@ FROM (
         OR issue IS NULL) ) AS `tbl_cr`,
     UNNEST(issn) AS issn
   INNER JOIN
-    `hoad-dash.hoaddata.hybrid_jns`
+    `subugoe-collaborative.hoaddata.hybrid_jns`
   ON
-    issn = `hoad-dash.hoaddata.hybrid_jns`.`issn` )
+    issn = `subugoe-collaborative.hoaddata.hybrid_jns`.`issn` )
 WHERE
   (cr_year BETWEEN 2017 AND 2023)

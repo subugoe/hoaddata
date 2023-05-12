@@ -8,8 +8,8 @@ SELECT
   id,
   display_name
   FROM
-    `hoad-dash.hoaddata.cc_md` AS cc_md
-  LEFT JOIN `hoad-dash.hoaddata.cr_openalex_inst_full` as inst ON cc_md.doi = inst.doi
+    `subugoe-collaborative.hoaddata.cc_md` AS cc_md
+  LEFT JOIN `subugoe-collaborative.hoaddata.cr_openalex_inst_full` as inst ON cc_md.doi = inst.doi
   WHERE
     vor = 1
     AND NOT cc IS NULL # there are few cases where the cc regex extraction did not work

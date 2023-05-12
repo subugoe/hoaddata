@@ -26,13 +26,13 @@ WITH
   END
     AS germany
   FROM
-    `hoad-dash.hoaddata.cc_md` AS cc_cr
+    `subugoe-collaborative.hoaddata.cc_md` AS cc_cr
   LEFT JOIN
     `subugoe-collaborative.openalex.works` AS oalex
   ON
     LOWER(cc_cr.doi) = LOWER(oalex.doi)
   LEFT OUTER JOIN
-    `hoad-dash.hoaddata.cr_openalex_inst_full` AS oalex_inst
+    `subugoe-collaborative.hoaddata.cr_openalex_inst_full` AS oalex_inst
   ON
     LOWER(cc_cr.doi) = LOWER(oalex_inst.doi) ),
   u AS (
@@ -61,7 +61,7 @@ WITH
     END
       AS cr_hybrid
     FROM
-      `hoad-dash.hoaddata.cc_md` AS cc_cr
+      `subugoe-collaborative.hoaddata.cc_md` AS cc_cr
     LEFT JOIN
       `subugoe-collaborative.openalex.works` AS oalex
     ON
