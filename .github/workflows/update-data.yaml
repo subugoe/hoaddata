@@ -44,19 +44,18 @@ jobs:
       - name: Check package after data update
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         uses: r-lib/actions/check-r-package@v2
-
-      - name: Commit files
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit --allow-empty -m "Auto-update of the data package" -a
-
-      - name: Push changes
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-        uses: ad-m/github-push-action@master
+        
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5.0.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
+          title: 'Update data'
+          body: |
+            ${{steps.build_changelog.outputs.changelog}}
+          labels: |
+            data
+            automated pr
+          assignees: njahn82
+          reviewers: njahn82
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
