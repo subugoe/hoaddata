@@ -22,9 +22,14 @@ if (gargle:::secret_can_decrypt(package = "hoaddata")) {
 
 jct_hybrid_jns_raw <- readr::read_csv("data-raw/jct_hybrid_jns.csv")
 
-# Map duplicate journal issn l
+# Fix publisher names and remove manually identified full oa journals
 jct_hybrid_jns <- jct_hybrid_jns_raw |>
-    dplyr::mutate(esac_publisher = gsub("&", "and", esac_publisher))
+    dplyr::mutate(esac_publisher = gsub("&", "and", esac_publisher)) |>
+    dplyr::filter(!issn_l %in% c("2769-2485", "2666-6278", "2772-5642",
+    "2772-6967", "1097-3702", "2768-7228", "1869-3660", "2666-9587",
+    "2589-8892", "2321-0656", "2642-3588", "2667-3681", "2590-0315",
+    "1746-6202", "0943-4747", "2352-3727", "2748-1964", "2516-6042",
+    "2747-7460", "0012-9623", "2804-7214", "2694-0884", "2694-085X"))
 
 # Upload to BQ
 jct_hybrid_jns_path <-
