@@ -49,9 +49,9 @@ SELECT DISTINCT doi,
     issn_l,
     cr_year,
     CASE
-        # Delayed OA Rockefeller, nasty hack
+        # Delayed OA Rockefeller and J Neuroscience, nasty hack
         WHEN cc = "CC BY-NC-SA"
-        AND issn_l IN ('0021-9525', '0022-1007', '0022-1295') THEN NULL
+        AND issn_l IN ('0021-9525', '0022-1007', '0022-1295', '0270-6474') THEN NULL
         ELSE cc
     END AS cc,
     vor,
