@@ -33,13 +33,13 @@ cc_md AS (
         RIGHT OUTER JOIN `subugoe-collaborative.hoaddata.cr_raw` AS cr_raw ON cc_df.doi = cr_raw.doi
 ),
 cc_md_raw AS (
-    # Fix ambigue license information in crossref metadata, eg: "10.1111/bjd.16343"
+    # Fix ambigue license information in crossref metadata, eg: "10.1111/bjd.16343", "10.1002/1873-3468.12905"
     SELECT *
     FROM (
             SELECT *,
                 ROW_NUMBER() OVER(
                     PARTITION BY doi
-                    ORDER BY cc
+                    ORDER BY cc, vor DESC
                 ) AS ROW
             FROM `cc_md`
         ) AS tmp
