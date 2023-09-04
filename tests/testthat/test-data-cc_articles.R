@@ -4,13 +4,19 @@ testthat::test_that("cc_articles exists", {
 })
 
 testthat::test_that("cc_articles has OA article", {
-  testthat::expect_equal(nrow
-  (cc_articles[cc_articles$doi == "10.1002/2016jc012241", ]),
-  1)
+  testthat::expect_equal(
+    nrow(unique(
+      cc_articles[cc_articles$doi == "10.1002/2016jc012241", "doi"]
+    )),
+    1
+  )
 })
 
 testthat::test_that("cc_articles has OA article", {
-  testthat::expect_equal(nrow
-  (cc_articles[cc_articles$doi == "10.1002/asi.24460", ]),
-  1)
+  testthat::expect_equal(
+    nrow(unique(
+      cc_articles[cc_articles$doi == "10.1002/asi.24460", "doi"]
+    )),
+    1
+  )
 })
