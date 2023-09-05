@@ -14,7 +14,7 @@ oam_hybrid_jns."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
     
     <a class="navbar-brand me-2" href="../index.html">hoaddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@ open access article published in hybrid journals as listed in
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 1129206 rows and 7 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 1307721 rows and 6 columns.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -91,11 +91,8 @@ country names from the display_name using regular expressions.</p>
     <dt>country_code</dt>
 <dd><p>The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)</p></dd>
 
-    <dt>id</dt>
-<dd><p>The OpenAlex ID for this institution</p></dd>
-
-    <dt>display_name</dt>
-<dd><p>The primary name of the institution (OpenAlex field `display_name`)</p></dd>
+    <dt>ror</dt>
+<dd><p>ROR Organizational ID</p></dd>
 
     
 </dl><p>To our knowledge, OpenAlex does not provide information about corresponding
@@ -105,20 +102,20 @@ country names from the display_name using regular expressions.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Hybrid OA articles with lead author from Uni Göttingen</span></span></span>
-<span class="r-in"><span><span class="va">cc_articles</span><span class="op">[</span><span class="va">cc_articles</span><span class="op">$</span><span class="va">id</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="st">"https://openalex.org/I74656192"</span>,<span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,765 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    doi                     issn_l  cr_year cc    country_code id    display_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10.1002/1873-3468.13978 0014-5…    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10.1002/1873-3468.14089 0014-5…    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10.1002/1873-3468.14671 0014-5…    <span style="text-decoration: underline;">2</span>023 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10.1002/adem.202201914  1438-1…    <span style="text-decoration: underline;">2</span>023 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10.1002/adma.201907693  0935-9…    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10.1002/adma.202000717  0935-9…    <span style="text-decoration: underline;">2</span>020 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/adma.202104075  0935-9…    <span style="text-decoration: underline;">2</span>021 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adma.202211279  0935-9…    <span style="text-decoration: underline;">2</span>023 CC B… DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/admi.202000473  2196-7…    <span style="text-decoration: underline;">2</span>020 CC BY DE           http… University …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/admi.202002049  2196-7…    <span style="text-decoration: underline;">2</span>021 CC B… DE           http… University …</span>
+<span class="r-in"><span><span class="va">cc_articles</span><span class="op">[</span><span class="va">cc_articles</span><span class="op">$</span><span class="va">ror</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="st">"https://ror.org/01y9bpm73"</span>,<span class="op">]</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,765 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    doi                     issn_l    cr_year cc          country_code ror       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10.1002/1873-3468.13978 0014-5793    <span style="text-decoration: underline;">2</span>020 CC BY-NC-ND DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10.1002/1873-3468.14089 0014-5793    <span style="text-decoration: underline;">2</span>021 CC BY-NC-ND DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10.1002/1873-3468.14671 0014-5793    <span style="text-decoration: underline;">2</span>023 CC BY-NC-ND DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10.1002/adem.202201914  1438-1656    <span style="text-decoration: underline;">2</span>023 CC BY-NC-ND DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10.1002/adma.201907693  0935-9648    <span style="text-decoration: underline;">2</span>020 CC BY       DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10.1002/adma.202000717  0935-9648    <span style="text-decoration: underline;">2</span>020 CC BY-NC    DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/adma.202104075  0935-9648    <span style="text-decoration: underline;">2</span>021 CC BY       DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adma.202211279  0935-9648    <span style="text-decoration: underline;">2</span>023 CC BY-NC    DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/admi.202000473  2196-7350    <span style="text-decoration: underline;">2</span>020 CC BY       DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/admi.202002049  2196-7350    <span style="text-decoration: underline;">2</span>021 CC BY-NC-ND DE           https://r…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,755 more rows</span></span>
 </code></pre></div>
     </div>
