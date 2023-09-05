@@ -217,9 +217,9 @@ bigrquery::bq_table_upload(
   jct_inst_short
 )
 # Map institutions to journals
-create_bq_table("esac_jn_inst")
+# create_bq_table("esac_jn_inst")
 
-ta_country_output <-
-  create_bq_table("ta_country_output", download = TRUE)
+#ta_country_output <-
+#  create_bq_table("ta_country_output", download = TRUE)
 # Save in package
 # usethis::use_data(ta_country_output, overwrite = TRUE)
