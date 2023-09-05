@@ -5,7 +5,7 @@
 \alias{cc_articles}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1129206 rows and 7 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1307721 rows and 6 columns.
 }
 \usage{
 cc_articles
@@ -32,8 +32,7 @@ Variables:
     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
     \item{cc}{Normalized Creative Commons variant.}
     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)}
-    \item{id}{The OpenAlex ID for this institution}
-    \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
+    \item{ror}{ROR Organizational ID}
     }
 
  To our knowledge, OpenAlex does not provide information about corresponding
@@ -41,6 +40,6 @@ Variables:
 }
 \examples{
 # Hybrid OA articles with lead author from Uni Göttingen
-cc_articles[cc_articles$id \%in\% "https://openalex.org/I74656192",]
+cc_articles[cc_articles$ror \%in\% "https://ror.org/01y9bpm73",]
 }
 \keyword{articledatasets}

@@ -139,7 +139,7 @@
 #' @keywords articledatasets
 #' @examples
 #' # Hybrid OA articles with lead author from Uni Göttingen
-#' cc_articles[cc_articles$id %in% "https://openalex.org/I74656192",]
+#' cc_articles[cc_articles$ror %in% "https://ror.org/01y9bpm73",]
 "cc_articles"
 
 #' Crossref Metadata Coverage

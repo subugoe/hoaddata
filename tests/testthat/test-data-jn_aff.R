@@ -4,7 +4,7 @@ testthat::test_that("cc_articles can be loaded as tibble", {
 })
 
 testthat::test_that("cc_articles format is correct", {
-  testthat::expect_equal(ncol(cc_articles), 7)
+  testthat::expect_equal(ncol(cc_articles), 6)
   testthat::expect_named(
     cc_articles,
     c(
