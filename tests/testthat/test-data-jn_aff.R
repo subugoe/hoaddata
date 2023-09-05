@@ -13,7 +13,8 @@ testthat::test_that("cc_articles format is correct", {
       "cr_year",
       "cc",
       "country_code",
-      "ror"
+      "id",
+      "display_name"
     )
   )
   testthat::expect_gt(nrow(cc_articles), 350000)

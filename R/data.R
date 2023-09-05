@@ -130,7 +130,8 @@
 #'     \item{cr_year}{Earliest publication year (Crossref field `issued`)}
 #'     \item{cc}{Normalized Creative Commons variant.}
 #'     \item{country_code}{The country where this institution is located, represented as an ISO two-letter country code. (OpenAlex field `country_code` and extra country extraction)}
-#'     \item{ror}{ROR Organizational ID}
+#'     \item{id}{The OpenAlex ID for this institution}
+#'     \item{display_name}{The primary name of the institution (OpenAlex field `display_name`)}
 #'     }
 #'
 #'  To our knowledge, OpenAlex does not provide information about corresponding
@@ -174,6 +175,12 @@
 #' @examples
 #' cr_upw
 "cr_upw"
+
+#' JCT Hybrid Journals: Institutions involved in transformative agreements by country
+#'
+#' @examples
+#' ta_country_output
+"ta_country_output"
 
 #' Hybrid Journals: Venues Metadata
 #'

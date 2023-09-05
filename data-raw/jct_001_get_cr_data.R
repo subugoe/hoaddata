@@ -222,4 +222,4 @@ create_bq_table("esac_jn_inst")
 ta_country_output <-
   create_bq_table("ta_country_output", download = TRUE)
 # Save in package
-# usethis::use_data(ta_country_output, overwrite = TRUE)
+usethis::use_data(ta_country_output, overwrite = TRUE)
