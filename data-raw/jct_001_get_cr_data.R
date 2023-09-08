@@ -200,26 +200,26 @@ usethis::use_data(jct_oalex_venues, overwrite = TRUE)
 
 ### Link country affiliations and TAs ----
 jct_inst <- readr::read_csv("data-raw/jct_institutions.csv")
-jct_inst_short <- jct_inst |>
-  dplyr::distinct(esac_id, ror_id) |>
-  # Remove orgs without ror id
-  dplyr::filter(!is.na(ror_id))
 
 # Upload to BQ
-jct_inst_short_path <-
-  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_inst_short")
+jct_inst_path <-
+  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_inst")
 
-if (bigrquery::bq_table_exists(jct_inst_short_path)) {
-  bigrquery::bq_table_delete(jct_inst_short_path)
+if (bigrquery::bq_table_exists(jct_inst_path)) {
+  bigrquery::bq_table_delete(jct_inst_path)
 }
 bigrquery::bq_table_upload(
-  jct_inst_short_path,
-  jct_inst_short
+  jct_inst_path,
+  jct_inst
 )
-# Map institutions to journals
-# create_bq_table("esac_jn_inst")
+# Add associated institutions
+ create_bq_table("jct_inst_enriched")
 
-#ta_country_output <-
-#  create_bq_table("ta_country_output", download = TRUE)
-# Save in package
+# Obtain publication statistics for institutions 
+# participating in transformative agreements (TA)
+create_bq_table("ta_oa_inst")
+
+# Save in GCS
+ta_oa_inst_path <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "ta_oa_inst")
+bigrquery::bq_table_save(ta_oa_inst_path, "gs://hoaddata/ta_oa_inst.csv.gz", destination_format = "csv")
 # usethis::use_data(ta_country_output, overwrite = TRUE)
