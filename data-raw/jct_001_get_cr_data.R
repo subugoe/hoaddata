@@ -215,7 +215,11 @@ bigrquery::bq_table_upload(
 # Add associated institutions
  create_bq_table("jct_inst_enriched")
 
-#ta_country_output <-
-#  create_bq_table("ta_country_output", download = TRUE)
-# Save in package
+# Obtain publication statistics for institutions 
+# participating in transformative agreements (TA)
+create_bq_table("ta_oa_inst")
+
+# Save in GCS
+ta_oa_inst_path <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "ta_oa_inst")
+bigrquery::bq_table_save(ta_oa_inst_path, "gs://hoaddata/ta_oa_inst.csv.gz", destination_format = "csv")
 # usethis::use_data(ta_country_output, overwrite = TRUE)
