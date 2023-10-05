@@ -12,7 +12,7 @@ via OpenALEX per journal, year and country affiliation (Germany)."><!-- mathjax 
     
     <a class="navbar-brand me-2" href="../index.html">hoaddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.71</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,20 +68,20 @@ via OpenALEX per journal, year and country affiliation (Germany).</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">cr_upw</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 137,030 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 137,473 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    issn_l    cr_year article_total upw_hybrid_total cr_hybrid_total cat    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 0001-0782    <span style="text-decoration: underline;">2</span>021           318                0               0 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 0001-1541    <span style="text-decoration: underline;">2</span>019           360               23              23 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 0001-5172    <span style="text-decoration: underline;">2</span>022           150               45              90 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 0001-6314    <span style="text-decoration: underline;">2</span>023            24                0              24 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 0001-6322    <span style="text-decoration: underline;">2</span>022            25               25              25 Germany</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 0001-6489    <span style="text-decoration: underline;">2</span>017             9                0               0 Germany</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 0001-690X    <span style="text-decoration: underline;">2</span>023             4                4               4 Germany</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 0001-706X    <span style="text-decoration: underline;">2</span>023           249               23              35 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 0001-8244    <span style="text-decoration: underline;">2</span>018            55               13              13 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 0001-8392    <span style="text-decoration: underline;">2</span>022            58                4               7 Global </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 137,020 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 0001-1541    <span style="text-decoration: underline;">2</span>020           323               28              30 Global </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 0001-4575    <span style="text-decoration: underline;">2</span>018             9                1               1 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 0001-4575    <span style="text-decoration: underline;">2</span>021            15                1               1 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 0001-4966    <span style="text-decoration: underline;">2</span>022            43               14               0 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 0001-5342    <span style="text-decoration: underline;">2</span>017            12                1               1 Global </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 0001-5342    <span style="text-decoration: underline;">2</span>020             2                1               1 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 0001-5458    <span style="text-decoration: underline;">2</span>019           103                0               0 Global </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 0001-5792    <span style="text-decoration: underline;">2</span>019             8                1               1 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 0001-5954    <span style="text-decoration: underline;">2</span>021            84                0               0 Global </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 0001-5954    <span style="text-decoration: underline;">2</span>023             2                0               0 Germany</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 137,463 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
