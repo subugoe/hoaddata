@@ -5,7 +5,7 @@
 \alias{cr_md}
 \title{Crossref Metadata Coverage}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 82067 rows and 9 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 83165 rows and 9 columns.
 }
 \usage{
 cr_md
