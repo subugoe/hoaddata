@@ -5,7 +5,7 @@
 \alias{jn_aff}
 \title{First author country affiliations per journal, year and Creative Commons license}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1909197 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1955022 rows and 6 columns.
 }
 \usage{
 jn_aff
