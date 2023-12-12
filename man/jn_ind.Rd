@@ -5,7 +5,7 @@
 \alias{jn_ind}
 \title{Prevalence of Creative Commons licenses by variant, year and journal}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 122639 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 123770 rows and 6 columns.
 }
 \usage{
 jn_ind

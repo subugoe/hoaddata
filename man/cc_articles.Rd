@@ -5,7 +5,7 @@
 \alias{cc_articles}
 \title{Hybrid OA publishing output from first authors}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1469938 rows and 6 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1511229 rows and 6 columns.
 }
 \usage{
 cc_articles
