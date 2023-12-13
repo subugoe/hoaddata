@@ -1,6 +1,6 @@
 # Test internal cr_upw dataset
 testthat::test_that("jct_hybrid_jns exists", {
-  testthat::expect_s3_class(cr_upw, "jct_hybrid_jns")
+  testthat::expect_s3_class(jct_hybrid_jns, "tbl_df")
 })
 
 testthat::test_that("jct_hybrid_jns de gruyter is normalized", {
@@ -9,6 +9,6 @@ testthat::test_that("jct_hybrid_jns de gruyter is normalized", {
       unique(
         jct_hybrid_jns[grepl("walter", jct_hybrid_jns$esac_publisher, ignore.case = TRUE), "esac_publisher"]
         )
-      ), 1
+      ),1
     )
 })
