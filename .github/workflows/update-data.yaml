@@ -34,36 +34,55 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
 
       - name: Update data
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
           source("data-raw/jct_001_get_cr_data.R")
         shell: Rscript {0}
-      
+
       - name: Check package after data update
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
         uses: r-lib/actions/check-r-package@v2
 
       - name: Commit files
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
+        id: commit_files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit --allow-empty -m "Auto-update of the data package" -a
+          BRANCH_NAME="data-update-branch-$(date +%Y%m%d%H%M%S)"
+          DATE=$(date +'%Y-%m-%d %H:%M:%S')
+          git checkout -b $BRANCH_NAME
+          git add .
+          git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
+          echo "::set-output name=branch::$BRANCH_NAME"
+          echo "::set-output name=date::$DATE"
 
       - name: Push changes
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.commit_files.outputs.branch }}
+
+      - name: Create Pull Request
+        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Auto-update of the data package on ${{ steps.commit_files.outputs.date }}"
+          branch: ${{ steps.commit_files.outputs.branch }}
+          title: "Auto-update of the data package on ${{ steps.commit_files.outputs.date }}"
+          body: "This PR contains automated updates to the data package performed on ${{ steps.commit_files.outputs.date }}."
 
       - name: Build site
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
-        if: github.event_name != 'pull_request'
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           clean: false
