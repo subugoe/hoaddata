@@ -2,7 +2,8 @@
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
-    branches: main
+    branches-ignore:
+      - main
   pull_request:
     branches: main
 
@@ -16,6 +17,17 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
     steps:
       - uses: actions/checkout@v2
+
+      - name: Check commit message
+        id: check_commit_message
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          if [[ "$COMMIT_MSG" != "Update data"* ]]; then
+            echo "Commit message does not start with 'Update data'."
+            echo "result=0" >> $GITHUB_ENV
+          else
+            echo "result=1" >> $GITHUB_ENV
+          fi
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -34,7 +46,7 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
 
       - name: Update data
-        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
@@ -42,39 +54,23 @@ jobs:
         shell: Rscript {0}
 
       - name: Check package after data update
-        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         uses: r-lib/actions/check-r-package@v2
 
       - name: Commit files
-        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
-        id: commit_files
+        if: env.result == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          BRANCH_NAME="data-update-branch-$(date +%Y%m%d%H%M%S)"
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
-          git checkout -b $BRANCH_NAME
           git add .
           git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
-          echo "::set-output name=branch::$BRANCH_NAME"
-          echo "::set-output name=date::$DATE"
 
       - name: Push changes
-        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.commit_files.outputs.branch }}
-
-      - name: Create Pull Request
-        if: ${{ github.ref != 'refs/heads/main' && github.event_name == 'push' }}
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Auto-update of the data package on ${{ steps.commit_files.outputs.date }}"
-          branch: ${{ steps.commit_files.outputs.branch }}
-          title: "Auto-update of the data package on ${{ steps.commit_files.outputs.date }}"
-          body: "This PR contains automated updates to the data package performed on ${{ steps.commit_files.outputs.date }}."
 
       - name: Build site
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
