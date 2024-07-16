@@ -73,10 +73,11 @@ jobs:
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
           git add data/
           git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
+      
       - name: Update branch
         if: env.result == '1'
         run: |
-          git pull origin ${{ github.head_ref }}
+          git pull --rebase origin ${{ github.head_ref }}
 
       - name: Push changes
         if: env.result == '1'

@@ -49,20 +49,20 @@ usethis::use_data(jct_hybrid_jns, overwrite = TRUE)
 # # Cleaned and enriched version of OAM data
 # # <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
 
-# oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
+ oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
 
 # # Upload to BQ
-# oam_hybrid_jns_path <-
-#   bigrquery::bq_table("subugoe-collaborative", "hoaddata", "oam_hybrid_jns")
+ oam_hybrid_jns_path <-
+   bigrquery::bq_table("subugoe-collaborative", "hoaddata", "oam_hybrid_jns")
 
-# if (bigrquery::bq_table_exists(oam_hybrid_jns_path)) {
-#   bigrquery::bq_table_delete(oam_hybrid_jns_path)
-# }
-# bigrquery::bq_table_upload(
-#   oam_hybrid_jns_path,
-#   oam_hybrid_jns
-# )
-# usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
+ if (bigrquery::bq_table_exists(oam_hybrid_jns_path)) {
+   bigrquery::bq_table_delete(oam_hybrid_jns_path)
+ }
+ bigrquery::bq_table_upload(
+   oam_hybrid_jns_path,
+   oam_hybrid_jns
+)
+ usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
 
 # # Combine both journal tables
 # hybrid_jns <- oam_hybrid_jns |>
