@@ -14,7 +14,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
@@ -71,6 +72,7 @@ jobs:
         if: env.result == '1'
         uses: ad-m/github-push-action@master
         with:
+          branch: ${{ github.head_ref }} # Push changes back to the originating branch
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build site
