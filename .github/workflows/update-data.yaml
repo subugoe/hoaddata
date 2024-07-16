@@ -74,18 +74,6 @@ jobs:
           git add data/
           git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
       
-      - name: Update branch
-        if: env.result == '1'
-        run: |
-          git pull --rebase origin ${{ github.head_ref }}
-
-      - name: Push changes
-        if: env.result == '1'
-        uses: ad-m/github-push-action@master
-        with:
-          branch: ${{ github.head_ref }} # Push changes back to the originating branch
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build site
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
