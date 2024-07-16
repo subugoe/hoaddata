@@ -44,182 +44,182 @@ bigrquery::bq_table_upload(
 )
 usethis::use_data(jct_hybrid_jns, overwrite = TRUE)
 
-# OAM data
+# # OAM data
 
-# Cleaned and enriched version of OAM data
-# <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
+# # Cleaned and enriched version of OAM data
+# # <https://doi.org/10.26165/JUELICH-DATA/VTQXLM>
 
-oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
+# oam_hybrid_jns <- readr::read_csv("data-raw/oam_hybrid_jns.csv")
 
-# Upload to BQ
-oam_hybrid_jns_path <-
-  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "oam_hybrid_jns")
+# # Upload to BQ
+# oam_hybrid_jns_path <-
+#   bigrquery::bq_table("subugoe-collaborative", "hoaddata", "oam_hybrid_jns")
 
-if (bigrquery::bq_table_exists(oam_hybrid_jns_path)) {
-  bigrquery::bq_table_delete(oam_hybrid_jns_path)
-}
-bigrquery::bq_table_upload(
-  oam_hybrid_jns_path,
-  oam_hybrid_jns
-)
-usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
+# if (bigrquery::bq_table_exists(oam_hybrid_jns_path)) {
+#   bigrquery::bq_table_delete(oam_hybrid_jns_path)
+# }
+# bigrquery::bq_table_upload(
+#   oam_hybrid_jns_path,
+#   oam_hybrid_jns
+# )
+# usethis::use_data(oam_hybrid_jns, overwrite = TRUE)
 
-# Combine both journal tables
-hybrid_jns <- oam_hybrid_jns |>
-  dplyr::filter(!issn_l %in% jct_hybrid_jns$issn_l) |>
-  dplyr::bind_rows(jct_hybrid_jns) |>
-  dplyr::distinct()
+# # Combine both journal tables
+# hybrid_jns <- oam_hybrid_jns |>
+#   dplyr::filter(!issn_l %in% jct_hybrid_jns$issn_l) |>
+#   dplyr::bind_rows(jct_hybrid_jns) |>
+#   dplyr::distinct()
 
-# Upload to BQ
-hybrid_jns_path <-
-  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "hybrid_jns")
+# # Upload to BQ
+# hybrid_jns_path <-
+#   bigrquery::bq_table("subugoe-collaborative", "hoaddata", "hybrid_jns")
 
-if (bigrquery::bq_table_exists(hybrid_jns_path)) {
-  bigrquery::bq_table_delete(hybrid_jns_path)
-}
-bigrquery::bq_table_upload(
-  hybrid_jns_path,
-  hybrid_jns
-)
+# if (bigrquery::bq_table_exists(hybrid_jns_path)) {
+#   bigrquery::bq_table_delete(hybrid_jns_path)
+# }
+# bigrquery::bq_table_upload(
+#   hybrid_jns_path,
+#   hybrid_jns
+# )
 
-# Article data
+# # Article data
 
-# Create Crossref metadata subset ----
-create_bq_table(sql_basename = "cr_raw")
+# # Create Crossref metadata subset ----
+# create_bq_table(sql_basename = "cr_raw")
 
-## Creative Commons licensing ----
+# ## Creative Commons licensing ----
 
-### Metadata ----
-# All CC-licensed articles
-create_bq_table(sql_basename = "cc_md_all")
-# Exclude journals with OA proportion > .95
-create_bq_table(sql_basename = "cc_oa_prop")
-# Final article-level CC metadata
-create_bq_table(sql_basename = "cc_md")
+# ### Metadata ----
+# # All CC-licensed articles
+# create_bq_table(sql_basename = "cc_md_all")
+# # Exclude journals with OA proportion > .95
+# create_bq_table(sql_basename = "cc_oa_prop")
+# # Final article-level CC metadata
+# create_bq_table(sql_basename = "cc_md")
 
-### Creative Commons per journals ----
-jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
-  dplyr::mutate(cr_year = factor(cr_year))  |>
-  dplyr::mutate(cc = factor(
-    cc,
-    # Order by permissiveness
-    levels = c(
-      "CC BY",
-      "CC BY-SA",
-      "CC BY-NC",
-      "CC BY-NC-SA",
-      "CC BY-ND",
-      "CC BY-NC-ND"
-    )
-  )) |>
-  dplyr::mutate(across(c(cc_total, prop), ~ tidyr::replace_na(., 0)))
+# ### Creative Commons per journals ----
+# jn_ind <- create_bq_table("cc_jn_ind", download = TRUE) |>
+#   dplyr::mutate(cr_year = factor(cr_year))  |>
+#   dplyr::mutate(cc = factor(
+#     cc,
+#     # Order by permissiveness
+#     levels = c(
+#       "CC BY",
+#       "CC BY-SA",
+#       "CC BY-NC",
+#       "CC BY-NC-SA",
+#       "CC BY-ND",
+#       "CC BY-NC-ND"
+#     )
+#   )) |>
+#   dplyr::mutate(across(c(cc_total, prop), ~ tidyr::replace_na(., 0)))
 
-# Export as package data
-usethis::use_data(jn_ind, overwrite = TRUE)
-
-
-## Affiliations (OpenAlex)  ----
-
-### Metadata ----
-
-# Article-level first author affiliation data, including dois
-# where no affiliation data could be found
-create_bq_table("cr_openalex_inst_full_raw")
-
-# Extract iso2 country codes from address strings where OpenALEX
-# found no match country code
-
-# 1. Upload countrycode list
-
-countrycodes <- countrycode::codelist[, c("iso2c", "country.name.en")]
-colnames(countrycodes) <- c("iso2c", "country_name_en")
-bg_countrycodes <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "countrycodes")
-
-if (bigrquery::bq_table_exists(bg_countrycodes)) {
-  bigrquery::bq_table_delete(bg_countrycodes)
-}
-bigrquery::bq_table_upload(
-  bg_countrycodes,
-  countrycodes
-)
-
-# 2. Extract and match country strings
-create_bq_table("cr_openalex_inst_full")
-
-### First-author affiliation data CC articles ----
-
-# Article-level first author affiliation data CC licenses
-cc_articles <-
-  create_bq_table("cc_openalex_inst", download = TRUE)
-# Save in package
-usethis::use_data(cc_articles, overwrite = TRUE)
+# # Export as package data
+# usethis::use_data(jn_ind, overwrite = TRUE)
 
 
-### Aggregated first-author country affiliations per hybrid journal and year ----
+# ## Affiliations (OpenAlex)  ----
 
-jn_aff <-
-  create_bq_table("cc_openalex_inst_jn_ind",
-  dataset = "hoaddata",
-                  download = TRUE)
-# Save in package
-usethis::use_data(jn_aff, overwrite = TRUE)
+# ### Metadata ----
 
-### Open Metadata ----
+# # Article-level first author affiliation data, including dois
+# # where no affiliation data could be found
+# create_bq_table("cr_openalex_inst_full_raw")
 
-#### License gaps
-cr_upw <-  create_bq_table("cc_upw_cr", download = TRUE)
-# Save in package
-usethis::use_data(cr_upw, overwrite = TRUE)
+# # Extract iso2 country codes from address strings where OpenALEX
+# # found no match country code
 
+# # 1. Upload countrycode list
 
-### Crossref metadata coverage CC-licenses articles
+# countrycodes <- countrycode::codelist[, c("iso2c", "country.name.en")]
+# colnames(countrycodes) <- c("iso2c", "country_name_en")
+# bg_countrycodes <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "countrycodes")
 
-#### Global
-cc_md_indicators <- create_bq_table("cc_md_indicators", download = TRUE)
+# if (bigrquery::bq_table_exists(bg_countrycodes)) {
+#   bigrquery::bq_table_delete(bg_countrycodes)
+# }
+# bigrquery::bq_table_upload(
+#   bg_countrycodes,
+#   countrycodes
+# )
 
-#### Germany
-cc_md_indicators_de <- create_bq_table("cc_md_indicators_de", download = TRUE)
+# # 2. Extract and match country strings
+# create_bq_table("cr_openalex_inst_full")
 
-cr_md <- cc_md_indicators |>
-  dplyr::mutate(cat = "Global") |>
-  dplyr::bind_rows(cc_md_indicators_de) |>
-  dplyr::mutate(cat = ifelse(is.na(cat), "Germany", cat)) |>
-  dplyr::arrange(issn_l, cr_year)
-# Save in package
-usethis::use_data(cr_md, overwrite = TRUE)
+# ### First-author affiliation data CC articles ----
 
-
-### OpenAlex Journal metadata ----
-jct_oalex_venues <- create_bq_table("jct_oalex_venues", download = TRUE)
-# Fix duplicate URLs
-jct_oalex_venues <- jct_oalex_venues |>
-  dplyr::distinct(issn_l, .keep_all = TRUE)
-# Save in package
-usethis::use_data(jct_oalex_venues, overwrite = TRUE)
+# # Article-level first author affiliation data CC licenses
+# cc_articles <-
+#   create_bq_table("cc_openalex_inst", download = TRUE)
+# # Save in package
+# usethis::use_data(cc_articles, overwrite = TRUE)
 
 
-### Link country affiliations and TAs ----
-jct_inst <- readr::read_csv("data-raw/jct_institutions.csv")
+# ### Aggregated first-author country affiliations per hybrid journal and year ----
 
-# Upload to BQ
-jct_inst_path <-
-  bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_inst")
+# jn_aff <-
+#   create_bq_table("cc_openalex_inst_jn_ind",
+#   dataset = "hoaddata",
+#                   download = TRUE)
+# # Save in package
+# usethis::use_data(jn_aff, overwrite = TRUE)
 
-if (bigrquery::bq_table_exists(jct_inst_path)) {
-  bigrquery::bq_table_delete(jct_inst_path)
-}
-bigrquery::bq_table_upload(
-  jct_inst_path,
-  jct_inst
-)
-# Add associated institutions
- create_bq_table("jct_inst_enriched")
+# ### Open Metadata ----
 
-# Obtain publication statistics for institutions 
-# participating in transformative agreements (TA)
-create_bq_table("ta_oa_inst")
+# #### License gaps
+# cr_upw <-  create_bq_table("cc_upw_cr", download = TRUE)
+# # Save in package
+# usethis::use_data(cr_upw, overwrite = TRUE)
 
-# Save in GCS
-ta_oa_inst_path <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "ta_oa_inst")
-bigrquery::bq_table_save(ta_oa_inst_path, "gs://hoaddata/ta_oa_inst.csv.gz", destination_format = "csv")
-# usethis::use_data(ta_country_output, overwrite = TRUE)
+
+# ### Crossref metadata coverage CC-licenses articles
+
+# #### Global
+# cc_md_indicators <- create_bq_table("cc_md_indicators", download = TRUE)
+
+# #### Germany
+# cc_md_indicators_de <- create_bq_table("cc_md_indicators_de", download = TRUE)
+
+# cr_md <- cc_md_indicators |>
+#   dplyr::mutate(cat = "Global") |>
+#   dplyr::bind_rows(cc_md_indicators_de) |>
+#   dplyr::mutate(cat = ifelse(is.na(cat), "Germany", cat)) |>
+#   dplyr::arrange(issn_l, cr_year)
+# # Save in package
+# usethis::use_data(cr_md, overwrite = TRUE)
+
+
+# ### OpenAlex Journal metadata ----
+# jct_oalex_venues <- create_bq_table("jct_oalex_venues", download = TRUE)
+# # Fix duplicate URLs
+# jct_oalex_venues <- jct_oalex_venues |>
+#   dplyr::distinct(issn_l, .keep_all = TRUE)
+# # Save in package
+# usethis::use_data(jct_oalex_venues, overwrite = TRUE)
+
+
+# ### Link country affiliations and TAs ----
+# jct_inst <- readr::read_csv("data-raw/jct_institutions.csv")
+
+# # Upload to BQ
+# jct_inst_path <-
+#   bigrquery::bq_table("subugoe-collaborative", "hoaddata", "jct_inst")
+
+# if (bigrquery::bq_table_exists(jct_inst_path)) {
+#   bigrquery::bq_table_delete(jct_inst_path)
+# }
+# bigrquery::bq_table_upload(
+#   jct_inst_path,
+#   jct_inst
+# )
+# # Add associated institutions
+#  create_bq_table("jct_inst_enriched")
+
+# # Obtain publication statistics for institutions 
+# # participating in transformative agreements (TA)
+# create_bq_table("ta_oa_inst")
+
+# # Save in GCS
+# ta_oa_inst_path <- bigrquery::bq_table("subugoe-collaborative", "hoaddata", "ta_oa_inst")
+# bigrquery::bq_table_save(ta_oa_inst_path, "gs://hoaddata/ta_oa_inst.csv.gz", destination_format = "csv")
+# # usethis::use_data(ta_country_output, overwrite = TRUE)

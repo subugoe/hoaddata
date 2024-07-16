@@ -14,7 +14,10 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Check commit message
         id: check_commit_message
@@ -61,7 +64,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
-          git add .
+          git add data/
           git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
 
       - name: Push changes
