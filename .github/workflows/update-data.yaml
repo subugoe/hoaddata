@@ -15,7 +15,22 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Check commit message
+        id: check_commit_message
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          if [[ "$COMMIT_MSG" != "Update data"* ]]; then
+            echo "Commit message does not start with 'Update data'."
+            echo "result=0" >> $GITHUB_ENV
+          else
+            echo "result=1" >> $GITHUB_ENV
+          fi
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -34,36 +49,34 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
 
       - name: Update data
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         env:
           HOADDATA_PASSWORD: ${{ secrets.HOADDATA_PASSWORD }}
         run: |
           source("data-raw/jct_001_get_cr_data.R")
         shell: Rscript {0}
-      
+
       - name: Check package after data update
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         uses: r-lib/actions/check-r-package@v2
 
       - name: Commit files
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        if: env.result == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit --allow-empty -m "Auto-update of the data package" -a
-
-      - name: Push changes
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-
+          DATE=$(date +'%Y-%m-%d %H:%M:%S')
+          git add data/
+          git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
+          git push origin ${{ github.head_ref }}
+      
       - name: Build site
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
-        if: github.event_name != 'pull_request'
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           clean: false
