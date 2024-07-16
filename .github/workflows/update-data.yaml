@@ -73,6 +73,7 @@ jobs:
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
           git add data/
           git commit --allow-empty -m "Auto-update of the data package on $DATE" -a
+          git push origin ${{ github.head_ref }}
       
       - name: Build site
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
