@@ -8,8 +8,6 @@ on:
     types:
       - opened
       - synchronize
-    branches-ignore:
-      - main
 
 name: cicd
 
