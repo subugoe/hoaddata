@@ -11,7 +11,7 @@ oam_hybrid_jns."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">hoaddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.001</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.01</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,7 @@ country names from the display_name using regular expressions.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Hybrid OA articles with lead author from Uni Göttingen</span></span></span>
 <span class="r-in"><span><span class="va">cc_articles</span><span class="op">[</span><span class="va">cc_articles</span><span class="op">$</span><span class="va">ror</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="st">"https://ror.org/01y9bpm73"</span>,<span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,304 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,488 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    doi                     issn_l    cr_year cc          country_code ror       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10.1002/1873-3468.13978 0014-5793    <span style="text-decoration: underline;">2</span>020 CC BY-NC-ND DE           https://r…</span>
@@ -100,11 +100,11 @@ country names from the display_name using regular expressions.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10.1002/adem.202201914  1438-1656    <span style="text-decoration: underline;">2</span>023 CC BY-NC-ND DE           https://r…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10.1002/adfm.202313619  1616-301X    <span style="text-decoration: underline;">2</span>024 CC BY       DE           https://r…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10.1002/adfm.202315559  1616-301X    <span style="text-decoration: underline;">2</span>023 CC BY-NC    DE           https://r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/adma.201907693  0935-9648    <span style="text-decoration: underline;">2</span>020 CC BY       DE           https://r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adma.202104075  0935-9648    <span style="text-decoration: underline;">2</span>021 CC BY       DE           https://r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/adma.202211279  0935-9648    <span style="text-decoration: underline;">2</span>023 CC BY-NC    DE           https://r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/adma.202300760  0935-9648    <span style="text-decoration: underline;">2</span>023 CC BY-NC    DE           https://r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2,294 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10.1002/adfm.202409432  1616-301X    <span style="text-decoration: underline;">2</span>024 CC BY-NC    DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10.1002/adma.201907693  0935-9648    <span style="text-decoration: underline;">2</span>020 CC BY       DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10.1002/adma.202104075  0935-9648    <span style="text-decoration: underline;">2</span>021 CC BY       DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10.1002/adma.202211279  0935-9648    <span style="text-decoration: underline;">2</span>023 CC BY-NC    DE           https://r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2,478 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
