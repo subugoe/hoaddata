@@ -49,5 +49,5 @@ FROM (
       INNER JOIN `subugoe-collaborative.hoaddata.hybrid_jns` ON issn = `subugoe-collaborative.hoaddata.hybrid_jns`.`issn`
   )
 WHERE (
-    cr_year BETWEEN 2017 AND 2024
+    cr_year BETWEEN 2017 AND 2025
   )
