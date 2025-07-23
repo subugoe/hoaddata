@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   overview: overview.html
-last_built: 2025-06-23T06:41Z
+last_built: 2025-07-23T11:26Z
 urls:
   reference: https://subugoe.github.io/hoaddata/reference
   article: https://subugoe.github.io/hoaddata/articles
