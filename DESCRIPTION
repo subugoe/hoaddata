@@ -1,7 +1,7 @@
 Package: hoaddata
 Type: Package
 Title: Data about hybrid open access journal publishing
-Version: 0.3.04
+Version: 0.3.05
 Authors@R: 
     person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
     role = c("aut", "cre"),
