@@ -1,4 +1,4 @@
-SELECT *
+SELECT DISTINCT *
 FROM (
     SELECT issn_l,
       esac_publisher,
