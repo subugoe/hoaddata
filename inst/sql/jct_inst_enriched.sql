@@ -8,7 +8,7 @@ WITH
     FROM
       `subugoe-collaborative.hoaddata.jct_inst` AS jct_inst
     LEFT JOIN
-      `subugoe-collaborative.openalex.institutions` AS oalex_inst
+      `subugoe-collaborative.openalex_walden.institutions` AS oalex_inst
     ON
       jct_inst.ror_id = oalex_inst.ror
     LEFT JOIN

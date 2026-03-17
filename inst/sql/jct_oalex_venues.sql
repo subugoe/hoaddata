@@ -22,7 +22,7 @@ WITH my_jns AS (
 oalex AS (
   SELECT homepage_url,
     issn_l
-  FROM `subugoe-collaborative.openalex.sources`
+  FROM `subugoe-collaborative.openalex_walden.sources`
   WHERE works_count > 10
     AND homepage_url IS NOT NULL
 )

@@ -8,7 +8,7 @@ WITH
   SELECT
     DISTINCT oalex.doi
   FROM
-    `subugoe-collaborative.openalex.works` AS oalex
+    `subugoe-collaborative.openalex_walden.works` AS oalex
   WHERE
     open_access.oa_status = "hybrid" ),
   # 2. Germany OA evidence per source

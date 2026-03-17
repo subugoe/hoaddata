@@ -6,7 +6,7 @@ SELECT DISTINCT cc_md.doi,
   ror
 FROM `subugoe-collaborative.hoaddata.cc_md` AS cc_md
   LEFT JOIN `subugoe-collaborative.hoaddata.cr_openalex_inst_full` as inst ON cc_md.doi = inst.doi
-  LEFT JOIN `subugoe-collaborative.openalex.institutions` as oalex ON inst.id = oalex.id
+  LEFT JOIN `subugoe-collaborative.openalex_walden.institutions` as oalex ON inst.id = oalex.id
 WHERE vor = 1
   AND NOT cc IS NULL # there are few cases where the cc regex extraction did not work
 ORDER BY doi

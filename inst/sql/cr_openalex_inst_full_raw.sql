@@ -8,7 +8,7 @@ WITH first_aff AS (
       SELECT doi,
         author_position,
         institutions
-      FROM `subugoe-collaborative.openalex.works`,
+      FROM `subugoe-collaborative.openalex_walden.works`,
         UNNEST(authorships)
       WHERE author_position = "first"
     ),
