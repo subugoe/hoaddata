@@ -17,7 +17,7 @@ WITH esac_journals AS (
   INNER JOIN `subugoe-collaborative.hoaddata.jct_inst_enriched` AS jct_inst
     ON jct_inst.esac_id = hybrid_jns.esac_id
   -- Match with OpenAlex institutions
-  INNER JOIN `subugoe-collaborative.openalex_walden.institutions` AS oalex
+  INNER JOIN `subugoe-collaborative.openalex.institutions` AS oalex
     ON jct_inst.ror = oalex.ror
 ),
 

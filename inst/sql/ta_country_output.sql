@@ -14,7 +14,7 @@ WITH country_oa_ta AS (
       ELSE FALSE
     END AS has_ta
   FROM `subugoe-collaborative.hoaddata.cc_openalex_inst` cr_oalex
-    LEFT JOIN `subugoe-collaborative.openalex_walden.institutions` oalex ON cr_oalex.id = oalex.id
+    LEFT JOIN `subugoe-collaborative.openalex.institutions` oalex ON cr_oalex.id = oalex.id
     LEFT JOIN `subugoe-collaborative.hoaddata.jct_hybrid_jns` jns ON cr_oalex.issn_l = jns.issn_l
   GROUP BY cr_oalex.cr_year,
     issn_l,
@@ -38,7 +38,7 @@ country_pubs_ta AS (
       ELSE FALSE
     END AS has_ta
   FROM `subugoe-collaborative.hoaddata.cr_openalex_inst_full` cr_oalex
-    LEFT JOIN `subugoe-collaborative.openalex_walden.institutions` oalex ON cr_oalex.id = oalex.id
+    LEFT JOIN `subugoe-collaborative.openalex.institutions` oalex ON cr_oalex.id = oalex.id
     LEFT JOIN `subugoe-collaborative.hoaddata.jct_hybrid_jns` jns ON cr_oalex.issn_l = jns.issn_l --WHERE ror = "https://ror.org/01y9bpm73"
     --WHERE cr_oalex.id = "https://openalex.org/I98358874" AND issn_l = "Elsevier"
   GROUP BY cr_oalex.cr_year,
