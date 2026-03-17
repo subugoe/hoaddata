@@ -10,7 +10,7 @@ WITH
     LEFT JOIN
       `subugoe-collaborative.openalex.institutions` AS oalex_inst
     ON
-      jct_inst.ror_id = oalex_inst.ror
+      jct_inst.ror_id = oalex_inst.ids.ror
     LEFT JOIN
       UNNEST(oalex_inst.associated_institutions) AS inst
     ORDER BY
