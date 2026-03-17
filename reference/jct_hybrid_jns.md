@@ -17,18 +17,18 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 ``` r
 jct_hybrid_jns
-#> # A tibble: 622,960 × 4
-#>    issn_l    issn      esac_publisher esac_id     
-#>    <chr>     <chr>     <chr>          <chr>       
-#>  1 0011-3255 0011-3255 Sage           sage2024csic
-#>  2 0011-3255 2376-6662 Sage           sage2024csic
-#>  3 0970-2385 2583-1445 Sage           sage2024csic
-#>  4 1086-4822 1086-4822 Sage           sage2024csic
-#>  5 1086-4822 1536-0687 Sage           sage2024csic
-#>  6 0001-3455 0001-3455 Sage           sage2024csic
-#>  7 0001-3455 1557-5136 Sage           sage2024csic
-#>  8 1925-3621 1925-3621 Sage           sage2024csic
-#>  9 1032-3732 1032-3732 Sage           sage2024csic
-#> 10 1032-3732 1749-3374 Sage           sage2024csic
-#> # ℹ 622,950 more rows
+#> # A tibble: 727,372 × 4
+#>    issn_l    issn      esac_publisher            esac_id      
+#>    <chr>     <chr>     <chr>                     <chr>        
+#>  1 0001-4842 0001-4842 American Chemical Society acs2023titech
+#>  2 0001-4842 1520-4898 American Chemical Society acs2023titech
+#>  3 2643-6728 2643-6728 American Chemical Society acs2023titech
+#>  4 2692-1952 2692-1952 American Chemical Society acs2023titech
+#>  5 2576-6422 2576-6422 American Chemical Society acs2023titech
+#>  6 2637-6113 2637-6113 American Chemical Society acs2023titech
+#>  7 2574-0962 2574-0962 American Chemical Society acs2023titech
+#>  8 2771-9545 2771-9545 American Chemical Society acs2023titech
+#>  9 1944-8244 1944-8244 American Chemical Society acs2023titech
+#> 10 1944-8244 1944-8252 American Chemical Society acs2023titech
+#> # ℹ 727,362 more rows
 ```

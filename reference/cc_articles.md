@@ -62,7 +62,7 @@ corresponding authors and their affiliation.
 ``` r
 # Hybrid OA articles with lead author from Uni Göttingen
 cc_articles[cc_articles$ror %in% "https://ror.org/01y9bpm73",]
-#> # A tibble: 2,812 × 6
+#> # A tibble: 2,785 × 6
 #>    doi                     issn_l    cr_year cc          country_code ror       
 #>    <chr>                   <chr>       <int> <chr>       <chr>        <chr>     
 #>  1 10.1002/1873-3468.13978 0014-5793    2020 CC BY-NC-ND DE           https://r…
@@ -75,5 +75,5 @@ cc_articles[cc_articles$ror %in% "https://ror.org/01y9bpm73",]
 #>  8 10.1002/adfm.202419990  1616-301X    2025 CC BY       DE           https://r…
 #>  9 10.1002/adfm.202511897  1616-301X    2025 CC BY       DE           https://r…
 #> 10 10.1002/adma.201907693  0935-9648    2020 CC BY       DE           https://r…
-#> # ℹ 2,802 more rows
+#> # ℹ 2,775 more rows
 ```

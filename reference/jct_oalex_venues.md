@@ -18,18 +18,18 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 ``` r
 jct_oalex_venues
-#> # A tibble: 13,197 × 3
-#>    issn_l    display_name                                           homepage_url
-#>    <chr>     <chr>                                                  <chr>       
-#>  1 2213-1027 International Human Rights Law Review                  NA          
-#>  2 2950-631X Total Environment Engineering                          NA          
-#>  3 2398-4686 Studies in Graduate and Postdoctoral Education         NA          
-#>  4 2152-2715 Cyberpsychology, Behavior, and Social Networking       NA          
-#>  5 2754-124X Transactions in Earth, Environment, and Sustainability NA          
-#>  6 1368-1494 Dams and Reservoirs                                    NA          
-#>  7 0959-3845 Information Technology &amp; People                    NA          
-#>  8 0590-8876 Costume                                                NA          
-#>  9 1549-7747 IEEE Transactions on Circuits and Systems II: Express… NA          
-#> 10 2688-299X ACM Transactions on Evolutionary Learning and Optimiz… NA          
-#> # ℹ 13,187 more rows
+#> # A tibble: 13,361 × 3
+#>    issn_l    display_name homepage_url
+#>    <chr>     <list>       <chr>       
+#>  1 2514-9342 <chr [1]>    NA          
+#>  2 2468-3485 <chr [1]>    NA          
+#>  3 2665-9883 <chr [1]>    NA          
+#>  4 1625-6484 <chr [1]>    NA          
+#>  5 0029-5566 <chr [1]>    NA          
+#>  6 2976-9442 <chr [1]>    NA          
+#>  7 1754-2731 <chr [1]>    NA          
+#>  8 1610-3181 <chr [1]>    NA          
+#>  9 1355-5855 <chr [1]>    NA          
+#> 10 1094-3641 <chr [1]>    NA          
+#> # ℹ 13,351 more rows
 ```
