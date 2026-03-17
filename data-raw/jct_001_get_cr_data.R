@@ -31,7 +31,14 @@ jct_hybrid_jns <- jct_hybrid_jns_raw |>
     "1746-6202", "0943-4747", "2352-3727", "2748-1964", "2516-6042",
     "2747-7460", "0012-9623", "2804-7214", "2694-0884", "2694-085X")) |>
     # Also remove wrong ta data link in JCT
-    dplyr::filter(esac_id != "eme2025ukb")
+    dplyr::filter(!esac_id %in% c("eme2025ukb", "sn2025gac")) |>
+    # Fix ambigue publisher names
+    dplyr::mutate(esac_publisher = dplyr::case_when(
+      esac_publisher == "Company of Biologists" ~ "The Company of Biologists",
+      esac_publisher == "CSIRO" ~ "CSIRO Publishing",
+      esac_publisher == "Optica" ~ "Optica Optica Publishing Group",
+      .default = esac_publisher
+    ))
 
 # Upload to BQ
 jct_hybrid_jns_path <-
