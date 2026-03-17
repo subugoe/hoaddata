@@ -82,20 +82,20 @@ variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 jn_ind
-#> # A tibble: 190,417 × 6
+#> # A tibble: 190,425 × 6
 #>    issn_l    cr_year cc          cc_total jn_all    prop
 #>    <chr>     <fct>   <fct>          <int>  <int>   <dbl>
 #>  1 0001-0782 2017    CC BY-NC-SA        1    281 0.00356
-#>  2 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
-#>  3 0001-0782 2017    CC BY-SA           1    281 0.00356
+#>  2 0001-0782 2017    CC BY-SA           1    281 0.00356
+#>  3 0001-0782 2017    CC BY-NC           2    281 0.00712
 #>  4 0001-0782 2017    CC BY              2    281 0.00712
-#>  5 0001-0782 2017    CC BY-NC           2    281 0.00712
-#>  6 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
-#>  7 0001-0782 2018    CC BY              3    302 0.00993
+#>  5 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
+#>  6 0001-0782 2018    CC BY              3    302 0.00993
+#>  7 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
 #>  8 0001-0782 2019    CC BY              6    280 0.0214 
-#>  9 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
-#> 10 0001-0782 2019    CC BY-SA           1    280 0.00357
-#> # ℹ 190,407 more rows
+#>  9 0001-0782 2019    CC BY-SA           1    280 0.00357
+#> 10 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
+#> # ℹ 190,415 more rows
 ```
 
 Number of active journals: 13361
@@ -128,20 +128,20 @@ license
 
 ``` r
 jn_aff
-#> # A tibble: 2,634,812 × 6
+#> # A tibble: 2,958,562 × 6
 #>    issn_l    cr_year country_code cc       articles_under_cc_va…¹ articles_total
 #>    <chr>       <int> <chr>        <chr>                     <int>          <int>
-#>  1 1674-2001    2026 NA           NA                           85             97
-#>  2 0040-5752    2026 NA           CC BY-N…                      5             61
-#>  3 1464-8849    2026 NA           NA                           20             34
-#>  4 0378-8733    2026 NA           CC BY                        19             40
-#>  5 1124-4909    2026 NA           CC BY                        10             18
-#>  6 0951-5089    2026 NA           CC BY                         8             22
-#>  7 2377-3766    2026 NA           CC BY                        54            659
-#>  8 0141-9870    2026 NA           NA                           51             69
-#>  9 1742-464X    2026 NA           CC BY                        29             76
-#> 10 1026-7670    2026 NA           NA                            7              7
-#> # ℹ 2,634,802 more rows
+#>  1 0227-5910    2026 AU           CC BY                         1              3
+#>  2 2572-7958    2026 US           NA                            6              7
+#>  3 0306-2619    2026 US           CC BY                         5             44
+#>  4 1742-5468    2026 US           CC BY                         1              2
+#>  5 2352-7102    2026 CA           CC BY                         8             17
+#>  6 2210-3155    2026 IN           NA                           12             14
+#>  7 2754-6969    2026 BD           NA                            1              1
+#>  8 1557-2013    2026 GB           CC BY-N…                      2              3
+#>  9 1056-7895    2026 CN           NA                            5              5
+#> 10 0896-5811    2026 US           CC BY                         1              6
+#> # ℹ 2,958,552 more rows
 #> # ℹ abbreviated name: ¹​articles_under_cc_variant
 ```
 
@@ -152,20 +152,20 @@ OpenAlex.
 
 ``` r
 cc_articles
-#> # A tibble: 2,716,759 × 6
+#> # A tibble: 2,924,785 × 6
 #>    doi                     issn_l    cr_year cc          country_code ror       
 #>    <chr>                   <chr>       <int> <chr>       <chr>        <chr>     
 #>  1 10.1002/1438-390x.1017  1438-3896    2019 CC BY       AT           https://r…
-#>  2 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND US           https://r…
-#>  3 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND NA           https://r…
-#>  4 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND ZA           https://r…
-#>  5 10.1002/1438-390x.12016 1438-3896    2019 CC BY-NC    JP           https://r…
-#>  6 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
+#>  2 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND NA           https://r…
+#>  3 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND US           https://r…
+#>  4 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND PL           https://r…
+#>  5 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND ZA           https://r…
+#>  6 10.1002/1438-390x.12016 1438-3896    2019 CC BY-NC    JP           https://r…
 #>  7 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
-#>  8 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
+#>  8 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
 #>  9 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
-#> 10 10.1002/1438-390x.12021 1438-3896    2019 CC BY       US           https://r…
-#> # ℹ 2,716,749 more rows
+#> 10 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
+#> # ℹ 2,924,775 more rows
 ```
 
 ``` r
@@ -189,7 +189,7 @@ Crossref metadata coverage.
 
 ``` r
 cr_md
-#> # A tibble: 127,011 × 9
+#> # A tibble: 132,018 × 9
 #>    cr_year issn_l    article_total tdm_total orcid_total funder_total
 #>      <int> <chr>             <int>     <int>       <int>        <int>
 #>  1    2017 0001-0782             9         9           0            6
@@ -202,6 +202,6 @@ cr_md
 #>  8    2022 0001-0782            30        30           0           15
 #>  9    2022 0001-0782             1         1           0            1
 #> 10    2023 0001-0782            24        24           0            8
-#> # ℹ 127,001 more rows
+#> # ℹ 132,008 more rows
 #> # ℹ 3 more variables: abstract_total <int>, ref_total <int>, cat <chr>
 ```

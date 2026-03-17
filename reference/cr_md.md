@@ -59,17 +59,18 @@ The following Crossref metadata were analysed:
 ``` r
 # OA Articles in Scientometrics from first-authors in Germany: Metadata coverage
 cr_md[cr_md$issn_l == "0138-9130" & cr_md$cat == "Germany",]
-#> # A tibble: 9 × 9
-#>   cr_year issn_l article_total tdm_total orcid_total funder_total abstract_total
-#>     <int> <chr>          <int>     <int>       <int>        <int>          <int>
-#> 1    2017 0138-…             7         7           3            4              0
-#> 2    2018 0138-…             5         5           4            1              0
-#> 3    2019 0138-…             6         6           5            1              2
-#> 4    2020 0138-…            28        28          25           11             28
-#> 5    2021 0138-…            28        28          25           25             24
-#> 6    2022 0138-…            24        24          23           23             23
-#> 7    2023 0138-…            15        15          15           15             15
-#> 8    2024 0138-…            17        17          17           17             17
-#> 9    2025 0138-…             3         3           3            3              3
-#> # ℹ 2 more variables: ref_total <int>, cat <chr>
+#> # A tibble: 10 × 9
+#>    cr_year issn_l    article_total tdm_total orcid_total funder_total
+#>      <int> <chr>             <int>     <int>       <int>        <int>
+#>  1    2017 0138-9130             5         5           3            4
+#>  2    2018 0138-9130             5         5           4            1
+#>  3    2019 0138-9130             6         6           5            1
+#>  4    2020 0138-9130            31        31          28           13
+#>  5    2021 0138-9130            31        31          28           28
+#>  6    2022 0138-9130            24        24          23           23
+#>  7    2023 0138-9130            15        15          15           15
+#>  8    2024 0138-9130            21        21          21           20
+#>  9    2025 0138-9130            19        19          19           16
+#> 10    2026 0138-9130             3         3           3            3
+#> # ℹ 3 more variables: abstract_total <int>, ref_total <int>, cat <chr>
 ```

@@ -65,18 +65,18 @@ Variables:
 # Country output China vs Germany in Scientometrics (ISSN-L: 0138-9130)
   subset(jn_aff,
     issn_l %in% "0138-9130" & country_code %in% c("DE", "CN"))
-#> # A tibble: 33 × 6
+#> # A tibble: 36 × 6
 #>    issn_l    cr_year country_code cc    articles_under_cc_variant articles_total
 #>    <chr>       <int> <chr>        <chr>                     <int>          <int>
-#>  1 0138-9130    2025 DE           CC BY                         3              3
-#>  2 0138-9130    2025 CN           CC BY                         1              6
-#>  3 0138-9130    2025 CN           NA                            5              6
-#>  4 0138-9130    2024 CN           NA                           76             80
-#>  5 0138-9130    2024 DE           NA                            2             19
-#>  6 0138-9130    2024 CN           CC BY                         4             80
-#>  7 0138-9130    2024 DE           CC BY                        17             19
-#>  8 0138-9130    2023 DE           CC BY                        15             15
-#>  9 0138-9130    2023 CN           NA                           75             79
-#> 10 0138-9130    2023 CN           CC BY                         4             79
-#> # ℹ 23 more rows
+#>  1 0138-9130    2026 CN           NA                           24             26
+#>  2 0138-9130    2026 DE           CC BY                         3              3
+#>  3 0138-9130    2026 CN           CC BY                         2             26
+#>  4 0138-9130    2025 DE           CC BY                        19             19
+#>  5 0138-9130    2025 CN           NA                           88             92
+#>  6 0138-9130    2025 CN           CC BY                         4             92
+#>  7 0138-9130    2024 CN           NA                           96            101
+#>  8 0138-9130    2024 CN           CC BY                         5            101
+#>  9 0138-9130    2024 DE           NA                            3             24
+#> 10 0138-9130    2024 DE           CC BY                        21             24
+#> # ℹ 26 more rows
 ```
