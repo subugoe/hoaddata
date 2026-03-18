@@ -82,20 +82,20 @@ variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 jn_ind
-#> # A tibble: 190,425 × 6
+#> # A tibble: 190,424 × 6
 #>    issn_l    cr_year cc          cc_total jn_all    prop
 #>    <chr>     <fct>   <fct>          <int>  <int>   <dbl>
 #>  1 0001-0782 2017    CC BY-NC-SA        1    281 0.00356
-#>  2 0001-0782 2017    CC BY-SA           1    281 0.00356
-#>  3 0001-0782 2017    CC BY-NC           2    281 0.00712
+#>  2 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
+#>  3 0001-0782 2017    CC BY-SA           1    281 0.00356
 #>  4 0001-0782 2017    CC BY              2    281 0.00712
-#>  5 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
-#>  6 0001-0782 2018    CC BY              3    302 0.00993
-#>  7 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
-#>  8 0001-0782 2019    CC BY              6    280 0.0214 
+#>  5 0001-0782 2017    CC BY-NC           2    281 0.00712
+#>  6 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
+#>  7 0001-0782 2018    CC BY              3    302 0.00993
+#>  8 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
 #>  9 0001-0782 2019    CC BY-SA           1    280 0.00357
-#> 10 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
-#> # ℹ 190,415 more rows
+#> 10 0001-0782 2019    CC BY              6    280 0.0214 
+#> # ℹ 190,414 more rows
 ```
 
 Number of active journals: 13361
@@ -128,20 +128,20 @@ license
 
 ``` r
 jn_aff
-#> # A tibble: 2,958,562 × 6
+#> # A tibble: 2,958,495 × 6
 #>    issn_l    cr_year country_code cc       articles_under_cc_va…¹ articles_total
 #>    <chr>       <int> <chr>        <chr>                     <int>          <int>
-#>  1 0227-5910    2026 AU           CC BY                         1              3
-#>  2 2572-7958    2026 US           NA                            6              7
-#>  3 0306-2619    2026 US           CC BY                         5             44
-#>  4 1742-5468    2026 US           CC BY                         1              2
-#>  5 2352-7102    2026 CA           CC BY                         8             17
-#>  6 2210-3155    2026 IN           NA                           12             14
-#>  7 2754-6969    2026 BD           NA                            1              1
-#>  8 1557-2013    2026 GB           CC BY-N…                      2              3
-#>  9 1056-7895    2026 CN           NA                            5              5
-#> 10 0896-5811    2026 US           CC BY                         1              6
-#> # ℹ 2,958,552 more rows
+#>  1 2755-1725    2026 CA           NA                            1              1
+#>  2 0256-7679    2026 CN           NA                           56             56
+#>  3 1363-2469    2026 IT           NA                            3              3
+#>  4 0007-0610    2026 NA           CC BY-N…                     12             95
+#>  5 2168-6777    2026 US           NA                            6              6
+#>  6 0923-4748    2026 IN           NA                            1              1
+#>  7 1098-612X    2026 CH           CC BY-NC                      1              1
+#>  8 0218-0014    2026 US           NA                           26             26
+#>  9 1386-9477    2026 CN           NA                           42             42
+#> 10 1077-260X    2026 US           NA                           17             19
+#> # ℹ 2,958,485 more rows
 #> # ℹ abbreviated name: ¹​articles_under_cc_variant
 ```
 
@@ -156,8 +156,8 @@ cc_articles
 #>    doi                     issn_l    cr_year cc          country_code ror       
 #>    <chr>                   <chr>       <int> <chr>       <chr>        <chr>     
 #>  1 10.1002/1438-390x.1017  1438-3896    2019 CC BY       AT           https://r…
-#>  2 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND NA           https://r…
-#>  3 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND US           https://r…
+#>  2 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND US           https://r…
+#>  3 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND NA           https://r…
 #>  4 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND PL           https://r…
 #>  5 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND ZA           https://r…
 #>  6 10.1002/1438-390x.12016 1438-3896    2019 CC BY-NC    JP           https://r…

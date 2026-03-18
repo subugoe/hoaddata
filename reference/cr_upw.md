@@ -18,18 +18,18 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 ``` r
 cr_upw
-#> # A tibble: 198,248 × 6
+#> # A tibble: 198,236 × 6
 #>    issn_l    cr_year article_total upw_hybrid_total cr_hybrid_total cat    
 #>    <chr>       <int>         <int>            <int>           <int> <chr>  
-#>  1 0001-2785    2019           207                0               0 Global 
-#>  2 0001-2998    2017            60                1               1 Global 
-#>  3 0001-3072    2017             2                0               0 Germany
-#>  4 0001-4338    2024           137                0               0 Global 
-#>  5 0001-4788    2017            37                2               3 Global 
-#>  6 0001-4842    2024            25               19              19 Germany
-#>  7 0001-4842    2026            64                6               9 Global 
-#>  8 0001-4966    2024          2267              156             152 Global 
-#>  9 0001-5385    2019            79                0               0 Global 
-#> 10 0001-5903    2020            27               11              11 Global 
-#> # ℹ 198,238 more rows
+#>  1 0001-1541    2023           322               48              50 Global 
+#>  2 0001-4788    2020            49                5              12 Global 
+#>  3 0001-4966    2026             8                6               6 Germany
+#>  4 0001-5458    2025            14                0               0 Global 
+#>  5 0001-5970    2022            14               11              11 Germany
+#>  6 0001-6446    2021             5                0               0 Germany
+#>  7 0001-6519    2021            71                0               0 Global 
+#>  8 0001-6810    2017            47                7               2 Global 
+#>  9 0001-7868    2025            71                2               2 Germany
+#> 10 0001-8244    2026            11                8               9 Global 
+#> # ℹ 198,226 more rows
 ```

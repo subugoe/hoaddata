@@ -17,7 +17,7 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 
 ``` r
 jct_hybrid_jns
-#> # A tibble: 725,533 × 4
+#> # A tibble: 721,388 × 4
 #>    issn_l    issn      esac_publisher            esac_id      
 #>    <chr>     <chr>     <chr>                     <chr>        
 #>  1 0001-4842 0001-4842 American Chemical Society acs2023titech
@@ -30,5 +30,5 @@ jct_hybrid_jns
 #>  8 2771-9545 2771-9545 American Chemical Society acs2023titech
 #>  9 1944-8244 1944-8244 American Chemical Society acs2023titech
 #> 10 1944-8244 1944-8252 American Chemical Society acs2023titech
-#> # ℹ 725,523 more rows
+#> # ℹ 721,378 more rows
 ```
