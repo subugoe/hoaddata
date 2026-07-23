@@ -66,6 +66,8 @@ SELECT DISTINCT
   ror_matched as ror,
   ror_type_ as ror_type
 FROM inst_per_year
+-- Save only articles published under TA
+WHERE ta_active = TRUE
 -- Order results by TA journal portfolio, publication year (descending) and DOI
 ORDER BY
   ta_journal_portfolio,
