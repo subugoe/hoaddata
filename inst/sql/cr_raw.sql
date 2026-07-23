@@ -1,26 +1,29 @@
 SELECT DISTINCT *
-FROM (
-    SELECT issn_l,
+FROM
+  (
+    SELECT
+      issn_l,
       esac_publisher,
-      LOWER(doi) as doi,
-      publisher as cr_publisher,
-      container_title as cr_journal_title,
-      EXTRACT (
+      LOWER(doi) AS doi,
+      publisher AS cr_publisher,
+      container_title AS cr_journal_title,
+      EXTRACT(
         YEAR
-        FROM issued
-      ) AS cr_year,
+        FROM issued) AS cr_year,
       CASE
         WHEN abstract IS NOT NULL THEN 1
-      END AS has_abstract,
+        END AS has_abstract,
       CASE
         WHEN ARRAY_LENGTH(reference) != 0 THEN 1
-      END AS has_ref,
+        END AS has_ref,
       license,
       author,
       link,
       funder
-    FROM (
-        SELECT SPLIT(issn, ",") AS issn,
+    FROM
+      (
+        SELECT DISTINCT
+          issn,
           doi,
           publisher,
           container_title,
@@ -32,22 +35,20 @@ FROM (
           link,
           funder
         FROM `subugoe-collaborative.cr_instant.snapshot`
-        WHERE NOT REGEXP_CONTAINS(
+        WHERE
+          NOT REGEXP_CONTAINS(
             title,
-            '(?i)^Author Index$|^Back Cover|^Contents$|^Contents:|^Corrigendum|^Cover Image|^Cover Picture|^Editorial Board|^Front Cover|^Frontispiece|^Inside Back Cover|^Inside Cover|^Inside Front Cover|^Issue Information|^List of contents|^Masthead|^Title page|^Correction$|^Corrections to|^Corrections$|^Withdrawn|^Frontmatter'
-          )
+            '(?i)^Author Index$|^Back Cover|^Contents$|^Contents:|^Corrigendum|^Cover Image|^Cover Picture|^Editorial Board|^Front Cover|^Frontispiece|^Inside Back Cover|^Inside Cover|^Inside Front Cover|^Issue Information|^List of contents|^Masthead|^Title page|^Correction$|^Corrections to|^Corrections$|^Withdrawn|^Frontmatter')
           AND (
             NOT REGEXP_CONTAINS(page, '^S')
-            OR page IS NULL
-          ) -- include online only articles, lacking page or issue
+            OR page
+              IS NULL)  -- include online only articles, lacking page or issue
           AND (
             NOT REGEXP_CONTAINS(issue, '^S')
-            OR issue IS NULL
-          )
+            OR issue IS NULL)
+          AND issued BETWEEN DATETIME('2017-01-01') AND DATETIME('2026-12-31')
       ) AS `tbl_cr`,
       UNNEST(issn) AS issn
-      INNER JOIN `subugoe-collaborative.hoaddata.hybrid_jns` ON issn = `subugoe-collaborative.hoaddata.hybrid_jns`.`issn`
-  )
-WHERE (
-    cr_year BETWEEN 2017 AND 2026
+    INNER JOIN `subugoe-collaborative.hoaddata.hybrid_jns`
+      ON issn = `subugoe-collaborative.hoaddata.hybrid_jns`.`issn`
   )
