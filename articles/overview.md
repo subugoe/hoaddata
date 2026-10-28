@@ -82,25 +82,25 @@ variants by year and hybrid journal as obtained from Crossref.
 
 ``` r
 jn_ind
-#> # A tibble: 195,619 × 6
+#> # A tibble: 196,989 × 6
 #>    issn_l    cr_year cc          cc_total jn_all    prop
 #>    <chr>     <fct>   <fct>          <int>  <int>   <dbl>
 #>  1 0001-0782 2017    CC BY-NC-SA        1    281 0.00356
-#>  2 0001-0782 2017    CC BY-NC           2    281 0.00712
-#>  3 0001-0782 2017    CC BY              2    281 0.00712
-#>  4 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
-#>  5 0001-0782 2017    CC BY-SA           1    281 0.00356
-#>  6 0001-0782 2018    CC BY              3    302 0.00993
-#>  7 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
-#>  8 0001-0782 2019    CC BY              6    280 0.0214 
-#>  9 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
-#> 10 0001-0782 2019    CC BY-SA           1    280 0.00357
-#> # ℹ 195,609 more rows
+#>  2 0001-0782 2017    CC BY-SA           1    281 0.00356
+#>  3 0001-0782 2017    CC BY-NC           2    281 0.00712
+#>  4 0001-0782 2017    CC BY              2    281 0.00712
+#>  5 0001-0782 2017    CC BY-NC-ND        3    281 0.0107 
+#>  6 0001-0782 2018    CC BY-NC-SA        2    302 0.00662
+#>  7 0001-0782 2018    CC BY              3    302 0.00993
+#>  8 0001-0782 2019    CC BY-SA           1    280 0.00357
+#>  9 0001-0782 2019    CC BY              6    280 0.0214 
+#> 10 0001-0782 2019    CC BY-NC-ND        4    280 0.0143 
+#> # ℹ 196,979 more rows
 ```
 
-Number of active journals: 13360
+Number of active journals: 13357
 
-Number of open access articles with Creative Commons license: 2298106
+Number of open access articles with Creative Commons license: 2437605
 
 Creative Commons Breakdown:
 
@@ -113,12 +113,12 @@ jn_ind %>%
 #> # A tibble: 6 × 2
 #>   cc          articles
 #>   <fct>          <int>
-#> 1 CC BY        1508630
-#> 2 CC BY-NC-ND   558898
-#> 3 CC BY-NC      225961
-#> 4 CC BY-NC-SA     3791
-#> 5 CC BY-SA         452
-#> 6 CC BY-ND         374
+#> 1 CC BY        1610113
+#> 2 CC BY-NC-ND   585382
+#> 3 CC BY-NC      237286
+#> 4 CC BY-NC-SA     3941
+#> 5 CC BY-SA         489
+#> 6 CC BY-ND         394
 ```
 
 ### `jn_aff`
@@ -128,20 +128,21 @@ license
 
 ``` r
 jn_aff
-#> # A tibble: 3,141,282 × 6
-#>    issn_l    cr_year country_code cc    articles_under_cc_variant articles_total
+#> # A tibble: 3,093,418 × 6
+#>    issn_l    cr_year country_code cc       articles_under_cc_va…¹ articles_total
 #>    <chr>       <int> <chr>        <chr>                     <int>          <int>
-#>  1 0094-243X    2026 ZA           NA                           33             33
-#>  2 2397-8821    2026 BE           NA                            1              1
-#>  3 1520-5436    2026 DE           CC BY                         1              3
-#>  4 0269-7491    2026 NA           NA                           23             36
-#>  5 0168-8227    2026 KW           CC BY                         1              2
-#>  6 1549-9618    2026 RO           NA                            2              2
-#>  7 1524-9050    2026 MO           NA                            6              6
-#>  8 0021-8286    2026 ES           NA                            1              1
-#>  9 0022-314X    2026 CN           NA                           41             41
-#> 10 1735-6865    2026 IN           NA                           43             44
-#> # ℹ 3,141,272 more rows
+#>  1 0179-1613    2026 IT           CC BY                         2              3
+#>  2 2213-5383    2026 BR           CC BY                         2              6
+#>  3 1613-6810    2026 CN           CC BY-NC                      3           2382
+#>  4 0306-4379    2026 RO           CC BY                         2              2
+#>  5 2366-3294    2026 ID           NA                            1              1
+#>  6 0307-6946    2026 US           NA                           11             17
+#>  7 1022-7954    2026 RU           CC BY                         3             93
+#>  8 0301-2115    2026 NA           NA                           41             50
+#>  9 0004-9425    2026 AU           CC BY-N…                     10             13
+#> 10 2768-3192    2026 NA           NA                           11             11
+#> # ℹ 3,093,408 more rows
+#> # ℹ abbreviated name: ¹​articles_under_cc_variant
 ```
 
 ### `cc_articles`
@@ -151,20 +152,20 @@ OpenAlex.
 
 ``` r
 cc_articles
-#> # A tibble: 3,274,095 × 6
+#> # A tibble: 3,448,001 × 6
 #>    doi                     issn_l    cr_year cc          country_code ror       
 #>    <chr>                   <chr>       <int> <chr>       <chr>        <chr>     
 #>  1 10.1002/1438-390x.1017  1438-3896    2019 CC BY       AT           https://r…
 #>  2 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND US           https://r…
 #>  3 10.1002/1438-390x.1019  1438-3896    2019 CC BY-NC-ND NA           https://r…
 #>  4 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND ZA           https://r…
-#>  5 10.1002/1438-390x.12015 1438-3896    2019 CC BY-NC-ND PL           https://r…
-#>  6 10.1002/1438-390x.12016 1438-3896    2019 CC BY-NC    JP           https://r…
+#>  5 10.1002/1438-390x.12016 1438-3896    2019 CC BY-NC    JP           https://r…
+#>  6 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
 #>  7 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
-#>  8 10.1002/1438-390x.12018 1438-3896    2019 CC BY-NC-ND JP           https://r…
+#>  8 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
 #>  9 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
 #> 10 10.1002/1438-390x.12019 1438-3896    2019 CC BY       JP           https://r…
-#> # ℹ 3,274,085 more rows
+#> # ℹ 3,447,991 more rows
 ```
 
 ``` r
@@ -174,12 +175,12 @@ cc_articles %>%
 #> # A tibble: 6 × 2
 #>   cc          articles
 #>   <chr>          <int>
-#> 1 CC BY        1508630
-#> 2 CC BY-NC      225961
-#> 3 CC BY-NC-ND   558898
-#> 4 CC BY-NC-SA     3791
-#> 5 CC BY-ND         374
-#> 6 CC BY-SA         452
+#> 1 CC BY        1610113
+#> 2 CC BY-NC      237286
+#> 3 CC BY-NC-ND   585382
+#> 4 CC BY-NC-SA     3941
+#> 5 CC BY-ND         394
+#> 6 CC BY-SA         489
 ```
 
 ### `cr_md`
@@ -188,7 +189,7 @@ Crossref metadata coverage.
 
 ``` r
 cr_md
-#> # A tibble: 137,276 × 9
+#> # A tibble: 138,341 × 9
 #>    cr_year issn_l    article_total tdm_total orcid_total funder_total
 #>      <int> <chr>             <int>     <int>       <int>        <int>
 #>  1    2017 0001-0782             9         9           0            6
@@ -201,6 +202,6 @@ cr_md
 #>  8    2022 0001-0782            30        30           0           15
 #>  9    2022 0001-0782             1         1           0            1
 #> 10    2023 0001-0782            24        24           0            8
-#> # ℹ 137,266 more rows
+#> # ℹ 138,331 more rows
 #> # ℹ 3 more variables: abstract_total <int>, ref_total <int>, cat <chr>
 ```

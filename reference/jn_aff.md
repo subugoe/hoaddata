@@ -68,15 +68,15 @@ Variables:
 #> # A tibble: 36 × 6
 #>    issn_l    cr_year country_code cc    articles_under_cc_variant articles_total
 #>    <chr>       <int> <chr>        <chr>                     <int>          <int>
-#>  1 0138-9130    2026 CN           NA                           58             62
-#>  2 0138-9130    2026 DE           CC BY                         6              6
-#>  3 0138-9130    2026 CN           CC BY                         4             62
-#>  4 0138-9130    2025 DE           CC BY                        19             19
-#>  5 0138-9130    2025 CN           NA                           88             92
-#>  6 0138-9130    2025 CN           CC BY                         4             92
-#>  7 0138-9130    2024 DE           NA                            3             23
+#>  1 0138-9130    2026 CN           NA                          114            118
+#>  2 0138-9130    2026 DE           CC BY                        13             13
+#>  3 0138-9130    2026 CN           CC BY                         4            118
+#>  4 0138-9130    2025 CN           NA                           87             91
+#>  5 0138-9130    2025 CN           CC BY                         4             91
+#>  6 0138-9130    2025 DE           CC BY                        19             19
+#>  7 0138-9130    2024 DE           CC BY                        20             22
 #>  8 0138-9130    2024 CN           NA                           96            101
 #>  9 0138-9130    2024 CN           CC BY                         5            101
-#> 10 0138-9130    2024 DE           CC BY                        20             23
+#> 10 0138-9130    2024 DE           NA                            2             22
 #> # ℹ 26 more rows
 ```
