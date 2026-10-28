@@ -11,13 +11,13 @@ Source:
 [`DESCRIPTION`](https://github.com/subugoe/hoaddata/blob/main/DESCRIPTION)
 
 Jahn N (2026). *hoaddata: Data about hybrid open access journal
-publishing*. R package version 0.3.1,
+publishing*. R package version 0.3.11,
 <https://subugoe.github.io/hoaddata>.
 
     @Manual{,
       title = {hoaddata: Data about hybrid open access journal publishing},
       author = {Najko Jahn},
       year = {2026},
-      note = {R package version 0.3.1},
+      note = {R package version 0.3.11},
       url = {https://subugoe.github.io/hoaddata},
     }
